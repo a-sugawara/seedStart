@@ -16,6 +16,6 @@ class Backing(db.Model):
         return {
             'id': self.id,
             'backed': self.backed,
-            'projectId': self.projectId,
-            'userId': self.userId
+            'project_id': self.project_id,
+            'user_id': self.user_id
         }
