@@ -5,8 +5,8 @@ class Backing(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     backed = db.Column(db.Integer, nullable=False)
-    projectId = db.Column(db.Integer, db.ForeignKey('projects.id'))
-    userId = db.Column(db.Integer, db.ForeignKey('users.id'))
+    project_id = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     user = db.relationship('User', back_populates='backings')
 
@@ -19,4 +19,3 @@ class Backing(db.Model):
             'projectId': self.projectId,
             'userId': self.userId
         }
-
