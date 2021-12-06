@@ -11,6 +11,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
+    # items = db.relationship('item', back_populates="users", cascade=""), example on what to do
+
     @property
     def password(self):
         return self.hashed_password
@@ -28,3 +30,5 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email
         }
+
+#add to the to_dict if more properties for our model
