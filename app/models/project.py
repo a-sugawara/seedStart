@@ -6,7 +6,7 @@ class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey('categories.id'), nullable=False)
-    description = db.Column(db.Text(3000), nullable=False)
+    description = db.Column(db.Text, nullable=False)
     goal_amount = db.Column(db.Integer, nullable=False)
     title = db.Column(db.String(50), nullable=False)
 

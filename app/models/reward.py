@@ -5,9 +5,9 @@ class Reward(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50), nullable=False)
-    project_id = db.Column(db.Integer, db.ForeignKey('project.id'), nullable=False)
+    project_id = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
     price = db.Column(db.Integer, nullable=False)
-    description = db.Column(db.Text(3000), nullable=False)
+    description = db.Column(db.Text, nullable=False)
 
     project = db.relationship('Project', back_populates='rewards')
 
