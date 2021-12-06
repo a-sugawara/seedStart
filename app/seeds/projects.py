@@ -1,6 +1,6 @@
-from app.models import category, db, Project
+from app.models import Project, db
 
-def seed_project():
+def seed_projects():
 
     project1 = Project(
         user_id = 1,

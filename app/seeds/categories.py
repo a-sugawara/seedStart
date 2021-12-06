@@ -1,7 +1,7 @@
-from app.models import category, db, Category
+from app.models import Category, db
 
 # creates the categories for projects
-def seed_category():
+def seed_categories():
     parks_and_rec = Category(
         category = 'Parks & Recreation'
     )

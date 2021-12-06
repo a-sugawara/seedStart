@@ -1,4 +1,4 @@
-from app.models import db, Reward
+# from app.models import db, Reward
 
-def seed_rewards():
-    sticker = Reward()
+# def seed_rewards():
+#     sticker = Reward()

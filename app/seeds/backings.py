@@ -1,9 +1,9 @@
-from app.models import project, user, db
+from app.models import Backing, db
 
-def seed_backing():
-    backing1 = Project(
-        backed = 1.00
-        project_id = 1
+def seed_backings():
+    backing1 = Backing(
+        backed = 1.00,
+        project_id = 1,
         user_id = 2
     )
 
@@ -12,4 +12,4 @@ def seed_backing():
 
 def undo_backings():
     db.session.execute('TRUNCATE backings RESTART IDENTITY CASCADE;')
-    session.commit()
+    db.session.commit()
