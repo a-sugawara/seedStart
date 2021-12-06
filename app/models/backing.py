@@ -10,7 +10,7 @@ class Backing(db.Model):
 
     user = db.relationship('User', back_populates='backings')
 
-    project = db.relationship('Project', back_populates='backings')
+    project = db.relationship('Project', back_populates='backing')
 
     def to_dict(self):
         return {

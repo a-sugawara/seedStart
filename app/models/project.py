@@ -10,11 +10,11 @@ class Project(db.Model):
     goal_amount = db.Column(db.Integer, nullable=False)
     title = db.Column(db.String(50), nullable=False)
 
-    user = db.relationship('User', back_populates='projects')
-    category = db.relationship('Category', back_populates='projects')
-    backing = db.relationship('Backing', back_populates='projects', cascade="all, delete")
-    reward = db.relationship('Reward', back_populates='projects', cascade="all, delete")
-    image = db.relationship('Image', back_populates='projects', cascade="all, delete")
+    user = db.relationship('User', back_populates='project')
+    category = db.relationship('Category', back_populates='project')
+    backing = db.relationship('Backing', back_populates='project', cascade="all, delete")
+    reward = db.relationship('Reward', back_populates='project', cascade="all, delete")
+    image = db.relationship('Image', back_populates='project', cascade="all, delete")
 
     def to_dict(self):
         return{

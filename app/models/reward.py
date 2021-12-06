@@ -9,7 +9,8 @@ class Reward(db.Model):
     price = db.Column(db.Integer, nullable=False)
     description = db.Column(db.Text, nullable=False)
 
-    project = db.relationship('Project', back_populates='rewards')
+    project = db.relationship('Project', back_populates='reward')
+
 
     def to_dict(self):
         return {
