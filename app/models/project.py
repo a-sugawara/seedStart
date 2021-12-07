@@ -1,4 +1,3 @@
-from sqlalchemy.sql.expression import true
 from .db import db
 
 class Project(db.Model):
