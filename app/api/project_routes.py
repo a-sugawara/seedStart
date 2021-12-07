@@ -1,5 +1,7 @@
 from flask import Blueprint, jsonify, request, session
-from app.models import Project, db
+from sqlalchemy.orm import joinedload
+from sqlalchemy import orm
+from app.models import Project, db 
 from app.forms import ProjectForm
 
 project_routes = Blueprint('projects', __name__)
@@ -47,7 +49,7 @@ def delete_a_project(id):
     specific_project = Project.query.get(id)
     db.session.delete(specific_project)
     db.session.commit()
-    return {"message": "Sucessful deletion"}
+    return {"message": "Successful deletion"}
 
 @project_routes.route('/<int:id>', methods=['PUT'])
 def update_a_project(id):
@@ -62,4 +64,4 @@ def update_a_project(id):
         db.session.commit()
         return specific_project.to_dict()
         
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401 
