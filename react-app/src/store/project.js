@@ -59,6 +59,7 @@ export const oneProject = (id) => async(dispatch) => {
 }
 
 export const createProject = (projectInfo) => async(dispatch) => {
+  console.log(projectInfo)
   const response = await fetch(`/api/projects/`, {
     method: 'POST',
     headers: {
@@ -82,7 +83,7 @@ export const createProject = (projectInfo) => async(dispatch) => {
   }
 }
 
-let initialState = {projects:null, currentProject:null}
+let initialState = {projects:[], currentProject:null}
 
 const reducer = (state = initialState, action) => {
   let newState
