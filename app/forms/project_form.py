@@ -10,3 +10,5 @@ class ProjectForm(FlaskForm):
     description = StringField('description', validators=[DataRequired()])
     goal_amount = IntegerField('goal_amount', validators=[DataRequired()])
     title = StringField('title', validators=[DataRequired()])
+
+    image_url = StringField('image_url', validators=[DataRequired()])

@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request, session
-from app.models import Project, db
+from app.models import Project, Image, db
 from app.forms import ProjectForm
 
 project_routes = Blueprint('projects', __name__)
@@ -19,8 +19,6 @@ def get_all_projects():
     all_projects = Project.query.all()
     return {'projects': [project.to_dict() for project in all_projects]}
 
-
-
 @project_routes.route('/<int:id>')
 def get_a_project(id):
     project = Project.query.get(id)
@@ -39,6 +37,13 @@ def post_project():
             title=form.data['title']
         )
         db.session.add(project)
+        db.session.commit()
+
+        image = Image(
+            image_url = form.data['image_url'],
+            project_id = project.id
+        )
+        db.session.add(image)
         db.session.commit()
         return project.to_dict()
 
