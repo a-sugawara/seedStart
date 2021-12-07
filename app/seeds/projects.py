@@ -9,8 +9,18 @@ def seed_projects():
         goal_amount = 100000,
         title = "A tree for a tree",
     )
+    project2 = Project(
+        user_id = 1,
+        category_id = 3,
+        description = 'We are trying to plant trees in local communities and municipalities. We will match donations up to $100,000!',
+        goal_amount = 100000,
+        title = "A tree for a dict",
+    )
+
 
     db.session.add(project1)
+    db.session.add(project2)
+
     db.session.commit()
 
 def undo_projects():

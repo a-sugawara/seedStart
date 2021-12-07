@@ -15,7 +15,7 @@ def seed_rewards():
     )
     reward_3 = Reward(
         title = "Your fruit",
-        project_id = 1,
+        project_id = 2,
         price = 10,
         description = "We will give you a fruit from our tree (random)"
     )

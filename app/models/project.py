@@ -1,3 +1,4 @@
+from sqlalchemy.sql.expression import true
 from .db import db
 
 class Project(db.Model):
@@ -22,5 +23,7 @@ class Project(db.Model):
             'user_id':self.user_id,
             'category_id': self.category_id,
             'description':self.description,
-            'goal_amount': self.goal_amount
+            'goal_amount': self.goal_amount,
+            'rewards': [list((obj.title, obj.description, obj.price)) for obj in self.reward],
+            # 'images' : [list((obj.))]
         }
