@@ -11,6 +11,7 @@ from .api.auth_routes import auth_routes
 from .api.project_routes import project_routes
 from .api.rewards_routes import reward_routes
 from .api.backing_routes import backing_routes
+from .api.image_routes import image_routes
 
 
 from .seeds import seed_commands
@@ -38,6 +39,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(project_routes, url_prefix='/api/projects')
 app.register_blueprint(reward_routes, url_prefix='/api/rewards')
 app.register_blueprint(backing_routes, url_prefix='/api/backings')
+app.register_blueprint(image_routes, url_prefix='/api/images')
 
 db.init_app(app)
 Migrate(app, db)
