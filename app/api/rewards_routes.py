@@ -26,6 +26,22 @@ def delete_a_reward(id):
     db.session.commit()
     return {'message': 'Successful Deletion'}
 
+
+@reward_routes.route('/<int:id>', methods=["PUT"])
+def update_a_reward(id):
+    specific_reward = Reward.query.get(id)
+    form = RewardForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        specific_reward.project_id=form.data['project_id'],
+        specific_reward.title=form.data['title'],
+        specific_reward.price=form.data['price'],
+        specific_reward.description=form.data['description']
+        db.session.commit()
+        return specific_reward.to_dict()
+
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
 @reward_routes.route('/', methods=["POST"])
 def post_reward():
     form = RewardForm()
