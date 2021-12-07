@@ -6,7 +6,6 @@ import {allProjects} from  '../../store/project'
 
 export default function AllProjectsPage(){
     let dispatch = useDispatch()
-    let total = 0
     let projects = useSelector(state => state.project.projects)
     const details = projects?.map(project =>
     <>
