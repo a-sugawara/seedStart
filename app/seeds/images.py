@@ -7,7 +7,7 @@ def seed_images():
     )
 
     image_2 = Image(
-        project_id = 1,
+        project_id = 2,
         image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
     )
 

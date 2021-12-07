@@ -16,13 +16,33 @@ class Project(db.Model):
     reward = db.relationship('Reward', back_populates='project', cascade="all, delete")
     image = db.relationship('Image', back_populates='project', cascade="all, delete")
 
+
+
     def to_dict(self):
+         return{
+            'title':self.title,
+            'id':self.id,
+            'user_id':self.user_id,
+            'category_id': self.category_id,
+            'goal_amount': self.goal_amount,
+            'user': self.user.username,
+            'backing': [obj.backed for obj in self.backing],
+            'images' : [obj.image_url for obj in self.image]
+
+        }
+
+    def to_dictionary(self):
         return{
+            'title':self.title,
             'id':self.id,
             'user_id':self.user_id,
             'category_id': self.category_id,
             'description':self.description,
             'goal_amount': self.goal_amount,
             'rewards': [list((obj.title, obj.description, obj.price)) for obj in self.reward],
-            # 'images' : [list((obj.))]
+            'category': self.category.category,
+            'user': self.user.username,
+            'backing': [obj.backed for obj in self.backing],
+            'images' : [obj.image_url for obj in self.image]
+
         }

@@ -19,10 +19,12 @@ def get_all_projects():
     all_projects = Project.query.all()
     return {'projects': [project.to_dict() for project in all_projects]}
 
+
+
 @project_routes.route('/<int:id>')
 def get_a_project(id):
     project = Project.query.get(id)
-    return project.to_dict()
+    return project.to_dictionary()
 
 @project_routes.route('/', methods=['POST'])
 def post_project():
