@@ -9,6 +9,7 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import AllProjectsPage from './components/AllProjectsPage';
 import OneProjectPage from './components/OneProjectsPage';
+import ProjectForm from './components/ProjectFormPage';
 import { authenticate } from './store/session';
 
 function App() {
@@ -36,11 +37,17 @@ function App() {
         <Route path='/projects' exact={true}>
           <AllProjectsPage />
         </Route>
+        <Route path='/sign-up' exact={true}>
+          <SignUpForm />
+        </Route>
+        <ProtectedRoute path='/projects/new' exact={true}>
+          <ProjectForm/>
+        </ProtectedRoute>
         <Route path='/projects/:projectId' exact={true}>
           <OneProjectPage/>
         </Route>
-        <Route path='/sign-up' exact={true}>
-          <SignUpForm />
+        <Route path='/bing-bong'>
+          <h1>bing-bong</h1>
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
