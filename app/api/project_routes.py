@@ -1,7 +1,18 @@
-from flask import Blueprint, jsonify
-from app.models import Project
+from flask import Blueprint, jsonify, request, session
+from app.models import Project, db
 from app.forms import ProjectForm
+
 project_routes = Blueprint('projects', __name__)
+
+def validation_errors_to_error_messages(validation_errors):
+    """
+    Simple function that turns the WTForms validation errors into a simple list
+    """
+    errorMessages = []
+    for field in validation_errors:
+        for error in validation_errors[field]:
+            errorMessages.append(f'{field} : {error}')
+    return errorMessages
 
 @project_routes.route('/')
 def get_all_projects():
@@ -21,12 +32,34 @@ def post_project():
         project = Project(
             user_id=form.data['user_id'],
             category_id=form.data['category_id'],
-            description=form.data['description']
+            description=form.data['description'],
             goal_amount=form.data['goal_amount'],
-            title=form.data['title'],
+            title=form.data['title']
         )
         db.session.add(project)
         db.session.commit()
         return project.to_dict()
 
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+@project_routes.route('/<int:id>', methods=['DELETE'])
+def delete_a_project(id):
+    specific_project = Project.query.get(id)
+    db.session.delete(specific_project)
+    db.session.commit()
+    return {"message": "Sucessful deletion"}
+
+@project_routes.route('/<int:id>', methods=['PUT'])
+def update_a_project(id):
+    specific_project = Project.query.get(id)
+    form = ProjectForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        specific_project.category_id=form.data['category_id'],
+        specific_project.description=form.data['description'],
+        specific_project.goal_amount=form.data['goal_amount'],
+        specific_project.title=form.data['title']
+        db.session.commit()
+        return specific_project.to_dict()
+        
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
