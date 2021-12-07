@@ -1,7 +1,5 @@
 from flask import Blueprint, jsonify, request, session
-from sqlalchemy.orm import joinedload
-from sqlalchemy import orm
-from app.models import Project, db 
+from app.models import Project, db
 from app.forms import ProjectForm
 
 project_routes = Blueprint('projects', __name__)
@@ -63,5 +61,5 @@ def update_a_project(id):
         specific_project.title=form.data['title']
         db.session.commit()
         return specific_project.to_dict()
-        
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401 
+
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
