@@ -3,6 +3,7 @@ const GET_ONE_PROJECT = 'projects/GET_ONE'
 const CREATE_PROJECT = 'projects/CREATE_ONE'
 const EDIT_PROJECT = 'projects/EDIT_ONE'
 const REMOVE_ONE_PROJECT = 'projects/REMOVE_ONE'
+const POST_BACKING = 'backings/POST_BACKING'
 
 const setAllProjects = (allProjects) => {
     return {
@@ -35,6 +36,13 @@ const putProject = (oneProject) => {
   return {
     type: EDIT_PROJECT,
     payload: oneProject
+  }
+}
+
+const postBacking = (backing) => {
+  return {
+    type: POST_BACKING,
+    payload: backing
   }
 }
 
@@ -120,11 +128,32 @@ export const editProject = (id, projectInfo) => async(dispatch) => {
     return ['An error occurred. Please try again.']
   }
 }
+
 export const removeProject = (id) => async(dispatch) => {
-  const response = await fetch(`/api/projects/${id}`,{
+  const response = await fetch(`/api/projects/${id}`, {
     method: 'DELETE',
   })
   dispatch(removeOneProject(id))
+}
+
+export const newBooking = (bookingData) => async(dispatch) => {
+  const response = await fetch('/api/backings/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(bookingData)
+  })
+  if (response.ok) {
+    const data = await response.json()
+    dispatch(postBacking(data))
+    return data;
+  } else if (response.status < 500){
+    const data = await response.json()
+    if (data.errors) {
+      return data.errors
+    }
+  } else {
+    return ['An error occurred. Please try again.']
+  }
 }
 
 let initialState = {projects:[], currentProject:null}
@@ -154,6 +183,11 @@ const reducer = (state = initialState, action) => {
           newState = {...state}
           const projectRIdx = newState.projects.findIndex(project => project.id === action.payload)
           newState.projects.splice(projectRIdx, 1)
+          return newState
+        case POST_BACKING:
+          console.log('reducerahahdah', action.payload)
+          newState = {...state}
+          newState.currentProject.backing.push([action.payload.backed, action.payload.user_id])
           return newState
         default:
             return state;

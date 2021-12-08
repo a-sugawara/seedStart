@@ -42,7 +42,7 @@ class Project(db.Model):
             'rewards': [list((obj.title, obj.description, obj.price)) for obj in self.reward],
             'category': self.category.category,
             'user': self.user.username,
-            'backing': [obj.backed for obj in self.backing],
+            'backing': [list((obj.backed, obj.user_id)) for obj in self.backing],
             'images' : [obj.image_url for obj in self.image]
 
         }
