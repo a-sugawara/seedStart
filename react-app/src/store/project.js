@@ -5,6 +5,7 @@ const EDIT_PROJECT = 'projects/EDIT_ONE'
 const REMOVE_ONE_PROJECT = 'projects/REMOVE_ONE'
 const POST_BACKING = 'backings/POST_BACKING'
 const POST_REWARD = 'rewards/POST_REWARD'
+const GET_SEARCHED_PROJECTS = 'projects/GET_SEARCHED'
 
 const setAllProjects = (allProjects) => {
     return {
@@ -51,6 +52,13 @@ const postReward = (reward) => {
   return {
     type: POST_REWARD,
     payload: reward
+  }
+}
+
+const setSearchedProjects = (projects) => {
+  return {
+    type: GET_SEARCHED_PROJECTS,
+    payload: projects
   }
 }
 
@@ -188,7 +196,16 @@ export const createReward = (reward) => async(dispatch) => {
   }
 }
 
-let initialState = {projects:[], currentProject:null}
+export const searchProjects = (searchTerm) => async (dispatch) => {
+  const response = await fetch(`/api/projects/discover/${searchTerm}`);
+
+  if (response.ok) {
+      const projects = await response.json();
+      dispatch(setSearchedProjects(projects));
+  }
+};
+
+let initialState = {projects:[], currentProject:null, searchedProjects:null}
 
 const reducer = (state = initialState, action) => {
   let newState
@@ -223,6 +240,10 @@ const reducer = (state = initialState, action) => {
         case POST_REWARD:
           newState = {...state}
           newState.currentProject.rewards.push([action.payload.title, action.payload.description, action.payload.price])
+          return newState
+        case GET_SEARCHED_PROJECTS:
+          newState = {...state}
+          newState.searchedProjects = action.payload.projects
           return newState
         default:
             return state;
