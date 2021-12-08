@@ -1,0 +1,15 @@
+.project-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 5rem;
+}
+
+.project-card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.1rem;
+}

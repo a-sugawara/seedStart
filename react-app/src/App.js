@@ -11,6 +11,7 @@ import AllProjectsPage from './components/AllProjectsPage';
 import OneProjectPage from './components/OneProjectsPage';
 import ProjectForm from './components/ProjectFormPage';
 import ProjectFormEdit from './components/ProjectFormEdit'
+import SearchedProjectsPage from './components/SearchedProjectsPage/SearchedProjectsPage';
 import { authenticate } from './store/session';
 import { allProjects } from './store/project';
 
@@ -39,6 +40,9 @@ function App() {
         </Route>
         <Route path='/projects' exact={true}>
           <AllProjectsPage />
+        </Route>
+        <Route path='/discover/:term'>
+          <SearchedProjectsPage/>
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
