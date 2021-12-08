@@ -56,6 +56,11 @@ def delete_a_project(id):
     db.session.commit()
     return {"message": "Successful deletion"}
 
+@project_routes.route('/discover/<string:term>')
+def search_project(term):
+    projects = Project.query.filter(Project.title.ilike("%" + term + "%"))
+    return {'projects': [project.to_dict() for project in projects]}
+
 @project_routes.route('/<int:id>', methods=['PUT'])
 def update_a_project(id):
     specific_project = Project.query.get(id)
