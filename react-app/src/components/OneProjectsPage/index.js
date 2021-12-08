@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import{NavLink ,useHistory, useParams} from 'react-router-dom'
 import {oneProject} from  '../../store/project'
 import  BackingForm  from '../BackingForm/index'
-
+import EditProjectModal from '../ProjectFormEdit/EditProjectModal'
+import DeleteProjectModal from "../DeleteProjectModal/DeleteProjectModal";
 
 export default function OneProjectPage(){
     let dispatch = useDispatch()
@@ -17,7 +18,7 @@ export default function OneProjectPage(){
     )
 
     let backingForm
-    
+
     for(let i = 0; i < project?.backing.length; i++) {
         if(project.backing[i][1] === user_id) {
             backingForm = 'Already contributed to this project'
@@ -47,12 +48,14 @@ export default function OneProjectPage(){
         <img className="project-card-img" src={project?.images[0]}/>
             <div>{project?.title}</div>
             <div>Goal: {"$"}{project?.goal_amount}</div>
-            //ask leah how to fix this dynamically
+            {/* //ask leah how to fix this dynamically */}
             <div>Raised: {"$"}{project?.backing?.reduce((acc, a)=>acc+a[0],0)}</div>
             <div>User: {project?.user}</div>
         {/* {project?.goal_amount} */}
         {projectButtons}
         {backingForm}
+        <EditProjectModal project_id={projectId} />
+        <DeleteProjectModal project_id={projectId}/>
     </div>
     )
-}   
+}

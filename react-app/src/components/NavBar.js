@@ -3,6 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useSelector } from 'react-redux';
+import LoginModal from '../components/auth/LoginModal';
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
@@ -22,11 +23,7 @@ const NavBar = () => {
   }else {
     projectbutton=null
     navbuttons =<div className="navbtn-holder">
-    <NavLink to='/login' exact={true} activeClassName='active'>
-        <div className="navbtn">
-            Login
-        </div>
-      </NavLink>
+        <LoginModal/>
       <NavLink to='/sign-up' exact={true} activeClassName='active'>
         <div className="navbtn">
           Sign Up
