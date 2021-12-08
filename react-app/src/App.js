@@ -52,9 +52,6 @@ function App() {
         <Route path='/projects/:projectId' exact={true}>
           <OneProjectPage/>
         </Route>
-        {/* <Route path='/bing-bong'>
-          <h1>bing-bong</h1>
-        </Route> */}
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>

@@ -7,7 +7,6 @@ import { newBooking } from "../../store/project";
 const BackingForm = ({user_id, project_id}) => {
     const [backed, setBacked] = useState(0)
     const dispatch = useDispatch();
-    console.log(user_id, project_id, 'bingbongg')
 
     const handleSubmit = (e) => {
         e.preventDefault()

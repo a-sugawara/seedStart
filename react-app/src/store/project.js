@@ -1,9 +1,10 @@
 const GET_ALL_PROJECTS = 'projects/GET_ALL'
 const GET_ONE_PROJECT = 'projects/GET_ONE'
-const CREATE_PROJECT = 'projects/CREATE_ONE'
+const CREATE_PROJECT = 'projects/POST_ONE'
 const EDIT_PROJECT = 'projects/EDIT_ONE'
 const REMOVE_ONE_PROJECT = 'projects/REMOVE_ONE'
 const POST_BACKING = 'backings/POST_BACKING'
+const POST_REWARD = 'rewards/POST_REWARD'
 
 const setAllProjects = (allProjects) => {
     return {
@@ -43,6 +44,13 @@ const postBacking = (backing) => {
   return {
     type: POST_BACKING,
     payload: backing
+  }
+}
+
+const postReward = (reward) => {
+  return {
+    type: POST_REWARD,
+    payload: reward
   }
 }
 
@@ -156,6 +164,30 @@ export const newBooking = (bookingData) => async(dispatch) => {
   }
 }
 
+export const createReward = (reward) => async(dispatch) => {
+  const response = await fetch(`/api/rewards/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(
+      reward
+    )
+  })
+  if (response.ok) {
+    const data = await response.json()
+    dispatch(postReward(data))
+    return data;
+  } else if (response.status < 500){
+    const data = await response.json()
+    if (data.errors) {
+      return data.errors
+    }
+  } else {
+    return ['An error occurred. Please try again.']
+  }
+}
+
 let initialState = {projects:[], currentProject:null}
 
 const reducer = (state = initialState, action) => {
@@ -185,9 +217,12 @@ const reducer = (state = initialState, action) => {
           newState.projects.splice(projectRIdx, 1)
           return newState
         case POST_BACKING:
-          console.log('reducerahahdah', action.payload)
           newState = {...state}
           newState.currentProject.backing.push([action.payload.backed, action.payload.user_id])
+          return newState
+        case POST_REWARD:
+          newState = {...state}
+          newState.currentProject.rewards.push([action.payload.title, action.payload.description, action.payload.price])
           return newState
         default:
             return state;
