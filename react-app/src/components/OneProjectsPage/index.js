@@ -17,8 +17,13 @@ export default function OneProjectPage(){
     )
 
     let backingForm
-    if(backingForm) {
-        
+    
+    for(let i = 0; i < project?.backing.length; i++) {
+        if(project.backing[i][1] === user_id) {
+            backingForm = 'Already contributed to this project'
+        } else {
+            backingForm = <BackingForm project_id={+projectId} user_id={user_id}/>
+        }
     }
 
     let projectButtons
@@ -47,7 +52,7 @@ export default function OneProjectPage(){
             <div>User: {project?.user}</div>
         {/* {project?.goal_amount} */}
         {projectButtons}
-        <BackingForm project_id={+projectId} user_id={user_id}/>
+        {backingForm}
     </div>
     )
 }   
