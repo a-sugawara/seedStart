@@ -2,6 +2,7 @@ const GET_ALL_PROJECTS = 'projects/GET_ALL'
 const GET_ONE_PROJECT = 'projects/GET_ONE'
 const CREATE_PROJECT = 'projects/CREATE_ONE'
 const EDIT_PROJECT = 'projects/EDIT_ONE'
+const REMOVE_ONE_PROJECT = 'projects/REMOVE_ONE'
 
 const setAllProjects = (allProjects) => {
     return {
@@ -14,6 +15,12 @@ const getOneProject = (oneProject) => {
   return {
     type: GET_ONE_PROJECT,
     payload: oneProject
+  }
+}
+const removeOneProject = (id) => {
+  return {
+    type: REMOVE_ONE_PROJECT,
+    payload: id
   }
 }
 
@@ -113,6 +120,12 @@ export const editProject = (id, projectInfo) => async(dispatch) => {
     return ['An error occurred. Please try again.']
   }
 }
+export const removeProject = (id) => async(dispatch) => {
+  const response = await fetch(`/api/projects/${id}`,{
+    method: 'DELETE',
+  })
+  dispatch(removeOneProject(id))
+}
 
 let initialState = {projects:[], currentProject:null}
 
@@ -136,6 +149,11 @@ const reducer = (state = initialState, action) => {
           console.log(action.payload)
           const projectIdx = newState.projects.findIndex(project => project.id === action.payload.id)
           newState.projects[projectIdx] = action.payload
+          return newState
+        case REMOVE_ONE_PROJECT:
+          newState = {...state}
+          const projectIdx = newState.projects.findIndex(project => project.id === action.payload)
+          newState.projects.splice(projectIdx, 1)
           return newState
         default:
             return state;
