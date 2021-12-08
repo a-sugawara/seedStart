@@ -152,8 +152,8 @@ const reducer = (state = initialState, action) => {
           return newState
         case REMOVE_ONE_PROJECT:
           newState = {...state}
-          const projectIdx = newState.projects.findIndex(project => project.id === action.payload)
-          newState.projects.splice(projectIdx, 1)
+          const projectRIdx = newState.projects.findIndex(project => project.id === action.payload)
+          newState.projects.splice(projectRIdx, 1)
           return newState
         default:
             return state;

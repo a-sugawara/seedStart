@@ -1,1 +1,17 @@
 /* TODO Add site wide styles */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25)
+}
+.navbtn-holder{
+    display: flex;
+    gap: 1rem;
+}
+
+.navbtn{
+    border: 1px solid black;
+    padding:0.3rem 1rem;
+    border-radius:5px;
+}
