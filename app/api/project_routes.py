@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request, session
 from app.models import Project, Image, db
-from app.forms import ProjectForm
+from app.forms import ProjectForm, ProjectFormEdit
 
 project_routes = Blueprint('projects', __name__)
 
@@ -59,7 +59,7 @@ def delete_a_project(id):
 @project_routes.route('/<int:id>', methods=['PUT'])
 def update_a_project(id):
     specific_project = Project.query.get(id)
-    form = ProjectForm()
+    form = ProjectFormEdit()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         specific_project.category_id=form.data['category_id'],

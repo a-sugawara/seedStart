@@ -1,6 +1,7 @@
 const GET_ALL_PROJECTS = 'projects/GET_ALL'
 const GET_ONE_PROJECT = 'projects/GET_ONE'
 const CREATE_PROJECT = 'projects/CREATE_ONE'
+const EDIT_PROJECT = 'projects/EDIT_ONE'
 
 const setAllProjects = (allProjects) => {
     return {
@@ -19,6 +20,13 @@ const getOneProject = (oneProject) => {
 const postProject = (oneProject) => {
   return {
     type: CREATE_PROJECT,
+    payload: oneProject
+  }
+}
+
+const putProject = (oneProject) => {
+  return {
+    type: EDIT_PROJECT,
     payload: oneProject
   }
 }
@@ -59,7 +67,6 @@ export const oneProject = (id) => async(dispatch) => {
 }
 
 export const createProject = (projectInfo) => async(dispatch) => {
-  console.log(projectInfo)
   const response = await fetch(`/api/projects/`, {
     method: 'POST',
     headers: {
@@ -72,6 +79,30 @@ export const createProject = (projectInfo) => async(dispatch) => {
   if (response.ok) {
     const data = await response.json()
     dispatch(postProject(data))
+    return data;
+  } else if (response.status < 500){
+    const data = await response.json()
+    if (data.errors) {
+      return data.errors
+    }
+  } else {
+    return ['An error occurred. Please try again.']
+  }
+}
+
+export const editProject = (id, projectInfo) => async(dispatch) => {
+  const response = await fetch(`/api/projects/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(
+      projectInfo
+    )
+  })
+  if (response.ok) {
+    const data = await response.json()
+    dispatch(putProject(data))
     return data;
   } else if (response.status < 500){
     const data = await response.json()
@@ -99,6 +130,12 @@ const reducer = (state = initialState, action) => {
         case CREATE_PROJECT:
           newState = {...state}
           newState.projects.push(action.payload)
+          return newState
+        case EDIT_PROJECT:
+          newState = {...state}
+          console.log(action.payload)
+          const projectIdx = newState.projects.findIndex(project => project.id === action.payload.id)
+          newState.projects[projectIdx] = action.payload
           return newState
         default:
             return state;

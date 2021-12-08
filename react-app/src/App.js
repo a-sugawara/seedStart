@@ -10,7 +10,9 @@ import User from './components/User';
 import AllProjectsPage from './components/AllProjectsPage';
 import OneProjectPage from './components/OneProjectsPage';
 import ProjectForm from './components/ProjectFormPage';
+import ProjectFormEdit from './components/ProjectFormEdit'
 import { authenticate } from './store/session';
+import { allProjects } from './store/project';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -21,6 +23,7 @@ function App() {
       await dispatch(authenticate());
       setLoaded(true);
     })();
+    dispatch(allProjects())
   }, [dispatch]);
 
   if (!loaded) {
@@ -40,15 +43,18 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+        <ProtectedRoute path='/projects/:projectId/edit' exact={true}>
+          <ProjectFormEdit/>
+        </ProtectedRoute>
         <ProtectedRoute path='/projects/new' exact={true}>
           <ProjectForm/>
         </ProtectedRoute>
         <Route path='/projects/:projectId' exact={true}>
           <OneProjectPage/>
         </Route>
-        <Route path='/bing-bong'>
+        {/* <Route path='/bing-bong'>
           <h1>bing-bong</h1>
-        </Route>
+        </Route> */}
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
