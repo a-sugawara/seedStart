@@ -14,6 +14,7 @@ import ProjectFormEdit from './components/ProjectFormEdit'
 import SearchedProjectsPage from './components/SearchedProjectsPage/SearchedProjectsPage';
 import { authenticate } from './store/session';
 import { allProjects } from './store/project';
+import CategoryBar from "./components/CategoryBar"
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -34,6 +35,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+      <CategoryBar/>
       <Switch>
         <Route path='/login' exact={true}>
           <LoginForm />
