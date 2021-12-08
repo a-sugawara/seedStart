@@ -23,7 +23,7 @@ export default function AllProjectsPage(){
         dispatch(allProjects())},
         [dispatch]
     )
-
+        
 
     console.log("00000000000000000000",projects)
 
