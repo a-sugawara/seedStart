@@ -8,3 +8,4 @@ class RewardForm(FlaskForm):
     title = StringField('title', validators=[DataRequired()])
     price = IntegerField('price', validators=[DataRequired()])
     description = TextAreaField('description', validators=[DataRequired()])
+
