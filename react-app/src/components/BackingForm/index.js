@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { createProject, oneProject } from '../../store/project'
-import { newBooking } from "../../store/project";
+import { newBacking } from "../../store/project";
 
 const BackingForm = ({user_id, project_id}) => {
     const [backed, setBacked] = useState(0)
@@ -15,7 +15,7 @@ const BackingForm = ({user_id, project_id}) => {
             project_id,
             backed
         }
-        dispatch(newBooking(backingInfo))
+        dispatch(newBacking(backingInfo))
         // dispatch(oneProject(project_id))
     }
 

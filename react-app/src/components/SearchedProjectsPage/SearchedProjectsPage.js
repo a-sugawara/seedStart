@@ -25,7 +25,6 @@ export default function SearchedProjectsPage(){
     )
 
 
-    console.log("00000000000000000000",projects)
 
     return <div className="project-wrapper">
         {details}

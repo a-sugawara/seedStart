@@ -179,11 +179,11 @@ export const removeProject = (id) => async(dispatch) => {
   }
 }
 
-export const newBooking = (bookingData) => async(dispatch) => {
+export const newBacking = (backingData) => async(dispatch) => {
   const response = await fetch('/api/backings/', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(bookingData)
+    body: JSON.stringify(backingData)
   })
   if (response.ok) {
     const data = await response.json()
@@ -252,7 +252,7 @@ export const putReward = (rewardInfo, rewardId) => async (dispatch) => {
   }
 }
 
-export const byeByeReward = (rewardId) => async(dispatch) => {
+export const removeReward = (rewardId) => async(dispatch) => {
   const response = await fetch(`/api/rewards/${rewardId}`, {
     method: 'DELETE'
   })
@@ -289,6 +289,7 @@ const reducer = (state = initialState, action) => {
           newState = {...state}
           const projectIdx = newState.projects.findIndex(project => project.id === action.payload.id)
           newState.projects[projectIdx] = action.payload
+          newState.currentProject = action.payload
           return newState
         case REMOVE_ONE_PROJECT:
           newState = {...state}
@@ -298,7 +299,6 @@ const reducer = (state = initialState, action) => {
         case POST_BACKING:
           newState = {...state}
           newState.currentProject.backing.push([action.payload.backed, action.payload.user_id])
-          newState.currentProject.backing = {...newState.currentProject.backing}
           return newState
         case POST_REWARD:
           newState = {...state}
@@ -310,8 +310,9 @@ const reducer = (state = initialState, action) => {
           return newState
         case UPDATE_REWARD:
           newState = {...state}
-          console.log('this is the payloaddddd', action.payload, 'bing-bong')
-          const rewardIdx = newState.currentProject.rewards.findIndex(reward => reward[3] === action.payload)
+          const rewardIdx = newState.currentProject.rewards.findIndex(reward => reward[3] === action.payload.id)
+          newState.currentProject.rewards[rewardIdx] = [action.payload.title, action.payload.description, action.payload.price, action.payload.id]
+          newState.currentProject.rewards[rewardIdx] = newState.currentProject.rewards[rewardIdx].slice()
           return newState
         default:
             return state;

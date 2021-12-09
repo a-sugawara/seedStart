@@ -10,7 +10,7 @@ import EditRewardModal from "../RewardEditModal";
 
 export default function OneProjectPage(){
     let dispatch = useDispatch();
-    let project = useSelector(state => state.project.currentProject);
+    let {currentProject: project} = useSelector(state => state.project);
     let sessionUser = useSelector(state => state.session.user);
     const user_id = useSelector(state => state.session.user?.id);
     const {projectId} = useParams();
@@ -38,7 +38,7 @@ export default function OneProjectPage(){
         }
     }
 
-    let rewards = project?.rewards.map((reward) => {
+    let rewards = project?.rewards?.map((reward) => {
         return <div className="rewardCard">
             <div className="tier1">
                 {reward[0]}
@@ -68,6 +68,7 @@ export default function OneProjectPage(){
         <img className="project-card-img" src={project?.images[0]} alt="project example"/>
             <div>{project?.title}</div>
             <div>Goal: {"$"}{project?.goal_amount}</div>
+            {console.log(project?.backing, '0000')}
             <div>Raised: {"$"}{project?.backing?.reduce((acc, a)=>acc+a[0],0)}</div>
             <div>User: {project?.user}</div>
         {/* {project?.goal_amount} */}
