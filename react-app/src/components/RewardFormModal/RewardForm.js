@@ -11,7 +11,7 @@ const RewardForm = ({project_id, setShowModal}) => {
 
     const dispatch = useDispatch();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
         const rewardInfo = {
             project_id,
@@ -19,12 +19,21 @@ const RewardForm = ({project_id, setShowModal}) => {
             price,
             description,
         }
-        dispatch(createReward(rewardInfo))
+        const data = await dispatch(createReward(rewardInfo))
+        if(data){
+            setErrors(data)
+        } else {
         setShowModal(false);
+        }
     }
 
     return (
         <div className='form-container'>
+            <div>
+            {errors.map((error, ind) => (
+                <div key={ind}>{error}</div>
+            ))}
+            </div>
             <form className='form' onSubmit={handleSubmit}>
                 <input
                 className='reward-title-input'
