@@ -23,6 +23,7 @@ def seed_rewards():
     db.session.add(reward_1)
     db.session.add(reward_2)
     db.session.add(reward_3)
+    
     db.session.commit()
 
 def undo_rewards():
