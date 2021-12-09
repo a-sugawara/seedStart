@@ -8,6 +8,7 @@ import DeleteProjectModal from "../DeleteProjectModal/DeleteProjectModal";
 import PostRewardModal from "../RewardFormModal/index";
 import EditRewardModal from "../RewardEditModal";
 import DeleteRewardModal from "../DeleteRewardModal";
+import './OneProjectsPage.css'
 
 export default function OneProjectPage(){
     let dispatch = useDispatch();
@@ -40,15 +41,15 @@ export default function OneProjectPage(){
 
     let rewards = project?.rewards?.sort((a,b) => a[2]-b[2]).map((reward) => {
         return <div className="rewardCard">
-            <div className="tier1">
+            <div className="reward-title">
                 {/* this is the reward title */}
                 {reward[0]} 
             </div>
-            <div className="tier2">
+            <div className="reward-description">
                 {/* this is the reward description */}
                 {reward[1]}
             </div>
-            <div className="tier3">
+            <div className="reward-price">
                 {/* this is the reward price */}
                 {reward[2]}
             </div>
@@ -65,17 +66,26 @@ export default function OneProjectPage(){
     }
 
     return (
-    <div className='single-wrapper'>
-        <img className="project-card-img" src={project?.images[0]} alt="project example"/>
-            <div>{project?.title}</div>
-            <div>Goal: {"$"}{project?.goal_amount}</div>
-            <div>Raised: {"$"}{project?.backing?.reduce((acc, a)=>acc+a[0],0)}</div>
-            <div>User: {project?.user}</div>
-        {/* {project?.goal_amount} */}
-        {projectButtons}
-        {backingForm}
-        {rewards}
-        {rewardCreateButtons}
-    </div>
+    <>
+        <div className='singleProject-title'>{project?.title}</div>
+        <div className='singleProject-wrapper'>
+            <div className="singleProject-name-info">
+                <img className="project-card-img" src={project?.images[0]} alt="project example"/>
+                    <div>Goal: {"$"}{project?.goal_amount}</div>
+                    <div>Raised: {"$"}{project?.backing?.reduce((acc, a)=>acc+a[0],0)}</div>
+                    <div>User: {project?.user}</div>
+                {/* {project?.goal_amount} */}
+                {projectButtons}
+                {backingForm}
+            </div>
+            <div className="singleProject-description">
+                {project?.description}
+            </div>
+            <div className="rewardsContainer">
+            {rewards}
+            {rewardCreateButtons}
+            </div>
+        </div>
+    </>
     )
 }

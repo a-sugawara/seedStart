@@ -1,1 +1,49 @@
+.singleProject-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    height: calc(80vh);
+    justify-content: space-around;
+}
 
+.singleProject-title{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    display:flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.singleProject-name-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.rewardCard{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    width: 50%;
+    background-color: #EFE8CF;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius:5px;
+}
+
+.singleProject-description{
+    max-width: 30%;
+}
+
+.rewardCard:hover{
+    box-shadow: 0 .1rem 5px rgba(0, 0, 0, 0.253);
+    transform: translateY(-2px) ;
+}
+
+@media only screen and (max-width:1375px){
+    .rewardsContainer{
+        display: flex;
+        gap: 1rem
+    }
+}
