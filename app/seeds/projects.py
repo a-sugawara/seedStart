@@ -1,7 +1,7 @@
 from app.models import Project, db
 
 def seed_projects():
-
+    # make four per category
     project1 = Project(
         user_id = 1,
         category_id = 3,
@@ -33,10 +33,10 @@ def seed_projects():
         )
     project5 = Project(
             user_id = 3,
-            category_id = 5,
-            description = 'We would like to create a space where artists can rent a space to make various types of art.',
+            category_id = 9,
+            description = 'We would like to create a space where people can learn how to make woodworking stuff.',
             goal_amount = 200000,
-            title = "Art Studio",
+            title = "Woodworking Workshop",
         )
     project6 = Project(
             user_id = 1,
@@ -78,6 +78,14 @@ def seed_projects():
 
     db.session.add(project1)
     db.session.add(project2)
+    db.session.add(project3)
+    db.session.add(project4)
+    db.session.add(project5)
+    db.session.add(project6)
+    db.session.add(project7)
+    db.session.add(project8)
+    db.session.add(project9)
+    db.session.add(project10)
 
     db.session.commit()
 
