@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import LoginModal from '../components/auth/LoginModal';
 import SearchForm from '../components/Searchbar';
 
+
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
   let navbuttons

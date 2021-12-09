@@ -14,6 +14,8 @@ import ProjectFormEdit from './components/ProjectFormEdit'
 import SearchedProjectsPage from './components/SearchedProjectsPage/SearchedProjectsPage';
 import { authenticate } from './store/session';
 import { allProjects } from './store/project';
+import CategoryBar from "./components/CategoryBar"
+import CategoryResults from './components/CategoryResults';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -34,9 +36,13 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+      <CategoryBar/>
       <Switch>
-        <Route path='/login' exact={true}>
+        {/* <Route path='/login' exact={true}>
           <LoginForm />
+        </Route> */}
+        <Route path='/category/:catId' exact={true}>
+          <CategoryResults />
         </Route>
         <Route path='/projects' exact={true}>
           <AllProjectsPage />
@@ -44,9 +50,9 @@ function App() {
         <Route path='/discover/:term'>
           <SearchedProjectsPage/>
         </Route>
-        <Route path='/sign-up' exact={true}>
+        {/* <Route path='/sign-up' exact={true}>
           <SignUpForm />
-        </Route>
+        </Route> */}
         <ProtectedRoute path='/projects/:projectId/edit' exact={true}>
           <ProjectFormEdit/>
         </ProtectedRoute>
