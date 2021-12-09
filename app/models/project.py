@@ -39,7 +39,7 @@ class Project(db.Model):
             'category_id': self.category_id,
             'description':self.description,
             'goal_amount': self.goal_amount,
-            'rewards': [list((obj.title, obj.description, obj.price)) for obj in self.reward],
+            'rewards': [list((obj.title, obj.description, obj.price, obj.id)) for obj in self.reward],
             'category': self.category.category,
             'user': self.user.username,
             'backing': [list((obj.backed, obj.user_id)) for obj in self.backing],
