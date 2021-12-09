@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import{useParams} from 'react-router-dom'
 import {oneProject} from  '../../store/project'
 import  BackingForm  from '../BackingForm/index'
+import BackingEditForm from "../BackingEditForm";
 import EditProjectModal from '../ProjectFormEdit/EditProjectModal'
 import DeleteProjectModal from "../DeleteProjectModal/DeleteProjectModal";
 import PostRewardModal from "../RewardFormModal/index";
@@ -61,7 +62,12 @@ export default function OneProjectPage(){
     let backingForm = <BackingForm project_id={+projectId} user_id={user_id}/>
     for(let i = 0; i < project?.backing.length; i++) {
         if(project.backing[i][1] === user_id) {
-            backingForm = 'Already contributed to this project'
+            backingForm = (
+                <>
+                <p>{`You've contributed $${project.backing[i][0]}`}</p>
+                {<BackingEditForm project_id={+projectId} user_id={user_id} backing_id={project.backing[i][2]} amount_backed={+project.backing[i][0]}/>}
+                </>
+            )
         }
     }
 
