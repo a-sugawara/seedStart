@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { newBacking } from "../../store/project";
+import { oneProject, newBacking } from "../../store/project";
 
 const BackingForm = ({user_id, project_id}) => {
     const [backed, setBacked] = useState(0)
@@ -17,6 +17,8 @@ const BackingForm = ({user_id, project_id}) => {
         const data = await dispatch(newBacking(backingInfo));
         if (data) {
             setErrors(data)
+        }else{
+            dispatch(oneProject(project_id))
         }
     }
 

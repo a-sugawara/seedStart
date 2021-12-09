@@ -41,6 +41,15 @@ export default function OneProjectPage(){
     }
 
     let rewards = project?.rewards?.sort((a,b) => a[2]-b[2]).map((reward) => {
+        let test
+        for(let i = 0; i < project?.backing.length; i++) {
+            if(project.backing[i][1] === user_id) {
+                if(project.backing[i][0] >= reward[2]){
+                    test="got"
+                }
+            }
+
+        }
         return <div className="rewardCard">
             <div className="reward-title">
                 {/* this is the reward title */}
@@ -56,6 +65,7 @@ export default function OneProjectPage(){
             </div>
             {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
             {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
+            {test}
         </div>
     })
 
