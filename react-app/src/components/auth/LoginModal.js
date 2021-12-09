@@ -9,8 +9,7 @@ function LoginModal(){
     const dispatch = useDispatch()
     const [showModal, setShowModal] = useState(false)
     const demoLogin = async() => {
-        const demoUser = {credential: "demo@aa.io", password: "password"}
-        await dispatch(login(demoUser))
+        await dispatch(login('demo@aa.io', 'password'))
     }
 
     return (
