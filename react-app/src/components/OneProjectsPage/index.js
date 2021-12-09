@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import{NavLink ,useHistory, useParams} from 'react-router-dom'
-import {oneProject} from  '../../store/project'
+import {oneProject, putReward} from  '../../store/project'
 import  BackingForm  from '../BackingForm/index'
 import EditProjectModal from '../ProjectFormEdit/EditProjectModal'
 import DeleteProjectModal from "../DeleteProjectModal/DeleteProjectModal";
 import PostRewardModal from "../RewardFormModal/index";
+import EditRewardModal from "../RewardEditModal";
 
 export default function OneProjectPage(){
     let dispatch = useDispatch();
@@ -15,34 +16,13 @@ export default function OneProjectPage(){
     const {projectId} = useParams();
 
     useEffect(() => {
-        dispatch(oneProject(projectId))}, [dispatch]
-    )
+        dispatch(oneProject(projectId))
+    }, [dispatch])
 
-    let backingForm;
-
-    let rewards = project?.rewards.map((reward) => {
-        return <div className="rewardCard">
-            <div className="tier1">
-                {reward[0]}
-            </div>
-            <div className="tier2">
-                {reward[1]}
-            </div>
-            <div className="tier3">
-                {reward[2]}
-            </div>
-        </div>
-    })
-
-    for(let i = 0; i < project?.backing.length; i++) {
-        if(project.backing[i][1] === user_id) {
-            backingForm = 'Already contributed to this project'
-        } else {
-            backingForm = <BackingForm project_id={+projectId} user_id={user_id}/>
-        }
-    }
+    let reward = [0,0,0,0]
 
     let projectButtons;
+    let rewardButtons;
     if(sessionUser){
         if(sessionUser.id === project?.user_id){
             projectButtons =
@@ -56,6 +36,31 @@ export default function OneProjectPage(){
                 </div>
         }
     }
+
+    let rewards = project?.rewards.map((reward) => {
+        return <div className="rewardCard">
+            <div className="tier1">
+                {reward[0]}
+            </div>
+            <div className="tier2">
+                {reward[1]}
+            </div>
+            <div className="tier3">
+                {reward[2]}
+            </div>
+            {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
+        </div>
+    })
+
+    let backingForm;
+    for(let i = 0; i < project?.backing.length; i++) {
+        if(project.backing[i][1] === user_id) {
+            backingForm = 'Already contributed to this project'
+        } else {
+            backingForm = <BackingForm project_id={+projectId} user_id={user_id}/>
+        }
+    }
+
 
 
     return (
