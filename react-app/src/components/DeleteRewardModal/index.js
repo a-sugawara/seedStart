@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux';
-// import {removeProject} from '../../store/project';
 import { Modal } from '../context/Modal';
-import DeleteProjectConfirmation from './DeleteConfirmation'
+import DeleteRewardConfirmation from './DeleteRewardConfirmation'
 
 
-function DeleteProjectModal({project}) {
+function DeleteRewardModal({project_id, reward_id}) {
     const [showModal, setShowModal] = useState(false)
 
   return (
@@ -14,7 +13,7 @@ function DeleteProjectModal({project}) {
         <button onClick={() => setShowModal(true)}>Delete</button>
         {showModal && (
             <Modal onClose={() => setShowModal(false)}>
-                <DeleteProjectConfirmation project={project} setShowModal={setShowModal}/>
+                <DeleteRewardConfirmation project_id={project_id}  reward_id={reward_id} setShowModal={setShowModal}/>
             </Modal>
         )}
     </>
@@ -22,4 +21,4 @@ function DeleteProjectModal({project}) {
   );
 }
 
-export default DeleteProjectModal;
+export default DeleteRewardModal;
