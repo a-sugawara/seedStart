@@ -76,12 +76,16 @@ export default function OneProjectPage(){
                     <div>User: {project?.user}</div>
                 {/* {project?.goal_amount} */}
                 {projectButtons}
-                {backingForm}
+                <div className="progress-bar">
+                    <div className="progress-status"
+                    style={{width:`${(project?.backing?.reduce((acc, a)=>acc+a[0],0)) / (project?.goal_amount) * 100}%`}}></div>
+                </div>
             </div>
             <div className="singleProject-description">
                 {project?.description}
             </div>
             <div className="rewardsContainer">
+            {backingForm}
             {rewards}
             {rewardCreateButtons}
             </div>
