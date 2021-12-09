@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import{NavLink ,useHistory, useParams} from 'react-router-dom'
+import{NavLink, useHistory, useParams} from 'react-router-dom'
 import {oneProject, putReward} from  '../../store/project'
 import  BackingForm  from '../BackingForm/index'
 import EditProjectModal from '../ProjectFormEdit/EditProjectModal'
@@ -34,20 +34,22 @@ export default function OneProjectPage(){
                         <DeleteProjectModal project_id={projectId}/>
                     </div>
                 </div>
-
             rewardCreateButtons = <PostRewardModal project_id={projectId}/>
         }
     }
 
-    let rewards = project?.rewards?.map((reward) => {
+    let rewards = project?.rewards?.sort((a,b) => a[2]-b[2]).map((reward) => {
         return <div className="rewardCard">
             <div className="tier1">
-                {reward[0]}
+                {/* this is the reward title */}
+                {reward[0]} 
             </div>
             <div className="tier2">
+                {/* this is the reward description */}
                 {reward[1]}
             </div>
             <div className="tier3">
+                {/* this is the reward price */}
                 {reward[2]}
             </div>
             {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
@@ -61,8 +63,6 @@ export default function OneProjectPage(){
             backingForm = 'Already contributed to this project'
         }
     }
-
-
 
     return (
     <div className='single-wrapper'>
