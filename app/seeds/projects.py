@@ -73,6 +73,55 @@ def seed_projects():
             goal_amount = 200000,
             title = "Antique Shop",
         )
+    project11 = Project(
+            user_id = 2,
+            category_id = 3,
+            description = 'We want to raise money to go to opening up a hiking trail so people can get exercise and enjoy nature.',
+            goal_amount = 50000,
+            title = "Wildlife Trail",
+        )
+    project12 = Project(
+            user_id = 3,
+            category_id = 3,
+            description = 'We want to gather some funds in order to clean up litter in our local parks and other areas that contain wildlife.',
+            goal_amount = 2000,
+            title = "Litter Cleanup",
+        )
+    project13 = Project(
+            user_id = 3,
+            category_id = 1,
+            description = 'We want to fund and build a playround for the local children.',
+            goal_amount = 50000,
+            title = "Playground",
+        )
+    project14 = Project(
+            user_id = 1,
+            category_id = 1,
+            description = 'We want to fund and build a large park for everyone to enjoy.',
+            goal_amount = 50000,
+            title = "Park",
+        )
+    project15 = Project(
+            user_id = 1,
+            category_id = 2,
+            description = 'We want to open a locally-owned shop where we sell fresh food from local farms.',
+            goal_amount = 200000,
+            title = "Locally Owned Organic Grocery Store",
+        )
+    project16 = Project(
+            user_id = 2,
+            category_id = 8,
+            description = 'We want to fund a weekly farmers marker, where local businesses and farms can apply to be a vendor and sell hand-made and hand-grown products.',
+            goal_amount = 2000,
+            title = "Weekly Farmers Market",
+        )
+    project16 = Project(
+            user_id = 3,
+            category_id = 8,
+            description = 'We want to have small mailbox-like containers that have books residents can donate, and also take with them while they donate their own.',
+            goal_amount = 2000,
+            title = "Take a Book, Leave a Book",
+        )
 
 
 
@@ -86,6 +135,12 @@ def seed_projects():
     db.session.add(project8)
     db.session.add(project9)
     db.session.add(project10)
+    db.session.add(project11)
+    db.session.add(project12)
+    db.session.add(project13)
+    db.session.add(project14)
+    db.session.add(project15)
+    db.session.add(project16)
 
     db.session.commit()
 
