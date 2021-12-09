@@ -18,7 +18,7 @@ export default function AllProjectsPage(){
             <div>User: {project.user}</div>
         </div>
     </NavLink>
-    )
+    ).reverse()
     useEffect(()=>{
         dispatch(allProjects())},
         [dispatch]

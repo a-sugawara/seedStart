@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { editProject } from '../../store/project'
 import {oneProject} from  '../../store/project'
 
-const ProjectFormEdit = () => {
+const ProjectFormEdit = ({setShowModal}) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [category_id, setCategoryId] = useState(1);
@@ -19,7 +19,7 @@ const ProjectFormEdit = () => {
         dispatch(oneProject(projectId))}, [dispatch]
     )
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const projectInfo = {
             user_id,
@@ -28,7 +28,12 @@ const ProjectFormEdit = () => {
             category_id,
             goal_amount,
         }
-        dispatch(editProject(projectId, projectInfo))
+        const data = await dispatch(editProject(projectId, projectInfo));
+        if (data) {
+            setErrors(data)
+        } else {
+        setShowModal(false)
+        };
     }
 
     const categories = ['Parks & Recreation',
@@ -43,14 +48,21 @@ const ProjectFormEdit = () => {
 
     return (
         <div className='form-container'>
+            <div>
+            {errors.map((error, ind) => (
+                <div key={ind}>{error}</div>
+            ))}
+            </div>
             <form className='form' onSubmit={handleSubmit}>
                 <input
                 className='project-title-input'
                 placeholder='Title'
+                required
                 onChange= {(e) => setTitle(e.target.value)}/>
                 <input
                 className='project-description-input'
                 placeholder='Description'
+                required
                 onChange= {(e) => setDescription(e.target.value)}/>
                 <select className='category-dropdown-menu'
                 onChange={(e) => setCategoryId(e.target.value)}>
@@ -67,6 +79,7 @@ const ProjectFormEdit = () => {
                 <input
                 className='project-price-input'
                 placeholder='Price'
+                required
                 onChange= {(e) => setGoalAmount(e.target.value)}/>
                 <button type='submit'>Submit</button>
             </form>

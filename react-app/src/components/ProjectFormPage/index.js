@@ -13,7 +13,7 @@ const ProjectForm = () => {
     const user_id = useSelector(state => state.session.user.id);
     const dispatch = useDispatch();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const projectInfo = {
             user_id,
@@ -23,7 +23,10 @@ const ProjectForm = () => {
             goal_amount,
             image_url
         }
-        dispatch(createProject(projectInfo))
+        const data = await dispatch(createProject(projectInfo));
+        if (data) {
+            setErrors(data)
+        }
     }
 
     const categories = ['Parks & Recreation',
@@ -38,14 +41,21 @@ const ProjectForm = () => {
 
     return (
         <div className='form-container'>
+            <div>
+            {errors.map((error, ind) => (
+                <div key={ind}>{error}</div>
+            ))}
+            </div>
             <form className='form' onSubmit={handleSubmit}>
                 <input
                 className='project-title-input'
                 placeholder='Title'
+                required
                 onChange= {(e) => setTitle(e.target.value)}/>
                 <input
                 className='project-description-input'
                 placeholder='Description'
+                required
                 onChange= {(e) => setDescription(e.target.value)}/>
                 <select className='category-dropdown-menu'
                 onChange={(e) => setCategoryId(e.target.value)}>
@@ -62,10 +72,12 @@ const ProjectForm = () => {
                 <input
                 className='project-price-input'
                 placeholder='Price'
+                required
                 onChange= {(e) => setGoalAmount(e.target.value)}/>
                 <input
                 className='project-image_url-input'
                 placeholder='Image URL'
+                required
                 onChange= {(e) => setImageUrl(e.target.value)}/>
                 <button type='submit'>Submit</button>
             </form>
