@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
-import { createProject, oneProject } from '../../store/project'
 import { newBacking } from "../../store/project";
 
 const BackingForm = ({user_id, project_id}) => {

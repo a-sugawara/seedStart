@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { Modal } from '../context/Modal';
 import ProjectFormEdit from './index';
-import editProject from '../../store/project'
+
 
 
 function EditProjectModal({project}){

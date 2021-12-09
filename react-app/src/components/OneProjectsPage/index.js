@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import{NavLink, useHistory, useParams} from 'react-router-dom'
-import {oneProject, putReward} from  '../../store/project'
+import{useParams} from 'react-router-dom'
+import {oneProject} from  '../../store/project'
 import  BackingForm  from '../BackingForm/index'
 import EditProjectModal from '../ProjectFormEdit/EditProjectModal'
 import DeleteProjectModal from "../DeleteProjectModal/DeleteProjectModal";
@@ -43,7 +43,7 @@ export default function OneProjectPage(){
         return <div className="rewardCard">
             <div className="reward-title">
                 {/* this is the reward title */}
-                {reward[0]} 
+                {reward[0]}
             </div>
             <div className="reward-description">
                 {/* this is the reward description */}

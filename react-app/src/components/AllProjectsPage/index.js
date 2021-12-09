@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import{NavLink ,useHistory} from 'react-router-dom'
+import{NavLink } from 'react-router-dom'
 import {allProjects} from  '../../store/project'
 import "./AllProjectsPage.css"
 
