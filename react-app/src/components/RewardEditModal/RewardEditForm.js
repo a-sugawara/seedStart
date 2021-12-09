@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { putReward} from '../../store/project'
 
-const RewardEditForm = ({project_id}) => {
+const RewardEditForm = ({project_id, reward_id}) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(0);
@@ -19,7 +19,7 @@ const RewardEditForm = ({project_id}) => {
             price,
             description
         }
-        dispatch(putReward(rewardInfo, ))
+        dispatch(putReward(rewardInfo, reward_id ))
     }
 
     return (

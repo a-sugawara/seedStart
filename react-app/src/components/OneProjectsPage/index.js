@@ -12,28 +12,29 @@ export default function OneProjectPage(){
     let dispatch = useDispatch();
     let project = useSelector(state => state.project.currentProject);
     let sessionUser = useSelector(state => state.session.user);
-    const user_id = useSelector(state => state.session.user.id);
+    const user_id = useSelector(state => state.session.user?.id);
     const {projectId} = useParams();
 
     useEffect(() => {
         dispatch(oneProject(projectId))
     }, [dispatch])
 
-    let reward = [0,0,0,0]
 
     let projectButtons;
-    let rewardButtons;
+    let rewardCreateButtons;
     if(sessionUser){
         if(sessionUser.id === project?.user_id){
             projectButtons =
                 <div className="navbtn-holder">
                     <div>
-                        edit
+                        <EditProjectModal project_id={projectId} />
                     </div>
                     <div>
-                        delete
+                        <DeleteProjectModal project_id={projectId}/>
                     </div>
                 </div>
+
+            rewardCreateButtons = <PostRewardModal project_id={projectId}/>
         }
     }
 
@@ -48,16 +49,15 @@ export default function OneProjectPage(){
             <div className="tier3">
                 {reward[2]}
             </div>
+            {console.log(reward[3])}
             {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
         </div>
     })
 
-    let backingForm;
+    let backingForm = <BackingForm project_id={+projectId} user_id={user_id}/>
     for(let i = 0; i < project?.backing.length; i++) {
         if(project.backing[i][1] === user_id) {
             backingForm = 'Already contributed to this project'
-        } else {
-            backingForm = <BackingForm project_id={+projectId} user_id={user_id}/>
         }
     }
 
@@ -73,10 +73,8 @@ export default function OneProjectPage(){
         {/* {project?.goal_amount} */}
         {projectButtons}
         {backingForm}
-        <EditProjectModal project_id={projectId} />
-        <DeleteProjectModal project_id={projectId}/>
         {rewards}
-        <PostRewardModal project_id={projectId}/>
+        {rewardCreateButtons}
     </div>
     )
 }
