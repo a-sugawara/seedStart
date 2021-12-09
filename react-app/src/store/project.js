@@ -6,6 +6,7 @@ const REMOVE_ONE_PROJECT = 'projects/REMOVE_ONE'
 const GET_SEARCHED_PROJECTS = 'projects/GET_SEARCHED'
 
 const POST_BACKING = 'backings/POST_BACKING'
+const UPDATE_BACKING = 'backings/UPDATE_BACKING'
 
 const POST_REWARD = 'rewards/POST_REWARD'
 const UPDATE_REWARD = 'rewards/UPDATE_REWARD'
@@ -49,6 +50,13 @@ const postBacking = (backing) => {
   return {
     type: POST_BACKING,
     payload: backing
+  }
+}
+
+const putBacking = (backingInfo) => {
+  return {
+    type: UPDATE_BACKING,
+    payload: backingInfo
   }
 }
 
@@ -151,7 +159,7 @@ export const editProject = (id, projectInfo) => async(dispatch) => {
   if (response.ok) {
     const data = await response.json()
     dispatch(putProject(data))
-    return data;
+    return null;
   } else if (response.status < 500){
     const data = await response.json()
     if (data.errors) {
@@ -188,6 +196,26 @@ export const newBacking = (backingData) => async(dispatch) => {
     const data = await response.json()
     dispatch(postBacking(data))
     return data;
+  } else if (response.status < 500){
+    const data = await response.json()
+    if (data.errors) {
+      return data.errors
+    }
+  } else {
+    return ['An error occurred. Please try again.']
+  }
+}
+
+export const updateBacking = (backingInfo, backingId) => async(dispatch) => {
+  const response = await fetch(`/api/backings/${backingId}`, {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(backingInfo)
+  })
+  if (response.ok) {
+    const data = await response.json()
+    dispatch(putBacking(data))
+    return null;
   } else if (response.status < 500){
     const data = await response.json()
     if (data.errors) {
@@ -298,6 +326,12 @@ const reducer = (state = initialState, action) => {
         case POST_BACKING:
           newState = {...state}
           newState.currentProject.backing.push([action.payload.backed, action.payload.user_id])
+          return newState
+        case UPDATE_BACKING:
+          console.log('update backing', action.payload)
+          newState = {...state}
+          const backingIdx = newState.currentProject.backing.findIndex(backing => backing[1] === action.payload[1])
+          newState.currentProject.backing[backingIdx] = action.payload
           return newState
         case POST_REWARD:
           newState = {...state}
