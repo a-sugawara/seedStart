@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { putReward} from '../../store/project'
 
-const RewardEditForm = ({project_id, reward_id}) => {
+const RewardEditForm = ({project_id, reward_id, setShowModal}) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(0);
@@ -20,6 +20,7 @@ const RewardEditForm = ({project_id, reward_id}) => {
             description
         }
         dispatch(putReward(rewardInfo, reward_id ))
+        setShowModal(false);
     }
 
     return (
@@ -28,14 +29,17 @@ const RewardEditForm = ({project_id, reward_id}) => {
                 <input
                 className='reward-title-input'
                 placeholder='Title'
+                required
                 onChange= {(e) => setTitle(e.target.value)}/>
                 <input
                 className='reward-description-input'
                 placeholder='Description'
+                required
                 onChange= {(e) => setDescription(e.target.value)}/>
                 <input
                 className='reward-price-input'
                 placeholder='Price'
+                required
                 onChange= {(e) => setPrice(e.target.value)}/>
                 <button type='submit'>Submit</button>
             </form>
