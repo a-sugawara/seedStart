@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import {useHistory} from 'react-router-dom'
 import { createProject } from '../../store/project'
 
 const ProjectForm = () => {
+    const history = useHistory()
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [category_id, setCategoryId] = useState(1);
@@ -27,6 +29,7 @@ const ProjectForm = () => {
         if (data) {
             setErrors(data)
         }
+        history.push('/')
     }
 
     const categories = ['Parks & Recreation',
