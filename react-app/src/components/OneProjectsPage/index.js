@@ -7,6 +7,7 @@ import EditProjectModal from '../ProjectFormEdit/EditProjectModal'
 import DeleteProjectModal from "../DeleteProjectModal/DeleteProjectModal";
 import PostRewardModal from "../RewardFormModal/index";
 import EditRewardModal from "../RewardEditModal";
+import DeleteRewardModal from "../DeleteRewardModal";
 
 export default function OneProjectPage(){
     let dispatch = useDispatch();
@@ -49,8 +50,8 @@ export default function OneProjectPage(){
             <div className="tier3">
                 {reward[2]}
             </div>
-            {console.log(reward[3])}
             {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
+            {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
         </div>
     })
 
@@ -68,7 +69,6 @@ export default function OneProjectPage(){
         <img className="project-card-img" src={project?.images[0]} alt="project example"/>
             <div>{project?.title}</div>
             <div>Goal: {"$"}{project?.goal_amount}</div>
-            {console.log(project?.backing, '0000')}
             <div>Raised: {"$"}{project?.backing?.reduce((acc, a)=>acc+a[0],0)}</div>
             <div>User: {project?.user}</div>
         {/* {project?.goal_amount} */}

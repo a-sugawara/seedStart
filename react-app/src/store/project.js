@@ -82,7 +82,6 @@ const deleteReward = (id) => {
 
 export const allProjects = () => async (dispatch) => {
     const response = await fetch('/api/projects/')
-    console.log(response)
     if (response.ok) {
         const data = await response.json();
         dispatch(setAllProjects(data))
@@ -302,7 +301,7 @@ const reducer = (state = initialState, action) => {
           return newState
         case POST_REWARD:
           newState = {...state}
-          newState.currentProject.rewards.push([action.payload.title, action.payload.description, action.payload.price])
+          newState.currentProject.rewards.push([action.payload.title, action.payload.description, action.payload.price, action.payload.id])
           return newState
         case GET_SEARCHED_PROJECTS:
           newState = {...state}
@@ -313,6 +312,11 @@ const reducer = (state = initialState, action) => {
           const rewardIdx = newState.currentProject.rewards.findIndex(reward => reward[3] === action.payload.id)
           newState.currentProject.rewards[rewardIdx] = [action.payload.title, action.payload.description, action.payload.price, action.payload.id]
           newState.currentProject.rewards[rewardIdx] = newState.currentProject.rewards[rewardIdx].slice()
+          return newState
+        case DELETE_REWARD:
+          newState = {...state}
+          const rewardRIdx = newState.currentProject.rewards.findIndex(reward => reward.id === action.payload)
+          newState.currentProject.rewards.splice(rewardRIdx, 1)
           return newState
         default:
             return state;
