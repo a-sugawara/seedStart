@@ -298,6 +298,7 @@ const reducer = (state = initialState, action) => {
         case POST_BACKING:
           newState = {...state}
           newState.currentProject.backing.push([action.payload.backed, action.payload.user_id])
+          newState.currentProject.backing = {...newState.currentProject.backing}
           return newState
         case POST_REWARD:
           newState = {...state}
@@ -310,7 +311,7 @@ const reducer = (state = initialState, action) => {
         case UPDATE_REWARD:
           newState = {...state}
           console.log('this is the payloaddddd', action.payload, 'bing-bong')
-          const rewardIdx = newState.projects.rewards.findIndex(reward => reward[3] === action.payload)
+          const rewardIdx = newState.currentProject.rewards.findIndex(reward => reward[3] === action.payload)
           return newState
         default:
             return state;

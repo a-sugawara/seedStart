@@ -16,7 +16,7 @@ const BackingForm = ({user_id, project_id}) => {
             backed
         }
         dispatch(newBooking(backingInfo))
-        dispatch(oneProject(project_id))
+        // dispatch(oneProject(project_id))
     }
 
     return (

@@ -5,7 +5,7 @@ import RewardEditForm from './RewardEditForm';
 
 
 
-function EditRewardModal({project_id}){
+function EditRewardModal({project_id , reward_id}){
     const [showModal, setShowModal] = useState(false)
 
     return (
@@ -14,7 +14,7 @@ function EditRewardModal({project_id}){
             <button onClick={() => setShowModal(true)}>Edit Reward</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <RewardEditForm project_id={project_id} setShowModal={setShowModal}/>
+                    <RewardEditForm project_id={project_id} reward_id={reward_id} setShowModal={setShowModal}/>
                 </Modal>
             )}
         </>
