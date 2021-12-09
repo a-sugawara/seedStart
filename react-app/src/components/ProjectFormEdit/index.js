@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Redirect, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { editProject } from '../../store/project'
 import {oneProject} from  '../../store/project'
 

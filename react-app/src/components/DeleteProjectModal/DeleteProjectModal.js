@@ -1,6 +1,4 @@
 import React, {useState} from 'react'
-import {useDispatch} from 'react-redux';
-// import {removeProject} from '../../store/project';
 import { Modal } from '../context/Modal';
 import DeleteProjectConfirmation from './DeleteConfirmation'
 

@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useSelector } from 'react-redux';
 import LoginModal from '../components/auth/LoginModal';
 import SearchForm from '../components/Searchbar';
+import SignUpModal from './auth/SignUpModal';
 
 
 const NavBar = () => {
@@ -26,11 +26,7 @@ const NavBar = () => {
     projectbutton=null
     navbuttons =<div className="navbtn-holder">
         <LoginModal/>
-      <NavLink to='/sign-up' exact={true} activeClassName='active'>
-        <div className="navbtn">
-          Sign Up
-        </div>
-      </NavLink>
+        <SignUpModal/>
     </div>
   }
 
