@@ -72,6 +72,6 @@ def update_a_project(id):
         specific_project.goal_amount=form.data['goal_amount'],
         specific_project.title=form.data['title']
         db.session.commit()
-        return specific_project.to_dict()
+        return specific_project.to_dictionary()
 
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
