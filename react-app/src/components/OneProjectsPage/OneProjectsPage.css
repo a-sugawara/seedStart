@@ -57,4 +57,5 @@
 .progress-status{
     height: .25rem;
     background-color: green;
+    transition: all 2s ease ;
 }
