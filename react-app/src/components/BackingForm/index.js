@@ -6,7 +6,7 @@ const BackingForm = ({user_id, project_id}) => {
     const [backed, setBacked] = useState(0)
     const [errors, setErrors] = useState([]);
     const dispatch = useDispatch();
-    
+
     const validator = () => {
         let error = []
         if (backed < 1) {
@@ -24,7 +24,8 @@ const BackingForm = ({user_id, project_id}) => {
     const preSubmit = (e) => {
         e.preventDefault();
 
-        setErrors(validator());
+        let error = validator()
+        setErrors(error);
 
         if (errors.length > 0) {
             return;

@@ -19,8 +19,8 @@ def goal_validator(form, field):
     goal = field.data
     if goal < 50:
         raise ValidationError('Please enter an amount greater than $50.')
-    if goal is not True:
-        raise ValidationError('Please enter a whole number (non-decimal).')
+    # if goal is not True:
+    #     raise ValidationError('Please enter a whole number (non-decimal).')
 
 def image_validator(form, field):
     image = field.data

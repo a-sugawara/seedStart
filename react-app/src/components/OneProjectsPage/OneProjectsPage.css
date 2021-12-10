@@ -50,14 +50,18 @@
 
 .progress-bar{
     width: 100%;
-    height: .25rem;
-    background-color: grey;
+    height: .5rem;
+    background-color: #BCC3C6;
     margin-top: 1rem;
 }
 
 .progress-status{
-    height: .25rem;
-    background-color: green;
+    height: .5rem;
+    background-color: #6D9688;
     transition: all 2s ease ;
     max-width: 125%;
+}
+.singleProject-card-img{
+    width: 600px;
+    aspect-ratio: 16/9;
 }

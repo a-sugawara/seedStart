@@ -25,6 +25,17 @@ export default function OneProjectPage(){
 
     let projectButtons;
     let rewardCreateButtons;
+    let backingForm = <BackingForm project_id={+projectId} user_id={user_id}/>
+    for(let i = 0; i < project?.backing.length; i++) {
+        if(project.backing[i][1] === user_id) {
+            backingForm = (
+                <>
+                <p>{`You've contributed $${project.backing[i][0]}`}</p>
+                {<BackingEditForm project_id={+projectId} user_id={user_id} backing_id={project.backing[i][2]} amount_backed={+project.backing[i][0]}/>}
+                </>
+            )
+        }
+    }
     if(sessionUser){
         if(sessionUser.id === project?.user_id){
             projectButtons =
@@ -37,6 +48,7 @@ export default function OneProjectPage(){
                     </div>
                 </div>
             rewardCreateButtons = <PostRewardModal project_id={projectId}/>
+            backingForm = null
         }
     }
 
@@ -69,24 +81,14 @@ export default function OneProjectPage(){
         </div>
     })
 
-    let backingForm = <BackingForm project_id={+projectId} user_id={user_id}/>
-    for(let i = 0; i < project?.backing.length; i++) {
-        if(project.backing[i][1] === user_id) {
-            backingForm = (
-                <>
-                <p>{`You've contributed $${project.backing[i][0]}`}</p>
-                {<BackingEditForm project_id={+projectId} user_id={user_id} backing_id={project.backing[i][2]} amount_backed={+project.backing[i][0]}/>}
-                </>
-            )
-        }
-    }
+
 
     return (
     <>
         <div className='singleProject-title'>{project?.title}</div>
         <div className='singleProject-wrapper'>
             <div className="singleProject-name-info">
-                <img className="project-card-img" src={project?.images[0]} alt="project example"/>
+                <img className="singleProject-card-img" src={project?.images[0]} alt="project example"/>
                     <div>Goal: {"$"}{project?.goal_amount}</div>
                     <div>Raised: {"$"}{project?.backing?.reduce((acc, a)=>acc+a[0],0)}</div>
                     <div>User: {project?.user}</div>
