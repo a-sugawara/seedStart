@@ -43,3 +43,12 @@
    font-size: 1.4rem;
 
 }
+
+.project-card:hover{
+    box-shadow: 0 .1rem 5px rgba(0, 0, 0, 0.253);
+    transform: translateY(-2px) ;
+}
+
+.project-title{
+    font-weight: bold;
+}
