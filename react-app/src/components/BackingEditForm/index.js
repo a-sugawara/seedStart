@@ -52,11 +52,11 @@ const BackingEditForm = ({user_id, project_id, backing_id, amount_backed}) => {
 
     return (
         <div className='backing-form-container'>
-            <div>
+            <div className="errors">
             {errors.map((error, ind) => (
-                <div key={ind}>{error}</div>
+                <div key={ind}>{error.split(':')[1]}</div>
             ))}
-            </div>
+        </div>
             <form className='backing-form' onSubmit={preSubmit}>
                 <input
                 className='backed-input'

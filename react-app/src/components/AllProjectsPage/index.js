@@ -13,7 +13,7 @@ export default function AllProjectsPage(){
         <div className="project-card">
             <img className="project-card-img" src={project.images[0]}/>
             <div className="project-card-info" >
-                <div>{project.title}</div>
+                <div className="title">{project.title}</div>
                 <div>Goal: ${project.goal_amount}</div>
                 <div>Raised: ${project.backing.reduce((acc, a)=>acc+a,0)}</div>
                 <div>User: {project.user}</div>

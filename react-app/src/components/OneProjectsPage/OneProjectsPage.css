@@ -34,7 +34,7 @@
 
 .singleProject-description{
     max-width: 30%;
-    font-size: calc(2.5vw);
+    font-size: 1.2rem;
 }
 
 .rewardCard:hover{
@@ -70,7 +70,7 @@
     background-color: #37393a;
     gap: 1.5rem;
     width: 25%;
-    padding: 1rem 0; 
+    padding: 1rem 0;
     border-radius: 10px;
 }
 
@@ -110,7 +110,7 @@
         background-color: #37393a;
         gap: 1.5rem;
         width: 80%;
-        padding: 1rem; 
+        padding: 1rem;
         border-radius: 10px;
         overflow-y: hidden;
     }
@@ -154,4 +154,3 @@
     }
 
 }
-
