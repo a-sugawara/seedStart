@@ -11,15 +11,24 @@ export default function CategoryResults(){
     let dispatch = useDispatch()
     let usprojects = useSelector(state => state.project.projects)
     let projects=usprojects.filter(project =>project.category_id === +catId)
-    const details = projects?.map(project =>
-    <NavLink to={`/projects/${project.id}`}>
-         <div className="project-card">
-            <img className="project-card-img" src={project.images[0]}/>
+    const details = projects?.map((project,idx) =>
+        <NavLink key={idx} to={`/projects/${project.id}`}>
+        <div className="project-card">
+            <div className="image-bar">
+                <img className="project-card-img" src={project.images[0]}/>
+                <div className="progress-bar-all">
+                    <div className="progress-status-all"
+                    style={{width:`${(project?.backing?.reduce((acc, a)=>acc+a,0)) / (project?.goal_amount) * 100}%`}}></div>
+                </div>
+            </div>
             <div className="project-card-info" >
-                <div>{project.title}</div>
+                <div className="title">{project.title}</div>
                 <div>Goal: ${project.goal_amount}</div>
-                <div>Raised: ${project.backing.reduce((acc, a)=>acc+a,0)}</div>
-                <div>User: {project.user}</div>
+                {/* <div>Raised: ${project.backing.reduce((acc, a)=>acc+a,0)}</div> */}
+                <div>By {project.user}</div>
+            </div>
+            <div>
+
             </div>
         </div>
     </NavLink>

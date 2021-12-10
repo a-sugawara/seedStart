@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import {searchProjects} from "../../store/project"
 
 const SearchForm = () => {
     const [term, setTerm] = useState('');
@@ -11,6 +12,7 @@ const SearchForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        dispatch(searchProjects(term))
         history.push(`/discover/${term}`)
     }
 
