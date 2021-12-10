@@ -1,3 +1,4 @@
+import{Link} from 'react-router-dom'
 import './footer.css'
 
 export default function Footer(){
@@ -8,7 +9,7 @@ export default function Footer(){
             <p>Alfredo</p>
             <p>Adeline</p>
             <p>Jose</p>
-            <p>Rachel</p>
+            <a href="https://github.com/rcwhite96" className="github-link">Rachel</a>
         </footer>
     )
 }

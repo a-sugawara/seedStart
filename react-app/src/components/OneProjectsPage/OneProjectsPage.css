@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     width:100%;
-    height: calc(80vh);
+    height: calc(90vh);
     justify-content: space-around;
 }
 

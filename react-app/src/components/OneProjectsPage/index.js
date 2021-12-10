@@ -9,6 +9,7 @@ import DeleteProjectModal from "../DeleteProjectModal/DeleteProjectModal";
 import PostRewardModal from "../RewardFormModal/index";
 import EditRewardModal from "../RewardEditModal";
 import DeleteRewardModal from "../DeleteRewardModal";
+import Footer from "../Footer/Footer";
 import './OneProjectsPage.css'
 
 export default function OneProjectPage(){
@@ -112,6 +113,7 @@ export default function OneProjectPage(){
                 {rewardCreateButtons}
             </div>
         </div>
+        <Footer/>
     </>
     )
 }
