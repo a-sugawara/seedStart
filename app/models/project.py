@@ -8,7 +8,7 @@ class Project(db.Model):
     category_id = db.Column(db.Integer, db.ForeignKey('categories.id'), nullable=False)
     description = db.Column(db.Text, nullable=False)
     goal_amount = db.Column(db.Integer, nullable=False)
-    title = db.Column(db.String(50), nullable=False)
+    title = db.Column(db.String(80), nullable=False)
 
     user = db.relationship('User', back_populates='project')
     category = db.relationship('Category', back_populates='project')
