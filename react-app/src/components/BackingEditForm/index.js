@@ -8,14 +8,15 @@ const BackingEditForm = ({user_id, project_id, backing_id, amount_backed}) => {
     const dispatch = useDispatch();
 
     const validator = () => {
+        console.log( "XXXXXXXXXX", backed, 123)
         let error = []
-        if (backed < 1) {
+        if (+backed < 1) {
             error.push('Please enter a whole number greater than 0.')
         }
-        else if (typeof backed === 'string') {
+        else if (typeof +backed === 'string') {
             error.push('Please enter a whole number greater than 0.')
         }
-        else if (backed % 1 !== 0) {
+        else if (+backed % 1 !== 0) {
             error.push('Please enter a whole number greater than 0.')
         }
         return error;
@@ -23,8 +24,8 @@ const BackingEditForm = ({user_id, project_id, backing_id, amount_backed}) => {
 
     const preSubmit = (e) => {
         e.preventDefault();
-
-        setErrors(validator());
+        let error = validator()
+        setErrors(error);
 
         if (errors.length > 0) {
             return;

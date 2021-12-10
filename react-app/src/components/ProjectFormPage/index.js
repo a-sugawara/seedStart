@@ -14,9 +14,38 @@ const ProjectForm = () => {
 
     const user_id = useSelector(state => state.session.user.id);
     const dispatch = useDispatch();
+    const validator = () => {
+        console.log( "XXXXXXXXXX", goal_amount, 123)
+        let error = []
+        if (+goal_amount < 50) {
+            error.push('Please enter a whole number greater than 50.')
+        }
+        else if (typeof +goal_amount === 'string') {
+            error.push('Please enter a whole number greater than 50.')
+        }
+        else if (+goal_amount % 1 !== 0) {
+            error.push('Please enter a whole number greater than 50.')
+        }
+        console.log(error)
+        return error;
+    }
+    const preSubmit = (e) => {
+        e.preventDefault();
+        // setErrors([])
+        const errors = validator()
+        setErrors(errors)
+        console.log("result of validator", validator())
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+        if (errors.length === 0) {
+            console.log("how are you in here?", errors)
+            handleSubmit();
+        } else {
+            return
+        }
+    }
+
+    const handleSubmit = async () => {
+        console.log("yoyoyoyoyo")
         const projectInfo = {
             user_id,
             title,
@@ -28,8 +57,10 @@ const ProjectForm = () => {
         const data = await dispatch(createProject(projectInfo));
         if (data) {
             setErrors(data)
+        }else{
+
+            history.push('/')
         }
-        history.push('/')
     }
 
     const categories = ['Parks & Recreation',
@@ -49,11 +80,12 @@ const ProjectForm = () => {
                 <div key={ind}>{error}</div>
             ))}
             </div>
-            <form className='form' onSubmit={handleSubmit}>
+            <form className='form'onSubmit={preSubmit}>
                 <input
                 className='project-title-input'
                 placeholder='Title'
                 required
+                value = {title}
                 onChange= {(e) => setTitle(e.target.value)}/>
                 <input
                 className='project-description-input'
@@ -76,13 +108,15 @@ const ProjectForm = () => {
                 className='project-price-input'
                 placeholder='Price'
                 required
+                value = {goal_amount}
                 onChange= {(e) => setGoalAmount(e.target.value)}/>
                 <input
                 className='project-image_url-input'
                 placeholder='Image URL'
                 required
+                value = {image_url}
                 onChange= {(e) => setImageUrl(e.target.value)}/>
-                <button type='submit'>Submit</button>
+                <button>Submit</button>
             </form>
         </div>
     )
