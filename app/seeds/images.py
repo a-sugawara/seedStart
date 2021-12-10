@@ -13,11 +13,11 @@ def seed_images():
 
     image_3 = Image(
         project_id = 3,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://user-images.githubusercontent.com/86431563/145533507-d64801bd-267d-487c-b4c0-e089b6b8164f.PNG'
     )
     image_4 = Image(
         project_id = 4,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://arrestedmotion.com/wp-content/uploads/2015/11/jen-stark-drip-color-platform-building-culver-city-california-designboom-15.jpg'
     )
     image_5 = Image(
         project_id = 5,
@@ -29,15 +29,15 @@ def seed_images():
     )
     image_7 = Image(
         project_id = 7,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://user-images.githubusercontent.com/86431563/145527975-fdf3df6f-2dc7-451b-8e33-c616b61cfa85.png'
     )
     image_8 = Image(
         project_id = 8,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://i.pinimg.com/564x/c5/64/28/c5642876b293416b3e663def00d29121.jpg'
     )
     image_9 = Image(
         project_id = 9,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://i.pinimg.com/originals/ac/bd/d4/acbdd4da1fed1d4bf15c5481600ec77d.jpg'
     )
     image_10 = Image(
         project_id = 10,
@@ -55,11 +55,11 @@ def seed_images():
 
     image_13 = Image(
         project_id = 13,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://i.pinimg.com/474x/e6/e6/e8/e6e6e88c3a129822c6f98d91ee71026e.jpg'
     )
     image_14 = Image(
         project_id = 14,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://user-images.githubusercontent.com/86431563/145530257-f5e6613e-81a2-4ac8-99db-13aab032854e.PNG'
     )
     image_15 = Image(
         project_id = 15,
@@ -67,11 +67,11 @@ def seed_images():
     )
     image_16 = Image(
         project_id = 16,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://i.pinimg.com/564x/36/18/a3/3618a3b5cb69b1d504b02e9f652a5579.jpg'
     )
     image_17 = Image(
         project_id = 17,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://user-images.githubusercontent.com/86431563/145540440-f1b75206-c700-4e0d-a602-ebe4990679bb.PNG'
     )
     image_18 = Image(
         project_id = 18,
@@ -109,11 +109,11 @@ def seed_images():
     )
     image_26 = Image(
         project_id = 26,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://i.pinimg.com/564x/83/dc/13/83dc134cc31444221bb95b14794ac106.jpg'
     )
     image_27 = Image(
         project_id = 27,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://user-images.githubusercontent.com/86431563/145537321-419b4480-dd59-4fab-9e2f-c0d89db4ea7d.PNG'
     )
     image_28 = Image(
         project_id = 28,
@@ -121,7 +121,7 @@ def seed_images():
     )
     image_29 = Image(
         project_id = 29,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://user-images.githubusercontent.com/86431563/145531116-c2970a93-1797-4b66-aff1-84976bb964be.PNG'
     )
     image_30 = Image(
         project_id = 30,
@@ -129,12 +129,12 @@ def seed_images():
     )
     image_31 = Image(
         project_id = 31,
-        image_url = 'https://m.media-amazon.com/images/I/412FFoC11ML._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://user-images.githubusercontent.com/86431563/145539175-43aa4fb0-d44e-419b-b14a-0e86e719deb0.PNG'
     )
 
     image_32 = Image(
         project_id = 32,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://images.adsttc.com/media/images/55e7/7f93/4d8d/5d0b/c000/1be4/newsletter/1751126620_96074c-528x430.jpg?1441234830'
     )
 
     image_33 = Image(
