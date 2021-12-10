@@ -16,12 +16,13 @@ const SearchForm = () => {
 
     return (
         <div className='searchbar-container'>
-            <form className='form' onSubmit={handleSubmit}>
+            <form className='search-form' onSubmit={handleSubmit}>
                 <input
                 className='searchbar-input'
                 placeholder='Discover projects'
+                value={term}
                 onChange= {(e) => setTerm(e.target.value)}/>
-                <button type='submit'>Search</button>
+                <button className='search-btn' type='submit'>Search</button>
             </form>
         </div>
     )

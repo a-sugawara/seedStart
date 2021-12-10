@@ -17,3 +17,10 @@
     height: 400px;
     padding:1rem;
 }
+.project-card-info{
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.4rem;
+
+ }
