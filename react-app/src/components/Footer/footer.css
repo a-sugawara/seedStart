@@ -1,0 +1,10 @@
+footer{
+    display: inline-flex;
+    justify-content: flex-end;
+    border-top: 1px black solid;
+
+}
+
+p {
+    margin: 10px;
+}

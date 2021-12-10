@@ -8,8 +8,18 @@
 .project-card{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: 1px solid rgb(158, 158, 158);
+    border-radius: 4px;
     justify-content: space-around;
     align-items: center;
     font-size: 1.1rem;
+}
+
+.project-card:hover{
+    box-shadow: 0 .1rem 5px rgba(0, 0, 0, 0.253);
+    transform: translateY(-2px) ;
+}
+
+.project-title{
+    font-weight: bold;
 }

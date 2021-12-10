@@ -12,7 +12,7 @@ export default function AllProjectsPage(){
     <NavLink to={`/projects/${project.id}`}>
         <div className="project-card">
             <img className="project-card-img" src={project.images[0]}/>
-            <div>{project.title}</div>
+            <div className="project-title">{project.title}</div>
             <div>Goal: ${project.goal_amount}</div>
             <div>Raised: ${project.backing.reduce((acc, a)=>acc+a,0)}</div>
             <div>User: {project.user}</div>

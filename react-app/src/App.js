@@ -16,6 +16,7 @@ import { authenticate } from './store/session';
 import { allProjects } from './store/project';
 import CategoryBar from "./components/CategoryBar"
 import CategoryResults from './components/CategoryResults';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -73,6 +74,7 @@ function App() {
           <AllProjectsPage />
         </Route>
       </Switch>
+      <Footer/>
     </BrowserRouter>
   );
 }
