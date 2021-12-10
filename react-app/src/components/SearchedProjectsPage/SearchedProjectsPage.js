@@ -8,14 +8,16 @@ export default function SearchedProjectsPage(){
     const {term} = useParams()
     let dispatch = useDispatch()
     let projects = useSelector(state => state.project.searchedProjects)
-    const details = projects?.map(project =>
-    <NavLink to={`/projects/${project.id}`}>
+    const details = projects?.map((project,idx) =>
+        <NavLink key={idx} to={`/projects/${project.id}`}>
         <div className="project-card">
             <img className="project-card-img" src={project.images[0]}/>
-            <div>{project.title}</div>
-            <div>Goal: ${project.goal_amount}</div>
-            <div>Raised: ${project.backing.reduce((acc, a)=>acc+a,0)}</div>
-            <div>User: {project.user}</div>
+            <div className="project-card-info" >
+                <div>{project.title}</div>
+                <div>Goal: ${project.goal_amount}</div>
+                <div>Raised: ${project.backing.reduce((acc, a)=>acc+a,0)}</div>
+                <div>User: {project.user}</div>
+            </div>
         </div>
     </NavLink>
     )

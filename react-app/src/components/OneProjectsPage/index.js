@@ -25,6 +25,17 @@ export default function OneProjectPage(){
 
     let projectButtons;
     let rewardCreateButtons;
+    let backingForm = <BackingForm project_id={+projectId} user_id={user_id}/>
+    for(let i = 0; i < project?.backing.length; i++) {
+        if(project.backing[i][1] === user_id) {
+            backingForm = (
+                <div className="backing-form-container">
+                    <div className="amount-contributed">{`You've contributed $${project.backing[i][0]}`}</div>
+                    {<BackingEditForm project_id={+projectId} user_id={user_id} backing_id={project.backing[i][2]} amount_backed={+project.backing[i][0]}/>}
+                </div>
+            )
+        }
+    }
     if(sessionUser){
         if(sessionUser.id === project?.user_id){
             projectButtons =
@@ -37,6 +48,7 @@ export default function OneProjectPage(){
                     </div>
                 </div>
             rewardCreateButtons = <PostRewardModal project_id={projectId}/>
+            backingForm = null
         }
     }
 
@@ -45,7 +57,7 @@ export default function OneProjectPage(){
         for(let i = 0; i < project?.backing.length; i++) {
             if(project.backing[i][1] === user_id) {
                 if(project.backing[i][0] >= reward[2]){
-                    test="got"
+                    test="Owned"
                 }
             }
 
@@ -55,38 +67,32 @@ export default function OneProjectPage(){
                 {/* this is the reward title */}
                 {reward[0]}
             </div>
-            <div className="reward-description">
-                {/* this is the reward description */}
-                {reward[1]}
+            <div className="reward-info">
+                <div className="reward-description">
+                    {/* this is the reward description */}
+                    {reward[1]}
+                </div>
+                <div className="reward-price">
+                    {/* this is the reward price */}
+                {` Cost: $${reward[2]}`}
+                </div>
             </div>
-            <div className="reward-price">
-                {/* this is the reward price */}
-                {reward[2]}
+            <div className="reward-buttons">
+                {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
+                {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
             </div>
-            {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
-            {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
             {test}
         </div>
     })
 
-    let backingForm = <BackingForm project_id={+projectId} user_id={user_id}/>
-    for(let i = 0; i < project?.backing.length; i++) {
-        if(project.backing[i][1] === user_id) {
-            backingForm = (
-                <>
-                <p>{`You've contributed $${project.backing[i][0]}`}</p>
-                {<BackingEditForm project_id={+projectId} user_id={user_id} backing_id={project.backing[i][2]} amount_backed={+project.backing[i][0]}/>}
-                </>
-            )
-        }
-    }
+
 
     return (
     <>
         <div className='singleProject-title'>{project?.title}</div>
         <div className='singleProject-wrapper'>
             <div className="singleProject-name-info">
-                <img className="project-card-img" src={project?.images[0]} alt="project example"/>
+                <img className="singleProject-card-img" src={project?.images[0]} alt="project example"/>
                     <div>Goal: {"$"}{project?.goal_amount}</div>
                     <div>Raised: {"$"}{project?.backing?.reduce((acc, a)=>acc+a[0],0)}</div>
                     <div>User: {project?.user}</div>
@@ -101,9 +107,9 @@ export default function OneProjectPage(){
                 {project?.description}
             </div>
             <div className="rewardsContainer">
-            {backingForm}
-            {rewards}
-            {rewardCreateButtons}
+                {backingForm}
+                {rewards}
+                {rewardCreateButtons}
             </div>
         </div>
     </>

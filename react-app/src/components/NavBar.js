@@ -33,9 +33,7 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <NavLink to='/' exact={true} activeClassName='active'>
-        <div>
-          Home
-        </div>
+       <img className="logo-img" src={"https://cdn.discordapp.com/attachments/915741036024827916/918730184356663396/Untitled-4.png"}/>
       </NavLink>
       {projectbutton}
       <SearchForm/>
