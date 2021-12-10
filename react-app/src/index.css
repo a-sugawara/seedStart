@@ -89,3 +89,10 @@ a{
     color: rgb(202, 0, 0);
     font-weight: 500;
 }
+.project-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
