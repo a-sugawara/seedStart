@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import{NavLink , useParams} from 'react-router-dom'
 import {allProjects} from  '../../store/project'
+import Footer from "../Footer/Footer";
 import "./CategoryResults.css"
 
 
@@ -29,7 +30,10 @@ export default function CategoryResults(){
     )
 
 
-    return <div className="project-wrapper">
+    return <>
+        <div className="project-wrapper">
         {details}
         </div>
+        <Footer/>
+        </>
 }

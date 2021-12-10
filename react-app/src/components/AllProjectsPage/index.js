@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import{NavLink } from 'react-router-dom'
 import {allProjects} from  '../../store/project'
+import Footer from "../Footer/Footer";
 import "./AllProjectsPage.css"
 
 
@@ -25,7 +26,6 @@ export default function AllProjectsPage(){
                 <div>By {project.user}</div>
             </div>
             <div>
-
             </div>
         </div>
     </NavLink>
@@ -37,5 +37,6 @@ export default function AllProjectsPage(){
 
     return <div className="project-wrapper">
         {details}
+        <Footer/>
         </div>
 }

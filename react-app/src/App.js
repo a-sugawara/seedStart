@@ -71,9 +71,10 @@ function App() {
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <AllProjectsPage />
+          <Footer/>
         </Route>
       </Switch>
-      <Footer/>
+      {/* <Footer/> */}
     </BrowserRouter>
   );
 }
