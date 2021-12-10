@@ -7,8 +7,34 @@ const BackingEditForm = ({user_id, project_id, backing_id, amount_backed}) => {
     const [errors, setErrors] = useState([]);
     const dispatch = useDispatch();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+    const validator = () => {
+        let error = []
+        if (backed < 1) {
+            error.push('Please enter a whole number greater than 0.')
+        }
+        else if (typeof backed === 'string') {
+            error.push('Please enter a whole number greater than 0.')
+        }
+        else if (backed % 1 !== 0) {
+            error.push('Please enter a whole number greater than 0.')
+        }
+        return error;
+    }
+
+    const preSubmit = (e) => {
+        e.preventDefault();
+
+        setErrors(validator());
+
+        if (errors.length > 0) {
+            return;
+        } else {
+            handleSubmit();
+        }
+    }
+
+    const handleSubmit = async (/*e*/) => {
+        // e.preventDefault()
         let total = parseInt(backed) + amount_backed
         const backingInfo = {
             user_id,
@@ -30,7 +56,7 @@ const BackingEditForm = ({user_id, project_id, backing_id, amount_backed}) => {
                 <div key={ind}>{error}</div>
             ))}
             </div>
-            <form className='backing-form' onSubmit={handleSubmit}>
+            <form className='backing-form' onSubmit={preSubmit}>
                 <input
                 className='backed-input'
                 placeholder='Amount'
