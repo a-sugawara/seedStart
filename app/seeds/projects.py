@@ -21,7 +21,7 @@ def seed_projects():
             category_id = 4,
             description = 'We would like to open up a small, locally-owned cafe. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 200000,
-            title = "Local Coffee Shop",
+            title = "Zero-Waste Coffee Shop & Locally-Sourced Ingredients",
     )
     project4 = Project(
             user_id = 3,
@@ -89,16 +89,16 @@ def seed_projects():
     project13 = Project(
             user_id = 3,
             category_id = 1,
-            description = 'We want to fund and build a playround for the local children. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description = 'We want to fund a playround kit for local youth to be available for families, organizations, schools, clubs and camps alike. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 50000,
-            title = "Playground",
+            title = "Playground Kit: Buildable & Modular",
         )
     project14 = Project(
             user_id = 1,
             category_id = 1,
-            description = 'We want to create and sell our newly innovated bike rack, which makes setup and use much more convenient. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description = 'We want to create and sell our newly innovated community-oriented decks, which makes setup and use much more convenient. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 50000,
-            title = "New and Improved Bike Rack",
+            title = "Deck Designed: Construct at Home or Parks",
         )
     project15 = Project(
             user_id = 1,
@@ -182,21 +182,21 @@ def seed_projects():
             category_id = 4,
             description = 'We would like run an annual food truck festival, to show off the variety of local resturants our city has. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 10000,
-            title = "Food Truck Festival",
+            title = "Annual Food Truck Festival",
     )
     project27 = Project(
             user_id = 2,
             category_id = 4,
             description = 'New site, new oven but still delicious sourdough and pastries. We are expanding and we would like to have you on board!. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 80000,
-            title = "Snapery Bakery - Help us grow",
+            title = "Snapery Bakery: Affordable Local Flavors, Tools, Classes",
     )
     project28 = Project(
             user_id = 2,
             category_id = 4,
-            description = 'We would like run a local ramen shop for the community to enjoy. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description = 'A brilliant spin on a handcrafted, ethically-sourced lunchbox and meal prep app. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 220000,
-            title = "Ramen Shop",
+            title = "Lunchbox Reimagined",
     )
     project29 = Project(
             user_id = 2,
@@ -215,23 +215,23 @@ def seed_projects():
     project31 = Project(
             user_id = 3,
             category_id = 5,
-            description = 'We would like to create a space where LGBTQIA+ community members can safely gather and have their own activities and events. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description = 'We would like to create a documentary for these community members to safely share their stories with a free screen showing to investors. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 200000,
-            title = "A Rare Documentation of the Lives of Afro-Mexicans",
+            title = "Rare Documentary on Lives of Afro-Mexicans",
         )
     project32 = Project(
             user_id = 3,
             category_id = 5,
-            description = 'You can be a part of bringing my research to light. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description = 'From our home to yours, for the public and with the public. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 5000,
-            title = "Hosting Spanish Classes",
+            title = "Foreign Languages Podcast: Educational & Resourceful",
         )
     project33 = Project(
             user_id = 3,
             category_id = 5,
-            description = 'We would like to fund extra curricular activities, such as a variety of sports, for our high school students. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description = 'We would like to fund dormatories for at-risk teens in school, such as a variety of living spaces. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 1000000,
-            title = "Extra Curricular Activities for Our High School",
+            title = "Dormitory Project for At-Risk High Schoolers",
         )
     project34 = Project(
             user_id = 2,

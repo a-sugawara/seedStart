@@ -5,8 +5,8 @@ from app.models import Project
 
 def title_validator(form, field):
     title = field.data
-    if len(title) > 50:
-        raise ValidationError('Please enter a title shorter than 50 characters.')
+    if len(title) > 80:
+        raise ValidationError('Please enter a title shorter than 80 characters.')
 
 def description_validator(form, field):
     description = field.data

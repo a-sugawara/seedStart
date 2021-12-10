@@ -5,8 +5,8 @@ from app.models import Reward
 
 def title_validator(form, field):
     title = field.data
-    if len(title) > 50:
-        raise ValidationError('Title cannot exceed 50 characters.')
+    if len(title) > 80:
+        raise ValidationError('Title cannot exceed 80 characters.')
 
 def price_validator(form, field):
     price = field.data

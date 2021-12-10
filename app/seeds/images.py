@@ -117,7 +117,7 @@ def seed_images():
     )
     image_28 = Image(
         project_id = 28,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://i.pinimg.com/564x/0f/8d/72/0f8d7260906ab8b69fb5aba35965858c.jpg'
     )
     image_29 = Image(
         project_id = 29,
@@ -129,17 +129,17 @@ def seed_images():
     )
     image_31 = Image(
         project_id = 31,
-        image_url = 'https://user-images.githubusercontent.com/86431563/145539175-43aa4fb0-d44e-419b-b14a-0e86e719deb0.PNG'
+        image_url = 'https://filmfolk.com/wp-content/uploads/2018/02/Documentary-Filming.jpg'
     )
 
     image_32 = Image(
         project_id = 32,
-        image_url = 'https://images.adsttc.com/media/images/55e7/7f93/4d8d/5d0b/c000/1be4/newsletter/1751126620_96074c-528x430.jpg?1441234830'
+        image_url = 'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5e6931e5e1e61700080e8493%2FCropped-view-of-smiling-podcast-host-sitting-near-microphone-in-podcasting-studio-%2F960x0.jpg%3Ffit%3Dscale'
     )
 
     image_33 = Image(
         project_id = 33,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://i.pinimg.com/564x/52/b3/6e/52b36e8eca52966281428e98630e6ba4.jpg'
     )
     image_34 = Image(
         project_id = 34,
