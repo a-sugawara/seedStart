@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
-import * as sessionActions from "../../store/session";
+import './Login.css'
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -32,36 +32,35 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          required
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          required
-          onChange={updatePassword}
-        />
-        <button type='submit'>Login</button>
-      </div>
-    </form>
+    <div className="login-container">
+      <div className="sidebar"></div>
+      <form onSubmit={onLogin} className="login-modal">
+        <div className="errors">
+          {errors.map((error, ind) => (
+            <div key={ind}>{error.split(':')[1]}</div>
+          ))}
+        </div>
+          <input
+            className="email-input"
+            name='email'
+            type='text'
+            placeholder='Email'
+            value={email}
+            required
+            onChange={updateEmail}
+          />
+          <input
+            className="password-input"
+            name='password'
+            type='password'
+            placeholder='Password'
+            value={password}
+            required
+            onChange={updatePassword}
+          />
+          <button type='submit' className="login-button">Login</button>
+      </form>
+    </div>
   );
 };
 

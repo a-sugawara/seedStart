@@ -29,9 +29,9 @@ const RewardForm = ({project_id, setShowModal}) => {
 
     return (
         <div className='form-container'>
-            <div>
-            {errors.map((error, ind) => (
-                <div key={ind}>{error}</div>
+            <div className="errors">
+                {errors.map((error, ind) => (
+                <div key={ind}>{error.split(':')[1]}</div>
             ))}
             </div>
             <form className='form' onSubmit={handleSubmit}>
