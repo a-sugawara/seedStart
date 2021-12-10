@@ -36,6 +36,7 @@
     height: 200px;
     /* aspect-ratio: 16/9; */
 }
+
 .project-card-info{
    display:flex;
    flex-direction: column;
@@ -44,11 +45,10 @@
 
 }
 
-.project-card:hover{
-    box-shadow: 0 .1rem 5px rgba(0, 0, 0, 0.253);
-    transform: translateY(-2px) ;
-}
-
 .project-title{
     font-weight: bold;
+}
+
+.title{
+    font-weight: 500;
 }

@@ -53,9 +53,9 @@ const BackingForm = ({user_id, project_id}) => {
 
     return (
         <div className='backing-form-container'>
-            <div>
-            {errors.map((error, ind) => (
-                <div key={ind}>{error}</div>
+            <div className="errors">
+                {errors.map((error, ind) => (
+                <div key={ind}>{error.split(':')[1]}</div>
             ))}
             </div>
             <form className='backing-form' onSubmit={preSubmit}>
