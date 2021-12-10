@@ -25,8 +25,8 @@
     display: flex;
     flex-direction:column;
     align-items:center;
-    width: 50%;
-    background-color: #EFE8CF;
+    width: 75%;
+    background-color: #bbd8c3;
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius:5px;
@@ -34,18 +34,12 @@
 
 .singleProject-description{
     max-width: 30%;
+    font-size: calc(2.5vw);
 }
 
 .rewardCard:hover{
-    box-shadow: 0 .1rem 5px rgba(0, 0, 0, 0.253);
+    /* box-shadow: 0 .1rem 5px #efe8cf6e; */
     transform: translateY(-2px) ;
-}
-
-@media only screen and (max-width:1375px){
-    .rewardsContainer{
-        display: flex;
-        gap: 1rem
-    }
 }
 
 .progress-bar{
@@ -66,3 +60,98 @@
     height: 350px;
     /* aspect-ratio: 16/9; */
 }
+
+.rewardsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 23.8rem;
+    overflow-y: auto;
+    background-color: #37393a;
+    gap: 1.5rem;
+    width: 25%;
+    padding: 1rem 0; 
+    border-radius: 10px;
+}
+
+.reward-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: .75rem;
+}
+
+.reward-description{
+    margin-bottom: .25rem;
+}
+
+.reward-info{
+    max-width: 80%;
+}
+
+.reward-buttons{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.amount-contributed{
+    color: #efe8cf;
+}
+
+@media only screen and (max-width:1375px){
+    .rewardsContainer{
+        display: flex;
+        align-items: center;
+        max-height: 15rem;
+        height: 15rem;
+        overflow-x: auto;
+        flex-direction: row;
+        background-color: #37393a;
+        gap: 1.5rem;
+        width: 80%;
+        padding: 1rem; 
+        border-radius: 10px;
+        overflow-y: hidden;
+    }
+
+    .rewardCard{
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        width: 30rem;
+        background-color: #bbd8c3;
+        padding: 1rem;
+        margin-bottom: 0;
+        border-radius:5px;
+        max-width: 30rem;
+        height: 11rem;
+    }
+
+    .reward-info{
+        display: flex;
+        flex-direction: row;
+        width: 17rem;
+        align-items: center;
+    }
+
+    .reward-title{
+        border-right: 1px solid rgba(0, 0, 0, 0.246);
+        height: 60%;
+        display: flex;
+        align-items: center;
+        margin-right: .6rem;
+        padding-right: .6rem;
+    }
+
+    .reward-price{
+        margin-right: 1rem;
+        width: 10rem;
+    }
+
+    .amount-contributed{
+        text-align: center;
+    }
+
+}
+

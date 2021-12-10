@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { oneProject, newBacking } from "../../store/project";
+import './BackingForm.css'
 
 const BackingForm = ({user_id, project_id}) => {
     const [backed, setBacked] = useState(0)

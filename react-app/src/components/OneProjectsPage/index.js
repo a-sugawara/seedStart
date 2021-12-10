@@ -29,10 +29,10 @@ export default function OneProjectPage(){
     for(let i = 0; i < project?.backing.length; i++) {
         if(project.backing[i][1] === user_id) {
             backingForm = (
-                <>
-                <p>{`You've contributed $${project.backing[i][0]}`}</p>
-                {<BackingEditForm project_id={+projectId} user_id={user_id} backing_id={project.backing[i][2]} amount_backed={+project.backing[i][0]}/>}
-                </>
+                <div className="backing-form-container">
+                    <div className="amount-contributed">{`You've contributed $${project.backing[i][0]}`}</div>
+                    {<BackingEditForm project_id={+projectId} user_id={user_id} backing_id={project.backing[i][2]} amount_backed={+project.backing[i][0]}/>}
+                </div>
             )
         }
     }
@@ -57,7 +57,7 @@ export default function OneProjectPage(){
         for(let i = 0; i < project?.backing.length; i++) {
             if(project.backing[i][1] === user_id) {
                 if(project.backing[i][0] >= reward[2]){
-                    test="got"
+                    test="Owned"
                 }
             }
 
@@ -67,16 +67,20 @@ export default function OneProjectPage(){
                 {/* this is the reward title */}
                 {reward[0]}
             </div>
-            <div className="reward-description">
-                {/* this is the reward description */}
-                {reward[1]}
+            <div className="reward-info">
+                <div className="reward-description">
+                    {/* this is the reward description */}
+                    {reward[1]}
+                </div>
+                <div className="reward-price">
+                    {/* this is the reward price */}
+                {` Cost: $${reward[2]}`}
+                </div>
             </div>
-            <div className="reward-price">
-                {/* this is the reward price */}
-                {reward[2]}
+            <div className="reward-buttons">
+                {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
+                {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
             </div>
-            {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
-            {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
             {test}
         </div>
     })
@@ -103,9 +107,9 @@ export default function OneProjectPage(){
                 {project?.description}
             </div>
             <div className="rewardsContainer">
-            {backingForm}
-            {rewards}
-            {rewardCreateButtons}
+                {backingForm}
+                {rewards}
+                {rewardCreateButtons}
             </div>
         </div>
     </>
