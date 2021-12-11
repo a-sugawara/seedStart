@@ -17,6 +17,7 @@ import { allProjects } from './store/project';
 import CategoryBar from "./components/CategoryBar"
 import CategoryResults from './components/CategoryResults';
 import Footer from './components/Footer/Footer';
+import Splash from './components/Splash'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -36,6 +37,9 @@ function App() {
 
   return (
     <BrowserRouter>
+        <Route path='/splash' exact={true}>
+          <Splash/>
+        </Route>
       <NavBar />
       <CategoryBar/>
       <Switch>
