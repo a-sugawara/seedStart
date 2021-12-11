@@ -27,12 +27,12 @@
 }
 .left-text{
     margin: 6rem;
-    font-size:2.4rem;
+    font-size: calc(2.4vh);
     color: #7e8385;
 }
 .right-text{
     margin: 3rem;
-    font-size:4rem;
+    font-size: calc(4vh);
 }
 .splash-bottom{
     display: flex;
@@ -56,15 +56,15 @@
     width:auto;
 }
 .circle{
-    height: 3rem;
-    width: 3rem;
+    height: calc(3vh);
+    width: calc(3vh);
     border-radius:3rem;
 
     box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.253);
 }
 .circle:hover{
-    height: 3rem;
-    width: 3rem;
+    height: calc(4vh);
+    width: calc(4vh);
     border-radius:3rem;
     box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.253);
     transform: translateY(-2px);
@@ -101,7 +101,7 @@
     justify-content:center;
     align-items: center;
     height: 50%;
-    font-size: 3rem;
+    font-size: calc(3vh);
     background-color: #BBD8C3
 }
 .bottom:hover{
@@ -109,7 +109,7 @@
     justify-content:center;
     align-items: center;
     height: 50%;
-    font-size: 3rem;
+    font-size: calc(3vh);
     background-color: #9ab4a2
 }
 .login{
@@ -121,7 +121,7 @@
     color:#37393A;
     height:40%;
     margin-left: 9rem;
-    font-size:3rem;
+    font-size: calc(3vh);
     border-radius: 15px;
 }
 .sign-up{
@@ -133,7 +133,7 @@
     background-color: #EFE8CF;
     height:40%;
     margin-right: 9rem;
-    font-size:3rem;
+    font-size: calc(3vh);
     border-radius: 15px;
 }
 .login:hover{
@@ -145,9 +145,10 @@
     color:#37393A;
     height:40%;
     margin-left: 9rem;
-    font-size:3rem;
+    font-size: calc(3vh);
     border-radius: 15px;
 }
+
 .sign-up:hover{
     display:flex;
     justify-content:space-around;
@@ -157,6 +158,6 @@
     background-color: #d8d3c0;
     height:40%;
     margin-right: 9rem;
-    font-size:3rem;
+    font-size: calc(3vh);
     border-radius: 15px;
 }

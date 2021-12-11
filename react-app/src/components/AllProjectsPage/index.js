@@ -22,7 +22,6 @@ export default function AllProjectsPage(){
             <div className="project-card-info" >
                 <div className="title">{project.title}</div>
                 <div>Goal: ${project.goal_amount}</div>
-                {/* <div>Raised: ${project.backing.reduce((acc, a)=>acc+a,0)}</div> */}
                 <div>By {project.user}</div>
             </div>
             <div>
