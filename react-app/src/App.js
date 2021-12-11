@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar';
@@ -23,6 +23,8 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
+  const {projects: splashProjects} = useSelector(state => state?.project)
+
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
@@ -35,17 +37,25 @@ function App() {
     return null;
   }
 
+  let projectsArr = []
+    if(splashProjects?.length) {
+        while(projectsArr?.length < 5 ) {
+            projectsArr.push(Math.floor(Math.random() * (splashProjects.length+1)))
+        }
+        console.log('this is random numbers', projectsArr)
+    }
+
   return (
     <BrowserRouter>
         <Route path='/splash' exact={true}>
-          <Splash/>
+          <Splash projectsArr={projectsArr}/>
         </Route>
       <NavBar />
       <CategoryBar/>
       <Switch>
-        {/* <Route path='/login' exact={true}>
+        <Route path='/login' exact={true}>
           <LoginForm />
-        </Route> */}
+        </Route>
         <Route path='/category/:catId' exact={true}>
           <CategoryResults />
         </Route>
@@ -55,9 +65,9 @@ function App() {
         <Route path='/discover/:term'>
           <SearchedProjectsPage/>
         </Route>
-        {/* <Route path='/sign-up' exact={true}>
+        <Route path='/sign-up' exact={true}>
           <SignUpForm />
-        </Route> */}
+        </Route>
         <ProtectedRoute path='/projects/:projectId/edit' exact={true}>
           <ProjectFormEdit/>
         </ProtectedRoute>
@@ -75,10 +85,8 @@ function App() {
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <AllProjectsPage />
-          <Footer/>
         </Route>
       </Switch>
-      {/* <Footer/> */}
     </BrowserRouter>
   );
 }

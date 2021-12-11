@@ -33,16 +33,16 @@ export default function CategoryResults(){
         </div>
     </NavLink>
     )
+
     useEffect(()=>{
         dispatch(allProjects())},
         [dispatch]
     )
 
-
-    return <>
-        <div className="project-wrapper">
-        {details}
+    return <div>
+        <div className="category-project-wrapper">
+            {details}
         </div>
-        <Footer/>
-        </>
+            <Footer/>
+        </div>
 }
