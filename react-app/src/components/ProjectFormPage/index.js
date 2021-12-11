@@ -15,7 +15,6 @@ const ProjectForm = () => {
     const user_id = useSelector(state => state.session.user.id);
     const dispatch = useDispatch();
     const validator = () => {
-        console.log( "XXXXXXXXXX", goal_amount, 123)
         let error = []
         if (+goal_amount < 50) {
             error.push('Please enter a whole number greater than 50.')
@@ -26,7 +25,6 @@ const ProjectForm = () => {
         else if (+goal_amount % 1 !== 0) {
             error.push('Please enter a whole number greater than 50.')
         }
-        console.log(error)
         return error;
     }
     const preSubmit = (e) => {
@@ -34,10 +32,8 @@ const ProjectForm = () => {
         // setErrors([])
         const errors = validator()
         setErrors(errors)
-        console.log("result of validator", validator())
 
         if (errors.length === 0) {
-            console.log("how are you in here?", errors)
             handleSubmit();
         } else {
             return
@@ -45,7 +41,6 @@ const ProjectForm = () => {
     }
 
     const handleSubmit = async () => {
-        console.log("yoyoyoyoyo")
         const projectInfo = {
             user_id,
             title,

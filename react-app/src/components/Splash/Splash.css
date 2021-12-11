@@ -69,11 +69,11 @@
     box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.253);
 }
 .circle:hover{
-    height: calc(4vh);
-    width: calc(4vh);
+    height: calc(3.05vh);
+    width: calc(3.05vh);
     border-radius:3rem;
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.253);
-    transform: translateY(-2px);
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.353);
+    transform: translateY(-.5px);
     cursor: pointer;
 }
 .one{
@@ -123,11 +123,11 @@
     display:flex;
     justify-content:space-around;
     align-items: center;
-    width: 25%;
+    width: 20%;
     background-color: #fff;
     color:#37393A;
-    height:40%;
-    margin-left: 9rem;
+    height: 35%;
+    margin-left: 15rem;
     font-size: calc(3vh);
     border-radius: 15px;
 }
@@ -135,11 +135,11 @@
     display:flex;
     justify-content:space-around;
     align-items: center;
-    width:25%;
+    width: 20%;
     color:#37393A;
     background-color: #EFE8CF;
-    height:40%;
-    margin-right: 9rem;
+    height: 35%;
+    margin-right: 15rem;
     font-size: calc(3vh);
     border-radius: 15px;
 }
@@ -147,11 +147,11 @@
     display:flex;
     justify-content:space-around;
     align-items: center;
-    width: 25%;
+    width: 20%;
     background-color: rgb(200, 200, 200);
     color:#37393A;
-    height:40%;
-    margin-left: 9rem;
+    height:35%;
+    margin-left: 15rem;
     font-size: calc(3vh);
     border-radius: 15px;
     cursor: pointer;
@@ -161,11 +161,11 @@
     display:flex;
     justify-content:space-around;
     align-items: center;
-    width:25%;
+    width:20%;
     color:#37393A;
     background-color: #d8d3c0;
-    height:40%;
-    margin-right: 9rem;
+    height: 35%;
+    margin-right: 15rem;
     font-size: calc(3vh);
     border-radius: 15px;
     cursor: pointer;
@@ -185,6 +185,9 @@
     /* padding:1rem; */
     transition: all .2s ease ;
     background-color:white;
+    border-bottom: .2px solid rgba(128, 128, 128, 0.272);
+    border-left: .1px solid rgba(128, 128, 128, 0.272);
+    border-right: .1px solid rgba(128, 128, 128, 0.272);
 }
 .sproject-card:hover{
     display: flex;
@@ -251,11 +254,11 @@
     height:4rem;
 }
 .xmed{
-    height:5rem;
+    height:4.5rem;
 }
 .large{
-    height:6rem;
+    height:4.85rem;
 }
 .xlarge{
-    height:7rem;
+    height:5.15rem;
 }

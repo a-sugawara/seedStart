@@ -350,7 +350,6 @@ const reducer = (state = initialState, action) => {
         case DELETE_REWARD:
           newState = {...state}
           const rewardRIdx = newState.currentProject.rewards.findIndex(reward => reward[3] === action.payload)
-          console.log(rewardRIdx)
           newState.currentProject.rewards.splice(rewardRIdx, 1)
           return newState
         default:

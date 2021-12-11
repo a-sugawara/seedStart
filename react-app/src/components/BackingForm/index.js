@@ -64,7 +64,7 @@ const BackingForm = ({user_id, project_id}) => {
                 placeholder='Amount'
                 required
                 onChange={(e) => setBacked(e.target.value)}/>
-                <button type='submit'>Back</button>
+                <button type='submit' className="backBtn">Back</button>
             </form>
         </div>
     )
