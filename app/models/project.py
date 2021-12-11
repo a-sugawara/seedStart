@@ -27,7 +27,8 @@ class Project(db.Model):
             'goal_amount': self.goal_amount,
             'user': self.user.username,
             'backing': [obj.backed for obj in self.backing],
-            'images' : [obj.image_url for obj in self.image]
+            'images' : [obj.image_url for obj in self.image],
+            'description' : self.description
 
         }
 

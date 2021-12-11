@@ -14,7 +14,7 @@ const DeleteProjectConfirmation = () => {
 
         dispatch(removeProject(projectId))
         dispatch(allProjects())
-        history.push('/')
+        history.push('/projects')
     }
 
     return (

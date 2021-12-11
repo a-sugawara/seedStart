@@ -38,8 +38,18 @@ export default function CategoryResults(){
         dispatch(allProjects())},
         [dispatch]
     )
+    const categories = ['Parks & Recreation',
+    'Local Businesses',
+    'Environment',
+    'Foods',
+    'Culture',
+    'Green Tech & Energy',
+    'Housing',
+    'Community',
+    'Other']
 
     return <div>
+        <div className='page-header'>{`${categories[catId-1]}`}</div>
         <div className="category-project-wrapper">
             {details}
         </div>

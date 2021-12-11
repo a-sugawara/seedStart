@@ -26,8 +26,8 @@
     flex-direction: column;
 }
 .left-text{
-    margin: 6rem;
-    font-size: calc(2.4vh);
+    margin: 4rem;
+    font-size: calc((1.75vh + 0.25vw));
     color: #7e8385;
 }
 .right-text{
@@ -51,9 +51,14 @@
     width:33.33%;
     height:100%;
 }
-.splash-logo-img{
-    height:12rem;
+.splash-logo-img-top{
+
     width:auto;
+}
+.splash-logo-img-bottom{
+    height:6rem;
+    width:auto;
+    margin-right: 1.2rem
 }
 .circle{
     height: calc(3vh);
@@ -160,4 +165,92 @@
     margin-right: 9rem;
     font-size: calc(3vh);
     border-radius: 15px;
+}
+
+
+.sproject-card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    /* border:none; */
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.267);
+    width: calc(25vw);
+    height: calc(65vh);
+    /* padding:1rem; */
+    transition: all .2s ease ;
+    background-color:white;
+}
+.sproject-card:hover{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.267);
+    /* padding:1rem; */
+    transform: translateY(-2px) ;
+}
+
+.sproject-card-img{
+    width: calc(25vw);
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.sproject-card-info{
+   display:flex;
+   flex-direction: column;
+   gap: 1rem;
+   font-size: calc((2vh + 1vw)/2);
+   padding: .5rem;
+   padding-top: 0;
+   max-width: 80%;
+}
+
+.project-title{
+    font-weight: bold;
+}
+
+.stitle{
+    font-weight: 500;
+}
+
+.sprogress-bar-all{
+    width: calc(25vw);
+    height: .5rem;
+    background-color: #BCC3C6;
+    margin-top: 0;
+}
+
+s.progress-status-all{
+    height: .5rem;
+    background-color: #6D9688;
+    transition: all 2s;
+    max-width: 100%;
+}
+.plant{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.small{
+    height:3rem;
+}
+.med{
+    height:4rem;
+}
+.xmed{
+    height:5rem;
+}
+.large{
+    height:6rem;
+}
+.xlarge{
+    height:7rem;
 }
