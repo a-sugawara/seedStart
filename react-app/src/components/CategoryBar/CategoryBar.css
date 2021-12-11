@@ -3,18 +3,18 @@
     gap: 1rem;
     align-items:center;
     justify-content:center;
-    margin-bottom: 5rem;
+
     box-sizing: border-box;
 }
 .category-name:hover{
     color: #6D9688;
     border-bottom: 3px solid #6D9688;
     box-sizing: border-box;
-    margin-bottom: 74px;
+    margin-bottom: 0px;
 }
 
 .category-name{
     transition: all .2s ease;
     box-sizing: border-box;
-    margin-bottom: 77px;
+    margin-bottom: 3px;
 }

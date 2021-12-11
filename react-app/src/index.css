@@ -5,6 +5,7 @@
 *{
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
+    /* overflow-x: hidden; */
 }
 a{
     color: #000000
@@ -62,6 +63,7 @@ a{
     height:80%;
     justify-content:space-between;
     align-items: center;
+    overflow-y: hidden;
 
 }
 .searchbar-input{
@@ -80,6 +82,7 @@ a{
     height:100%;
     width:10%;
     font-size: 1.25em;
+    overflow-y: hidden;
 }
 .search-btn:hover{
  color:#6D9688;
@@ -95,4 +98,11 @@ a{
     justify-content: center;
 
 
+}
+.page-header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size:3rem;
+    margin-top:2.5rem;
 }

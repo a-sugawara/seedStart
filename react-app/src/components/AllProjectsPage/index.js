@@ -36,6 +36,7 @@ export default function AllProjectsPage(){
     )
 
     return <div>
+    <div className='page-header'>All Projects</div>
     <div className="projects-wrapper">
         {details}
     </div>

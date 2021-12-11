@@ -8,23 +8,25 @@ import "./Splash.css"
 
 export default function Splash({projectsArr}) {
     const [idx, setIdx] = useState(0)
+    const [classs, setClasss]=useState("small")
     let {projects: splashProjects} = useSelector(state => state?.project)
-    
+    console.log("for the real random numbers", projectsArr)
     const singleProject = (
         splashProjects[idx]
         )
 
     const singleProjectCard = <NavLink to={`/projects/${singleProject?.id}`}>
-        <div className="project-card">
-            <div className="image-bar">
-                <img className="project-card-img" src={singleProject?.images[0]}/>
-                <div className="progress-bar-all">
-                    <div className="progress-status-all"
+        <div className="sproject-card">
+            <div className="simage-bar">
+                <img className="sproject-card-img" src={singleProject?.images[0]}/>
+                <div className="sprogress-bar-all">
+                    <div className="sprogress-status-all"
                     style={{width:`${(singleProject?.backing?.reduce((acc, a)=>acc+a,0)) / (singleProject?.goal_amount) * 100}%`}}></div>
                 </div>
             </div>
-            <div className="project-card-info" >
-                <div className="title">{singleProject?.title}</div>
+            <div className="sproject-card-info" >
+                <div className="stitle">{singleProject?.title}</div>
+                <div className="sdescription">{singleProject?.description.length > 100 ? singleProject.description.slice(0,100)+"...":singleProject?.description}</div>
                 <div>Goal: {'$'}{singleProject?.goal_amount}</div>
                 <div>By {singleProject?.user}</div>
             </div>
@@ -33,8 +35,29 @@ export default function Splash({projectsArr}) {
         </div>
     </NavLink>
 
-    
-    
+    const small=() => {
+        setIdx(projectsArr[0])
+        setClasss("small")
+    }
+    const med=() => {
+        setIdx(projectsArr[1])
+        setClasss("med")
+    }
+    const xmed=() => {
+        setIdx(projectsArr[2])
+        setClasss("xmed")
+    }
+    const large=() => {
+        setIdx(projectsArr[3])
+        setClasss("large")
+    }
+    const xlarge=() => {
+        setIdx(projectsArr[4])
+        setClasss("xlarge")
+    }
+
+
+
   return (
       <div className="splash-wrapper">
           <div className="splash-top">
@@ -50,7 +73,10 @@ export default function Splash({projectsArr}) {
                   {singleProjectCard}
               </div>
               <div className="right splashbox">
-                <img className="splash-logo-img" src={"https://cdn.discordapp.com/attachments/915741036024827916/918730184356663396/Untitled-4.png"}/>
+                <div className="plant">
+                    <img className={`splash-logo-img-top ${classs} `} src={"https://cdn.discordapp.com/attachments/898413474080772116/919162139489476658/justLeaves.png"}/>
+                    <img className="splash-logo-img-bottom" src={"https://cdn.discordapp.com/attachments/898413474080772116/919162139715985469/justPot.png"}/>
+                </div>
                 <div className="right-text">
                     Seed Starter
                 </div>
@@ -63,18 +89,18 @@ export default function Splash({projectsArr}) {
               </div>
               <div className="short-splashbox">
                   <div className="top">
-                      <div onClick={() => setIdx(projectsArr[0])} className="circle one">
+                      <div onClick={() =>small() } className="circle one">
                       </div>
-                      <div onClick={() => setIdx(projectsArr[1])} className="circle two">
+                      <div onClick={() => med()} className="circle two">
                       </div>
-                      <div onClick={() => setIdx(projectsArr[2])} className="circle three">
+                      <div onClick={() => xmed()} className="circle three">
                       </div>
-                      <div onClick={() => setIdx(projectsArr[3])} className="circle four">
+                      <div onClick={() => large()} className="circle four">
                       </div>
-                      <div onClick={() => setIdx(projectsArr[4])} className="circle five">
+                      <div onClick={() => xlarge()} className="circle five">
                       </div>
                   </div>
-                  <NavLink to='/'className="bottom">
+                  <NavLink to='/projects'className="bottom">
                       See All Projects
                   </NavLink>
               </div>
@@ -82,4 +108,3 @@ export default function Splash({projectsArr}) {
       </div>
   );
 }
-

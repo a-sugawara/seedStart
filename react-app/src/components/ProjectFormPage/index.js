@@ -59,7 +59,7 @@ const ProjectForm = () => {
             setErrors(data)
         }else{
 
-            history.push('/')
+            history.push('/projects')
         }
     }
 

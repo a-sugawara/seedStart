@@ -38,10 +38,11 @@ export default function SearchedProjectsPage(){
 
 
 
-    return <>
+    return <div>
+        <div className='page-header'>{`Search results for '${term}'`}</div>
         <div className="project-wrapper">
         {details}
         </div>
         <Footer/>
-        </>
+        </div>
 }

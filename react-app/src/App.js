@@ -37,22 +37,24 @@ function App() {
     return null;
   }
 
-  let projectsArr = []
+  let projectsArr = new Set()
     if(splashProjects?.length) {
-        while(projectsArr?.length < 5 ) {
-            projectsArr.push(Math.floor(Math.random() * (splashProjects.length+1)))
-        }
+        while(projectsArr?.size < 5 ) {
+            projectsArr.add(Math.floor(Math.random() * (splashProjects.length)))
+          }
+          projectsArr = Array.from(projectsArr);
         console.log('this is random numbers', projectsArr)
     }
 
   return (
     <BrowserRouter>
-        <Route path='/splash' exact={true}>
-          <Splash projectsArr={projectsArr}/>
-        </Route>
       <NavBar />
       <CategoryBar/>
       <Switch>
+        <Route path='/' exact={true}>
+          <Splash projectsArr={projectsArr}/>
+          <Footer/>
+        </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
@@ -62,7 +64,10 @@ function App() {
         <Route path='/projects' exact={true}>
           <AllProjectsPage />
         </Route>
-        <Route path='/discover/:term'>
+        <Route path='/discover/' exact={true}>
+          <AllProjectsPage />
+        </Route>
+        <Route path='/discover/:term' exact={true}>
           <SearchedProjectsPage/>
         </Route>
         <Route path='/sign-up' exact={true}>
@@ -83,9 +88,6 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <Route path='/' exact={true} >
-          <AllProjectsPage />
-        </Route>
       </Switch>
     </BrowserRouter>
   );
