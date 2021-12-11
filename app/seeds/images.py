@@ -3,12 +3,12 @@ from app.models import db, Image, image, project
 def seed_images():
     image_1 = Image(
         project_id = 1,
-        image_url = 'https://m.media-amazon.com/images/I/412FFoC11ML._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://ychef.files.bbci.co.uk/976x549/p07n19vr.jpg'
     )
 
     image_2 = Image(
         project_id = 2,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-3foodgroups_fruits_detailfeature.jpg?sfvrsn=64942d53_4'
     )
 
     image_3 = Image(
@@ -21,11 +21,11 @@ def seed_images():
     )
     image_5 = Image(
         project_id = 5,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://www.pcc.edu/community/wp-content/uploads/sites/36/2019/04/GettyImages-510385414.jpg'
     )
     image_6 = Image(
         project_id = 6,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://media.istockphoto.com/photos/solar-panel-cell-on-dramatic-sunset-sky-backgroundclean-alternative-picture-id1310384629?b=1&k=20&m=1310384629&s=170667a&w=0&h=9qeo39JbvBKsw1ulAmn6u9l3K9CqwGHrrSzuiWVw1s8='
     )
     image_7 = Image(
         project_id = 7,
@@ -41,16 +41,16 @@ def seed_images():
     )
     image_10 = Image(
         project_id = 10,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_284,q_60,w_640/v1/clients/alexandria/A_Galerie_CREDIT_M_Enriquez_for_Visit_Alexandria_1_2100x1354_b584b92a_436d_45a8_aba5_5ada9e5b56b8_8e4b470b-cd5e-4ae2-a5ad-37f31edeab14.jpg'
     )
     image_11 = Image(
         project_id = 11,
-        image_url = 'https://m.media-amazon.com/images/I/412FFoC11ML._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://www.planetware.com/wpimages/2018/09/oregon-sublimity-best-hiking-trails-trails-silver-falls-state-park-trail-of-ten-falls.jpg'
     )
 
     image_12 = Image(
         project_id = 12,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://greenvillejournal.com/wp-content/uploads/2021/02/GJ-2-19-21-Litter-pickup-iStock.jpeg'
     )
 
     image_13 = Image(
@@ -63,7 +63,7 @@ def seed_images():
     )
     image_15 = Image(
         project_id = 15,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://thumbor.thedailymeal.com/mTo4ojWZD5511nbS8eqWWcYcTPU=//https://www.thedailymeal.com/sites/default/files/2020/01/23/HERO.jpg'
     )
     image_16 = Image(
         project_id = 16,
@@ -75,37 +75,37 @@ def seed_images():
     )
     image_18 = Image(
         project_id = 18,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://www.thesprucecrafts.com/thmb/-91NSALmdRzf3Zr5OnLwl-8NWks=/4368x2457/smart/filters:no_upscale()/art-and-craft-supply-on-wooden-desk-1064711160-f6b9b4ba223242c3883c8c8a31cb0286.jpg'
     )
     image_19 = Image(
         project_id = 19,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://cdn.shopify.com/s/files/1/1881/4693/files/20181122-20181122-P1090601_1200x.jpg?v=1562892448'
     )
     image_20 = Image(
         project_id = 20,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://hips.hearstapps.com/pop.h-cdn.co/assets/cm/15/06/54cfd8e3db146_-_hardware-appreciation-0814-de.jpg?crop=1xw:1.0xh;center,top&resize=480:*'
     )
     image_21 = Image(
         project_id = 21,
-        image_url = 'https://m.media-amazon.com/images/I/412FFoC11ML._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://cdn.vox-cdn.com/thumbor/_06Ha2tlHC0oyXJJtNOkJMr-hPs=/0x0:1400x897/1200x800/filters:focal(588x336:812x560)/cdn.vox-cdn.com/uploads/chorus_image/image/65893255/small_storage_xl.0.jpg'
     )
 
     image_22 = Image(
         project_id = 22,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://cdn.searchenginejournal.com/wp-content/uploads/2021/05/41-of-the-best-seo-job-interview-questions-6130f38715181-sej-1280x720.jpg'
     )
 
     image_23 = Image(
         project_id = 23,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://www.quickenloans.com/learnassets/QuickenLoans.com/Learning%20Center%20Images/Stock-Condo-Exterior-Adobe-51342322-2.jpg'
     )
     image_24 = Image(
         project_id = 24,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,w_695,g_auto,q_auto,dpr_1.0,f_auto,h_460/hoaiq4qzsqeinfxh1ujc'
     )
     image_25 = Image(
         project_id = 25,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/uk/advisor/wp-content/uploads/2021/09/wind-unsplash.jpg'
     )
     image_26 = Image(
         project_id = 26,
@@ -113,7 +113,7 @@ def seed_images():
     )
     image_27 = Image(
         project_id = 27,
-        image_url = 'https://user-images.githubusercontent.com/86431563/145537321-419b4480-dd59-4fab-9e2f-c0d89db4ea7d.PNG'
+        image_url = 'https://www.bakingbusiness.com/ext/resources/2019/8/08192019/GlobalTrends.jpg?t=1566494557&width=1080'
     )
     image_28 = Image(
         project_id = 28,
@@ -125,7 +125,7 @@ def seed_images():
     )
     image_30 = Image(
         project_id = 30,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://cdn.shopify.com/s/files/1/2723/8896/files/Hydroponics_5_mini_1024x1024.jpeg?v=1567617764'
     )
     image_31 = Image(
         project_id = 31,
@@ -143,15 +143,15 @@ def seed_images():
     )
     image_34 = Image(
         project_id = 34,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://images.adsttc.com/media/images/5fb4/1d9f/63c0/171e/9f00/0093/newsletter/shutterstock_1121968397.jpg?1605639578'
     )
     image_35 = Image(
         project_id = 35,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://media.istockphoto.com/vectors/business-interview-illustration-vector-id977762310?k=20&m=977762310&s=612x612&w=0&h=HkTrU0wkI49xmerTBphlIgLh2SaP2wQzNQU3vxNLV3Y='
     )
     image_36 = Image(
         project_id = 36,
-        image_url = 'https://m.media-amazon.com/images/I/41K+qYuMSTL._AC_UY327_FMwebp_QL65_.jpg'
+        image_url = 'https://blog.divessi.com/wp-content/uploads/2020/10/SWIM_Adult_Cover_istock_microgen.jpg'
     )
 
 

@@ -70,7 +70,7 @@ def seed_projects():
             category_id = 2,
             description = 'We want to open a locally-owned shop where we sell a variety of antiques. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 200000,
-            title = "Antique Shop",
+            title = "Barnaby's Antique Shop",
         )
     project11 = Project(
             user_id = 2,
@@ -119,7 +119,7 @@ def seed_projects():
             category_id = 8,
             description = 'We want to have a small local bookstore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 2000,
-            title = "Local Bookstore",
+            title = "Red's Books: A Local Bookstore",
         )
     project18 = Project(
             user_id = 1,
@@ -133,14 +133,14 @@ def seed_projects():
             category_id = 2,
             description = 'We want to open a locally-owned shop where we sell a variety of plants and seeds to grow yourself. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 200000,
-            title = "Local Plant Shop",
+            title = "Monstera: A Local Plant Shop",
         )
     project20 = Project(
             user_id = 1,
             category_id = 2,
             description = 'We want to open a locally-owned shop where we sell a variety of tools and materials for construction. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 200000,
-            title = "Local Hardware Store",
+            title = "Mr. Hammer Hardware Store",
         )
     project21 = Project(
             user_id = 2,
@@ -154,7 +154,7 @@ def seed_projects():
             category_id = 7,
             description = 'We want to create a space where those who are in need of jobs can gain employement and experience. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 600000,
-            title = "Employement Agency",
+            title = "Employement Success Classes",
         )
     project23 = Project(
             user_id = 2,
@@ -175,7 +175,7 @@ def seed_projects():
             category_id = 6,
             description = 'We would like to erect wind turbines in a nearby field to generate our city/town. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 200000,
-            title = "Wind Turbines",
+            title = "Mini Wind Turbines For the Home",
         )
     project26 = Project(
             user_id = 2,
@@ -210,7 +210,7 @@ def seed_projects():
             category_id = 6,
             description = 'We would like to include hydroponics as a method of growing plants in the community gardens. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 20000,
-            title = "Hydroponics in the Community Garden",
+            title = "Prefabricated Hydroponics Kit",
         )
     project31 = Project(
             user_id = 3,
@@ -250,9 +250,9 @@ def seed_projects():
     project36 = Project(
             user_id = 2,
             category_id = 9,
-            description = 'We would like to create a space where people can learn how to swim and get exercise. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             goal_amount = 5000,
-            title = "Swimming Classes",
+            title = "Swimming Tutorial Video Series",
         )
 
 
