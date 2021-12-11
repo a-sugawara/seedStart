@@ -10,7 +10,6 @@ export default function Splash({projectsArr}) {
     const [idx, setIdx] = useState(0)
     const [classs, setClasss]=useState("small")
     let {projects: splashProjects} = useSelector(state => state?.project)
-    console.log("for the real random numbers", projectsArr)
     const singleProject = (
         splashProjects[idx]
         )
@@ -68,7 +67,6 @@ export default function Splash({projectsArr}) {
                   </div>
               </div>
               <div className="mid splashbox">
-                  {/* {console.log('this is the single project', oneToLengthOfProjects(+splashProjects?.length))} */}
                   {/* {splashProjectArray[0]} */}
                   {singleProjectCard}
               </div>

@@ -5,7 +5,7 @@
 *{
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 a{
     color: #000000
@@ -26,7 +26,6 @@ a{
 
 .navbtn{
     color:white;
-    padding:0.3rem 1rem;
     border-radius:5px;
     background-color: #6D9789;
     padding:0.5rem 1.5rem;

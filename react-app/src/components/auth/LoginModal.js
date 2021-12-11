@@ -4,12 +4,12 @@ import { Modal } from '../context/Modal'
 import LoginForm from './LoginForm';
 import {login} from '../../store/session';
 
-
 function LoginModal(){
     const dispatch = useDispatch()
     const [showModal, setShowModal] = useState(false)
     const demoLogin = async() => {
-        await dispatch(login('demo@aa.io', 'password'))
+        await dispatch(login('demo@aa.io', 'password'));
+
     }
 
     return (

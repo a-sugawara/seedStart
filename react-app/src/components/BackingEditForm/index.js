@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { oneProject, updateBacking } from "../../store/project";
+import '../../components/BackingForm/BackingForm.css'
 
 const BackingEditForm = ({user_id, project_id, backing_id, amount_backed}) => {
     let [backed, setBacked] = useState(0)
@@ -8,7 +9,6 @@ const BackingEditForm = ({user_id, project_id, backing_id, amount_backed}) => {
     const dispatch = useDispatch();
 
     const validator = () => {
-        console.log( "XXXXXXXXXX", backed, 123)
         let error = []
         if (+backed < 1) {
             error.push('Please enter a whole number greater than 0.')
@@ -63,7 +63,7 @@ const BackingEditForm = ({user_id, project_id, backing_id, amount_backed}) => {
                 placeholder='Amount'
                 required
                 onChange={(e) => setBacked(e.target.value)}/>
-                <button type='submit'>Back More</button>
+                <button type='submit' className="backMoreBtn">Back More</button>
             </form>
         </div>
     )

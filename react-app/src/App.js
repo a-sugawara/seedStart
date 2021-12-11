@@ -43,7 +43,6 @@ function App() {
             projectsArr.add(Math.floor(Math.random() * (splashProjects.length)))
           }
           projectsArr = Array.from(projectsArr);
-        console.log('this is random numbers', projectsArr)
     }
 
   return (
