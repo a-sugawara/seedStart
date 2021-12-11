@@ -1,7 +1,8 @@
-.project-wrapper{
+.projects-wrapper{
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: center;
+    gap: 3rem;
     padding: 5rem;
     height: calc(80vh)
 }
@@ -70,6 +71,6 @@
 .progress-status-all{
     height: .5rem;
     background-color: #6D9688;
-    transition: all 2s ease ;
+    transition: all 2s;
     max-width: 100%;
 }
