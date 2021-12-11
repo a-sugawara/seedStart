@@ -89,7 +89,10 @@ export default function Splash({projectsArr}) {
               </div>
               <div className="short-splashbox">
                   <div className="top">
-                      <div onClick={() =>small() } className="circle one">
+                  {/* <div>
+                      Click me for random projects!
+                  </div> */}
+                      <div onClick={() => small() } className="circle one">
                       </div>
                       <div onClick={() => med()} className="circle two">
                       </div>
