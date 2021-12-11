@@ -175,7 +175,7 @@ def seed_rewards():
         price = 400,
         description = "Recieve a one of our machines for your own use."
     )
-    reward_30 = Reward(
+    reward_72 = Reward(
         title = "Mini Wind Turbine",
         project_id = 25,
         price = 5000,
@@ -244,9 +244,196 @@ def seed_rewards():
     reward_40 = Reward(
         title = "Early Access to the Videos",
         project_id = 36,
-        price = 100,
+        price = 50,
         description = "Get the video tutorials before anyone else."
     )
+    reward_41 = Reward(
+        title = "Swim Bundle",
+        project_id = 36,
+        price = 100,
+        description = "Get a swimming kit: bathing suit, goggles, and a swim cap."
+    )
+    reward_42 = Reward(
+        title = "Seven Classes",
+        project_id = 35,
+        price = 200,
+        description = "Have seven classes to learn how to improve interview skills."
+    )
+    reward_43 = Reward(
+        title = "Seven Classes",
+        project_id = 34,
+        price = 200,
+        description = "Have seven classes to learn this craft."
+    )
+    reward_44 = Reward(
+        title = "Framed Print of The Building Sketch",
+        project_id = 33,
+        price = 100,
+        description = "Recieve a high-quality print of the building plan created by our architects."
+    )
+    reward_45 = Reward(
+        title = "Pin",
+        project_id = 32,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_46 = Reward(
+        title = "Pin",
+        project_id = 31,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_47 = Reward(
+        title = "Pin",
+        project_id = 30,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_48 = Reward(
+        title = "Pin",
+        project_id = 29,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_49 = Reward(
+        title = "Pin",
+        project_id = 28,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_50 = Reward(
+        title = "Pin",
+        project_id = 27,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_51 = Reward(
+        title = "Pin",
+        project_id = 26,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_52 = Reward(
+        title = "Pin",
+        project_id = 25,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_53 = Reward(
+        title = "Pin",
+        project_id = 24,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_54 = Reward(
+        title = "Pin",
+        project_id = 23,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_55 = Reward(
+        title = "Pin",
+        project_id = 22,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_56 = Reward(
+        title = "Pin",
+        project_id = 21,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_57 = Reward(
+        title = "Pin",
+        project_id = 20,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_58 = Reward(
+        title = "Pin",
+        project_id = 19,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_59 = Reward(
+        title = "Pin",
+        project_id = 18,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_60 = Reward(
+        title = "Pin",
+        project_id = 17,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_61 = Reward(
+        title = "Pin",
+        project_id = 16,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_62 = Reward(
+        title = "Pin",
+        project_id = 15,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_63 = Reward(
+        title = "Pin",
+        project_id = 14,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_64 = Reward(
+        title = "Pin",
+        project_id = 13,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_65 = Reward(
+        title = "Pin",
+        project_id = 12,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_66 = Reward(
+        title = "Pin",
+        project_id = 11,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_67 = Reward(
+        title = "Pin",
+        project_id = 10,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_68 = Reward(
+        title = "Pin",
+        project_id = 9,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_69 = Reward(
+        title = "Pin",
+        project_id = 8,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_70 = Reward(
+        title = "Pin",
+        project_id = 7,
+        price = 10,
+        description = "Recieve a pin made to show your support of our project."
+    )
+    reward_71 = Reward(
+        title = "Solar Panels",
+        project_id = 6,
+        price = 40000,
+        description = "Get your own solar panels installed on your property."
+    )
+
 
 
 
@@ -290,6 +477,38 @@ def seed_rewards():
     db.session.add(reward_38)
     db.session.add(reward_39)
     db.session.add(reward_40)
+    db.session.add(reward_41)
+    db.session.add(reward_42)
+    db.session.add(reward_43)
+    db.session.add(reward_44)
+    db.session.add(reward_45)
+    db.session.add(reward_46)
+    db.session.add(reward_47)
+    db.session.add(reward_48)
+    db.session.add(reward_49)
+    db.session.add(reward_50)
+    db.session.add(reward_51)
+    db.session.add(reward_52)
+    db.session.add(reward_53)
+    db.session.add(reward_54)
+    db.session.add(reward_55)
+    db.session.add(reward_56)
+    db.session.add(reward_57)
+    db.session.add(reward_58)
+    db.session.add(reward_59)
+    db.session.add(reward_60)
+    db.session.add(reward_61)
+    db.session.add(reward_62)
+    db.session.add(reward_63)
+    db.session.add(reward_64)
+    db.session.add(reward_65)
+    db.session.add(reward_66)
+    db.session.add(reward_67)
+    db.session.add(reward_68)
+    db.session.add(reward_69)
+    db.session.add(reward_70)
+    db.session.add(reward_71)
+    db.session.add(reward_72)
 
 
     db.session.commit()
