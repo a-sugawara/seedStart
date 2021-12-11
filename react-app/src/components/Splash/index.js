@@ -1,30 +1,52 @@
-
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import{NavLink } from 'react-router-dom'
+import {allProjects} from  '../../store/project'
+import Footer from "../Footer/Footer";
 import "./Splash.css"
 
 
-const Splash = () => {
-//   const sessionUser = useSelector(state => state.session.user);
-//   let navbuttons
-//   let projectbutton
-//   if (sessionUser) {
-//     projectbutton=
-//     <NavLink to='/projects/new' exact={true} activeClassName='active'>
-//       <div className="navbtn">
-//         Start a Project
-//       </div>
-//     </NavLink>
+export default function Splash() {
+    let dispatch = useDispatch()
+    let {projects: splashProjects} = useSelector(state => state?.project)
+    
+    useEffect(() => {
+        dispatch(allProjects())
+    })
 
-//     navbuttons =<div>
-//      <LogoutButton />
-//       </div>
-//   }else {
-//     projectbutton=null
-//     navbuttons =<div className="navbtn-holder">
-//         <LoginModal/>
-//         <SignUpModal/>
-//     </div>
-//   }
+    const allProject = splashProjects?.map((project, idx) =>
+    <NavLink key={idx} to={`/projects/${project.id}`}>
+        <div className="project-card">
+            <div className="image-bar">
+                <img className="project-card-img" src={project.images[0]}/>
+                <div className="progress-bar-all">
+                    <div className="progress-status-all"
+                    style={{width:`${(project?.backing?.reduce((acc, a)=>acc+a,0)) / (project?.goal_amount) * 100}%`}}></div>
+                </div>
+            </div>
+            <div className="project-card-info" >
+                <div className="title">{project.title}</div>
+                <div>Goal: ${project.goal_amount}</div>
+                <div>By {project.user}</div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </NavLink>
+    ).reverse()
 
+    const randomNumberGenerator = (lengthOfProjects, counter=0) => {
+        if(counter >= 5) {
+            return;
+        } else {
+            counter++
+            return Math.floor(Math.random() * (lengthOfProjects+1)) 
+        }
+    }
+    const singleProject = (
+        splashProjects[randomNumberGenerator(splashProjects.length)]
+        )
+    
   return (
       <div className="splash-wrapper">
           <div className="splash-top">
@@ -35,6 +57,7 @@ const Splash = () => {
                   </div>
               </div>
               <div className="mid splashbox">
+                  {console.log('this is the single project', singleProject)}
               </div>
               <div className="right splashbox">
                 <img className="splash-logo-img" src={"https://cdn.discordapp.com/attachments/915741036024827916/918730184356663396/Untitled-4.png"}/>
@@ -67,15 +90,6 @@ const Splash = () => {
               </div>
           </div>
       </div>
-    // <div className="navbar">
-    //   <NavLink to='/' exact={true} activeClassName='active'>
-    //    <img className="logo-img" src={"https://cdn.discordapp.com/attachments/915741036024827916/918730184356663396/Untitled-4.png"}/>
-    //   </NavLink>
-    //   {projectbutton}
-    //   <SearchForm/>
-    //   {navbuttons}
-    // </div>
   );
 }
 
-export default Splash;
