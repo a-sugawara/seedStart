@@ -90,17 +90,16 @@ export default function OneProjectPage(){
     let rewardsbox
     if(rewards?.length){
         rewardsbox = <div className="rewardsContainer">
-        {backingForm}
         {rewards}
         {rewardCreateButtons}
         </div>
     }else{
-        rewardsbox = rewardCreateButtons
+        rewardsbox = (backingForm ,rewardCreateButtons)
     }
 
 
     return (
-    <>
+    <div>
         <div className='singleProject-title'>{project?.title}</div>
         <div className='singleProject-wrapper'>
             <div className="singleProject-name-info">
@@ -118,9 +117,12 @@ export default function OneProjectPage(){
             <div className="singleProject-description">
                 {project?.description}
             </div>
+            <div className="backing-rewards">
+            {backingForm}
             {rewardsbox}
+            </div>
         </div>
         <Footer/>
-    </>
+    </div>
     )
 }
