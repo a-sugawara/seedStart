@@ -29,13 +29,16 @@ export default function AllProjectsPage(){
         </div>
     </NavLink>
     ).reverse()
+
     useEffect(()=>{
         dispatch(allProjects())},
         [dispatch]
     )
 
-    return <div className="projects-wrapper">
+    return <div>
+    <div className="projects-wrapper">
         {details}
+    </div>
         <Footer/>
-        </div>
+    </div>
 }
