@@ -31,7 +31,7 @@ export default function OneProjectPage(){
         if(project.backing[i][1] === user_id) {
             backingForm = (
                 <div className="backing-form-container">
-                    <div className="amount-contributed">{`You've contributed $${project.backing[i][0]}`}</div>
+                    <div className="amount-contributed">{`You've supported $${project.backing[i][0]}!✨`}</div>
                     {<BackingEditForm project_id={+projectId} user_id={user_id} backing_id={project.backing[i][2]} amount_backed={+project.backing[i][0]}/>}
                 </div>
             )

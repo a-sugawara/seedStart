@@ -32,7 +32,9 @@ const CategoryBar =() =>{
         <NavLink to="/category/9">
             <div className="category-name">Other</div>
         </NavLink>
-
+        <NavLink to="/projects">
+            <div className="category-name">All</div>
+        </NavLink>
     </div>
 }
 

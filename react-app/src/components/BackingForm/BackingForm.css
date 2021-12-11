@@ -11,11 +11,12 @@
     display: flex;
     align-items: center; */
     align-items: flex-start;
+    width: 100%;
 }
 .backBtn, .backMoreBtn {
     background-color: rgb(188,195,198);
     border-radius:5px;
-    padding: 0.25rem 1.5rem;
+    padding: 0.25rem .5rem;
     outline: none;
     border: none;
     margin-left: .7rem;
@@ -24,9 +25,9 @@
 }
 
 .backBtn:hover, .backMoreBtn:hover {
-    background-color: #d8d3c0;
+    background-color: rgb(167, 174, 177);
     border-radius:5px;
-    padding: 0.25rem 1.5rem;
+    padding: 0.25rem .5rem;
     outline: none;
     border: none;
     margin-left: .7rem;
@@ -36,6 +37,11 @@
     height: 20px;
     border: 1px solid #0000002d;
     border-radius: 5px;
-    width: 60%;
+    width: 57%;
     padding-left: 10px;
+}
+@media only screen and (max-width:1375px){
+    .backed-input {
+        /* width: 40%; */
+    }
 }

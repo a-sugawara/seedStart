@@ -46,7 +46,8 @@ export default function CategoryResults(){
     'Green Tech & Energy',
     'Housing',
     'Community',
-    'Other']
+    'Other',
+    'All']
 
     return <div>
         <div className='page-header'>{`${categories[catId-1]}`}</div>

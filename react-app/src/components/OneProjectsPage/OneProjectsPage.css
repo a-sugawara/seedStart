@@ -122,6 +122,7 @@
 
 .amount-contributed{
     color: #000000;
+    width: 20%;
 }
 .backing-rewards{
     width: 25%;
@@ -132,6 +133,7 @@
 }
 
 @media only screen and (max-width:1375px){
+
     .rewardsContainer{
         display: flex;
         align-items: center;
@@ -183,6 +185,7 @@
 
     .amount-contributed{
         text-align: center;
+        width: 20%;
     }
     .backing-rewards{
         width: 80%;
