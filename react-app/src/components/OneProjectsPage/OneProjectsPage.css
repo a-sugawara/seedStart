@@ -40,6 +40,7 @@
 .rewardCard:hover{
     /* box-shadow: 0 .1rem 5px #efe8cf6e; */
     transform: translateY(-2px) ;
+    cursor: pointer;
 }
 
 .progress-bar{

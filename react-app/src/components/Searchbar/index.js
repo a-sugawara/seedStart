@@ -12,7 +12,7 @@ const SearchForm = () => {
 
     useEffect(() => {
         dispatch(searchProjects(term))
-        history.push(`/discover/${term}`)
+        if(term.length > 0)history.push(`/discover/${term}`)
     },[term])
 
     const handleSubmit = (e) => {
