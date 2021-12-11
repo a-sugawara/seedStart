@@ -30,6 +30,7 @@
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius:5px;
+    overflow: hidden;
 }
 
 .singleProject-description{
@@ -48,7 +49,8 @@
     height: .65rem;
     background-color: #BCC3C6;
     margin-top: 1rem;
-    border-radius: 3px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 
 .progress-status{
@@ -67,8 +69,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 23.8rem;
-    overflow-y: auto;
+    max-height: 35rem;
+    overflow: hidden;
     background-color: #37393a;
     gap: 1.5rem;
     width: 100%;
@@ -81,20 +83,41 @@
     font-weight: 500;
     text-align: center;
     margin-bottom: .75rem;
+    overflow-y: hidden;
+    height: 100%;
 }
 
 .reward-description{
     margin-bottom: .25rem;
+    height: 100%;
 }
 
 .reward-info{
     max-width: 80%;
+
 }
 
 .reward-buttons{
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+    height: 50px;
+    border-radius:5px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.editRewardBtn, .deleteRewardBtn, .createRewardBtn{
+    background-color: #BCC3C6;
+    border: none;
+    outline: none;
+}
+
+.createRewardBtn{
+    height: 30px;
+}
+.createRewardBtnContainer {
+    overflow-y: hidden;
 }
 
 .amount-contributed{

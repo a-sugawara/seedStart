@@ -12,14 +12,15 @@
     background-color: #6D9789;
 }
 
-.login-modal{
+/* this is on the Login.css page */
+/* .login-modal{
     padding: 30px;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .email-input{
     margin: 10px;
@@ -30,7 +31,8 @@
     width: 80%;
 }
 
-.login-button{
+/* this is on the Login.css page */
+/* .login-button{
     margin-top: 10px;
     border-radius: 50px;
     padding: .5rem 1rem;
@@ -39,7 +41,7 @@
     background-color: #6D9789;
     color: white;
     width: 80%;
-}
+} */
 
 .login-button:hover{
     background-color: #5b7e73;

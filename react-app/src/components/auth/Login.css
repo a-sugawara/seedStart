@@ -15,7 +15,7 @@
 }
 
 .login-modal{
-    padding: 30px;
+    padding: 15px 30px;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
@@ -27,6 +27,7 @@
 .email-input{
     margin: 10px;
     width: 80%;
+    /* height: 50%; */
 }
 
 .password-input{
@@ -42,6 +43,7 @@
     background-color: #6D9789;
     color: white;
     width: 80%;
+    overflow-y: hidden;
 }
 
 .login-button:hover{

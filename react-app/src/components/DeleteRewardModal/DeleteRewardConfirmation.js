@@ -19,9 +19,10 @@ const DeleteRewardConfirmation = ({reward_id}) => {
     return (
         <div>
             <p>Are you sure you want to delete this reward?</p>
-            <button type="submit" onClick={handleDelete}>Delete</button>
+            <button type="submit" onClick={handleDelete} className="deleteRewardBtn">Delete</button>
         </div>
     )
 }
 
 export default DeleteRewardConfirmation
+
