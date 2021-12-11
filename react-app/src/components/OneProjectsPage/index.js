@@ -50,6 +50,8 @@ export default function OneProjectPage(){
             rewardCreateButtons = <PostRewardModal project_id={projectId}/>
             backingForm = null
         }
+    }else{
+        backingForm =null
     }
 
     let rewards = project?.rewards?.sort((a,b) => a[2]-b[2]).map((reward) => {
@@ -84,7 +86,16 @@ export default function OneProjectPage(){
             {test}
         </div>
     })
-
+    let rewardsbox
+    if(rewards?.length){
+        rewardsbox = <div className="rewardsContainer">
+        {backingForm}
+        {rewards}
+        {rewardCreateButtons}
+        </div>
+    }else{
+        rewardsbox = rewardCreateButtons
+    }
 
 
     return (
@@ -106,11 +117,7 @@ export default function OneProjectPage(){
             <div className="singleProject-description">
                 {project?.description}
             </div>
-            <div className="rewardsContainer">
-                {backingForm}
-                {rewards}
-                {rewardCreateButtons}
-            </div>
+            {rewardsbox}
         </div>
     </>
     )

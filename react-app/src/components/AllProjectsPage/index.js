@@ -35,7 +35,7 @@ export default function AllProjectsPage(){
         [dispatch]
     )
 
-    return <div className="project-wrapper">
+    return <div className="projects-wrapper">
         {details}
         </div>
 }

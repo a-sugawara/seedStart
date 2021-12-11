@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import {searchProjects} from "../../store/project"
@@ -9,6 +9,10 @@ const SearchForm = () => {
 
     const dispatch = useDispatch();
     const history = useHistory();
+
+    useEffect(() => {
+        dispatch(searchProjects(term))
+    },[term])
 
     const handleSubmit = (e) => {
         e.preventDefault()
