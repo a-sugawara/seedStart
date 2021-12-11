@@ -30,6 +30,7 @@
     height: 400px;
     /* padding:1rem; */
     transform: translateY(-2px) ;
+    cursor: pointer;
 }
 .project-card-img{
     width: 100%;

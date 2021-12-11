@@ -17,5 +17,5 @@ class Backing(db.Model):
             'id': self.id,
             'backed': self.backed,
             'project_id': self.project_id,
-            'user_id': self.user_id
+            'user_id': self.user_id,
         }

@@ -194,7 +194,6 @@ export const newBacking = (backingData) => async(dispatch) => {
   })
   if (response.ok) {
     const data = await response.json()
-    console.log("boooooooooooooooooooooooooooooooooooooooong", data)
     dispatch(postBacking(data))
     return data;
   } else if (response.status < 500){
@@ -325,7 +324,6 @@ const reducer = (state = initialState, action) => {
           newState.projects.splice(projectRIdx, 1)
           return newState
         case POST_BACKING:
-          console.log('bbbbbbbbbbbbinnnnnnnngggggg', action.payload)
           newState = {...state}
           newState.currentProject.backing.push([action.payload.backed, action.payload.user_id, action.payload.id])
           newState.currentProject.backing = newState.currentProject.backing.slice()

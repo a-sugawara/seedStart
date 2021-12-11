@@ -46,6 +46,7 @@
 
 .login-button:hover{
     background-color: #5b7e73;
+    cursor: pointer;
 }
 
 .errors{
