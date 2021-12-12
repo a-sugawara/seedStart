@@ -1,4 +1,5 @@
 .singleProject-wrapper{
+    margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     width:100%;
@@ -8,7 +9,7 @@
 
 .singleProject-title{
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
     display:flex;
     width: 100%;
     justify-content: center;
@@ -36,6 +37,11 @@
     max-width: 30%;
     font-size: 20px;
 }
+.singleProject-description-header{
+    font-size: 30px;
+    margin: 1rem 0;
+    font-weight: 500;
+}
 
 .rewardCard:hover{
     transform: translateY(-2px) ;
@@ -60,7 +66,8 @@
 .singleProject-card-img{
     width: 450px;
     height: 350px;
-    /* aspect-ratio: 16/9; */
+    aspect-ratio: 16/9;
+    border-radius: 5px;
 }
 
 .rewardsContainer{
@@ -77,6 +84,9 @@
 }
 
 .reward-title{
+    display: flex;
+    flex-direction: column;
+    min-height: 1.7rem;
     font-size: 1.5rem;
     font-weight: 500;
     text-align: center;
@@ -91,6 +101,8 @@
 }
 
 .reward-info{
+    display: flex;
+    flex-direction: column;
     max-width: 80%;
 
 }
@@ -105,20 +117,22 @@
     height: 100%;
 }
 
-/* .editRewardBtn, .createRewardBtn{
+.editRewardBtn, .createRewardBtn{
     background-color: #BCC3C6;
     border: none;
     outline: none;
     border-radius: 3px;
-} */
+    padding: 0.25rem 0.75rem;
+    font-size: 1rem;
+}
 
-/* .editRewardBtn:hover {
+.editRewardBtn:hover {
     background-color: rgb(167, 174, 177);
 }
 
 .createRewardBtnContainer {
     overflow-y: hidden;
-} */
+}
 
 .amount-contributed{
     color: #000000;
@@ -173,13 +187,16 @@
         border-right: 1px solid rgba(0, 0, 0, 0.246);
         height: 60%;
         display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
         margin-right: .6rem;
         padding-right: .6rem;
     }
 
     .reward-price{
         margin-right: 1rem;
+        margin-left: 1rem;
         width: 10rem;
     }
 
@@ -193,6 +210,18 @@
         flex-direction: row;
         justify-content:center;
         gap: 1rem;
+    }
+    .reward-buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        height: 50px;
+        border-radius:5px;
+        overflow: hidden;
+        height: 100%;
     }
 
 }

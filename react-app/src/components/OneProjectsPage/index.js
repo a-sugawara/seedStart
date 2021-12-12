@@ -81,10 +81,9 @@ export default function OneProjectPage(){
                 </div>
             </div>
             <div className="reward-buttons">
-                <div>hi</div>
-                <div>bye</div>
-                {/* {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
-                {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null} */}
+
+                {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
+                {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
             </div>
             {test}
         </div>
@@ -117,6 +116,7 @@ export default function OneProjectPage(){
                 </div>
             </div>
             <div className="singleProject-description">
+                <div className="singleProject-description-header">Description</div>
                 {project?.description}
             </div>
             <div className="backing-rewards">
