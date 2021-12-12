@@ -15,8 +15,9 @@
     align-items: center;
 }
 .footerPiece:hover {
-    border-bottom: 2px solid;
-    color: #BCC3C6;
+    /* border-bottom: 2px solid; */
+    /* color: #BCC3C6; */
+    /* opacity: .3; */
 }
 .github {
     margin-right: 4px;
