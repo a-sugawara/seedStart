@@ -195,7 +195,7 @@ export const newBacking = (backingData) => async(dispatch) => {
   if (response.ok) {
     const data = await response.json()
     dispatch(postBacking(data))
-    return data;
+    return null;
   } else if (response.status < 500){
     const data = await response.json()
     if (data.errors) {

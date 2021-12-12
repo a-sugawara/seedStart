@@ -15,17 +15,15 @@ def description_validator(form, field):
     if len(description) < 20:
         raise ValidationError('Please enter a more detailed description (of at least 20 characters).')
 
-def goal_validator(form, field):
-    goal = field.data
-    if goal < 50:
-        raise ValidationError('Please enter an amount greater than $50.')
-    # if goal is not True:
-    #     raise ValidationError('Please enter a whole number (non-decimal).')
+# def goal_validator(form, field):
+#     goal = field.data
+#     if goal < 50:
+#         raise ValidationError('Please enter an amount greater than $50.')
 
-def image_validator(form, field):
-    image = field.data
-    if not image:
-        raise ValidationError('Please enter an image.')
+# def image_validator(form, field):
+#     image = field.data
+#     if not image:
+#         raise ValidationError('Please enter an image.')
 
 
 
@@ -33,14 +31,14 @@ class ProjectForm(FlaskForm):
     user_id = IntegerField('user_id', validators=[DataRequired()])
     category_id = IntegerField('category_id', validators=[DataRequired()])
     description = StringField('description', validators=[DataRequired(), description_validator])
-    goal_amount = IntegerField('goal_amount', validators=[DataRequired(), goal_validator])
+    goal_amount = IntegerField('goal_amount', validators=[DataRequired()])
     title = StringField('title', validators=[DataRequired(), title_validator])
 
-    image_url = StringField('image_url', validators=[DataRequired(), image_validator])
+    image_url = StringField('image_url', validators=[DataRequired()])
 
 class ProjectFormEdit(FlaskForm):
     user_id = IntegerField('user_id', validators=[DataRequired()])
     category_id = IntegerField('category_id', validators=[DataRequired()])
     description = StringField('description', validators=[DataRequired(), description_validator])
-    goal_amount = IntegerField('goal_amount', validators=[DataRequired(), goal_validator])
+    goal_amount = IntegerField('goal_amount', validators=[DataRequired()])
     title = StringField('title', validators=[DataRequired(), title_validator])

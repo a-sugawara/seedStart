@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { oneProject, newBacking } from "../../store/project";
+import { oneProject, newBacking, allProjects } from "../../store/project";
 import './BackingForm.css'
 
 const BackingForm = ({user_id, project_id}) => {
@@ -10,44 +10,37 @@ const BackingForm = ({user_id, project_id}) => {
 
     const validator = () => {
         let error = []
-        if (backed < 1) {
-            error.push('Please enter a whole number greater than 0.')
-        }
-        else if (typeof backed === 'string') {
-            error.push('Please enter a whole number greater than 0.')
-        }
-        else if (backed % 1 !== 0) {
-            error.push('Please enter a whole number greater than 0.')
+        if(+backed < 1) {
+            error.push(". : Please enter a number greater than 0")
+        } else if(!Boolean(+backed)) {
+            error.push(". : Please enter a number")
+        } else if(+backed % 1 !== 0) {
+            error.push(". : Please enter a whole number")
         }
         return error;
     }
 
-    const preSubmit = (e) => {
-        e.preventDefault();
-
-        let error = validator()
-        setErrors(error);
-
-        if (errors.length > 0) {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const errorsArr = validator();
+        
+        if(errorsArr.length) {
+            setErrors(errorsArr)
             return;
         } else {
-            handleSubmit();
-        }
-    }
-
-    const handleSubmit = async (/*e*/) => {
-        // e.preventDefault();
-
-        const backingInfo = {
-            user_id,
-            project_id,
-            backed
-        }
-        const data = await dispatch(newBacking(backingInfo));
-        if (data) {
-            setErrors(data);
-        }else{
-            dispatch(oneProject(project_id));
+            setErrors([])
+            console.log('no errors')
+            const backingInfo = {
+                backed,
+                user_id,
+                project_id
+            }
+            const data = await dispatch(newBacking(backingInfo))
+            if(data) {
+                setErrors(data)
+            } else {
+                dispatch(oneProject(project_id))
+            }
         }
     }
 
@@ -58,7 +51,7 @@ const BackingForm = ({user_id, project_id}) => {
                 <div key={ind}>{error.split(':')[1]}</div>
             ))}
             </div>
-            <form className='backing-form' onSubmit={preSubmit}>
+            <form className='backing-form' onSubmit={handleSubmit}>
                 <input
                 className='backed-input'
                 placeholder='Amount'

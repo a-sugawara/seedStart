@@ -1,0 +1,47 @@
+.project-form-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-form{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.project-form > input,
+.project-form > select{
+    margin: .3rem;
+    border: 1px solid rgba(0, 0, 0, 0.246);
+    outline: none;
+    width: 90%;
+    border-radius: 3px;
+    height: 1.5rem;
+}
+
+.project-form > select{
+    margin: .3rem;
+    border: 1px solid rgba(0, 0, 0, 0.246);
+    outline: none;
+    width: 90.7%;
+    border-radius: 3px;
+}
+
+.project-submit-button{
+    margin-top: 10px;
+    border-radius: 50px;
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    background-color: #6D9789;
+    color: white;
+    width: 80%;
+    overflow-y: hidden;
+}

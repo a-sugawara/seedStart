@@ -10,58 +10,53 @@ const BackingEditForm = ({user_id, project_id, backing_id, amount_backed}) => {
 
     const validator = () => {
         let error = []
-        if (+backed < 1) {
-            error.push('Please enter a whole number greater than 0.')
-        }
-        else if (typeof +backed === 'string') {
-            error.push('Please enter a whole number greater than 0.')
-        }
-        else if (+backed % 1 !== 0) {
-            error.push('Please enter a whole number greater than 0.')
+        if(+backed < 1) {
+            error.push(". : Please enter a number greater than 0")
+        } else if(!Boolean(+backed)) {
+            error.push(". : Please enter a number")
+        } else if(+backed % 1 !== 0) {
+            error.push(". : Please enter a whole number")
         }
         return error;
     }
 
-    const preSubmit = (e) => {
-        e.preventDefault();
-        let error = validator()
-        setErrors(error);
-
-        if (errors.length > 0) {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const errorsArr = validator();
+        
+        if(errorsArr.length) {
+            setErrors(errorsArr)
             return;
         } else {
-            handleSubmit();
-        }
-    }
-
-    const handleSubmit = async (/*e*/) => {
-        // e.preventDefault()
-        let total = parseInt(backed) + amount_backed
-        const backingInfo = {
-            user_id,
-            project_id,
-            backed: total
-        }
-        const data = await dispatch(updateBacking(backingInfo, backing_id));
-        if (data) {
-            setErrors(data)
-        } else{
-            dispatch(oneProject(project_id))
+            setErrors([])
+            const total = parseInt(backed) + amount_backed
+            const backingInfo = {
+                backed: total,
+                user_id,
+                project_id
+            }
+            const data = await dispatch(updateBacking(backingInfo, backing_id))
+            if(data) {
+                setErrors(data)
+            } else {
+                dispatch(oneProject(project_id))
+            }
         }
     }
 
     return (
         <div className='backing-form-container'>
             <div className="errors">
-            {errors.map((error, ind) => (
+            {errors.length ?  errors.map((error, ind) => (
                 <div key={ind}>{error.split(':')[1]}</div>
-            ))}
+            )):null}
         </div>
-            <form className='backing-form' onSubmit={preSubmit}>
+            <form className='backing-form' onSubmit={handleSubmit}>
                 <input
                 className='backed-input'
                 placeholder='Amount'
                 required
+                value={backed}
                 onChange={(e) => setBacked(e.target.value)}/>
                 <button type='submit' className="backMoreBtn">Back More</button>
             </form>
