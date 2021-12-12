@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {useDispatch} from 'react-redux';
 import { Modal } from '../context/Modal';
 import DeleteRewardConfirmation from './DeleteRewardConfirmation'
-import '../OneProjectsPage/OneProjectsPage.css'
+import './DeleteRewardModal.css'
 
 function DeleteRewardModal({project_id, reward_id}) {
     const [showModal, setShowModal] = useState(false)
@@ -10,7 +10,7 @@ function DeleteRewardModal({project_id, reward_id}) {
   return (
     <div>
     <>
-        <button onClick={() => setShowModal(true)} className="deleteRewardBtn">Delete</button>
+        <button onClick={() => setShowModal(true)} className="deleteRewardFormBtn">Delete</button>
         {showModal && (
             <Modal onClose={() => setShowModal(false)}>
                 <DeleteRewardConfirmation project_id={project_id}  reward_id={reward_id} setShowModal={setShowModal}/>

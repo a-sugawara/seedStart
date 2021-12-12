@@ -107,15 +107,13 @@
     height: 100%;
 }
 
-.editRewardBtn, .deleteRewardBtn, .createRewardBtn{
+.editRewardBtn, .createRewardBtn{
     background-color: #BCC3C6;
     border: none;
     outline: none;
+    border-radius: 3px;
 }
 
-.createRewardBtn{
-    height: 30px;
-}
 .createRewardBtnContainer {
     overflow-y: hidden;
 }

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { createReward } from '../../store/project'
+import { createReward } from '../../store/project';
+import './RewardFormModal.css';
 
 const RewardForm = ({project_id, setShowModal}) => {
     const [title, setTitle] = useState('');
@@ -50,7 +51,7 @@ const RewardForm = ({project_id, setShowModal}) => {
                 placeholder='Price'
                 required
                 onChange= {(e) => setPrice(e.target.value)}/>
-                <button type='submit'>Submit</button>
+                <button type='submit' className="createRewardsBtn">Submit</button>
             </form>
         </div>
     )

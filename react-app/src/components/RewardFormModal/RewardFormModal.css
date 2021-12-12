@@ -1,0 +1,9 @@
+.createRewardsBtn {
+    background-color: #6D9688;
+    border: none;
+    border-radius: 2px;
+}
+.createRewardsBtn:hover {
+    background-color: #5b7e73;
+    cursor: pointer;
+}

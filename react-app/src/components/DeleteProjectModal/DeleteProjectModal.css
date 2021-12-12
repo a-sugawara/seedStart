@@ -1,4 +1,9 @@
-.form {
+.deleteProjectFormModal {
+    background-color: #6D9688;
+    border: none;
+    border-radius: 2px;
+}
+.deleteModal {
     padding: 15px 30px;
     border-radius: 4px;
     display: flex;
@@ -7,29 +12,16 @@
     justify-content: center;
     width: 100%;
 }
-.form-container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-}
-.project-title-input, .project-description-input, .project-price-input {
-    margin: 10px;
-    width: 80%;
-}
-.category-dropdown-menu {
-    width: 82.3%;
-}
-.editProjectModalBtn {
+.deleteModalBtn {
     background-color: #6D9688;
     border: none;
     border-radius: 2px;
-    overflow-y: hidden;
 }
-.editProjectModalBtn:hover {
+.deleteModalBtn:hover {
     background-color: #5b7e73;
     cursor: pointer;
 }
-.editProjectFormBtn {
+.deleteProjectFormBtn {
     background-color: #BCC3C6;
     border: none;
     border-radius: 2px;

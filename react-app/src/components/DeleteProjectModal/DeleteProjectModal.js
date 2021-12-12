@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Modal } from '../context/Modal';
 import DeleteProjectConfirmation from './DeleteConfirmation'
+import './DeleteProjectModal.css'
 
 
 function DeleteProjectModal({project}) {
@@ -9,7 +10,7 @@ function DeleteProjectModal({project}) {
   return (
     <div>
     <>
-        <button onClick={() => setShowModal(true)}>Delete</button>
+        <button onClick={() => setShowModal(true)} className="deleteProjectFormBtn">Delete Project</button>
         {showModal && (
             <Modal onClose={() => setShowModal(false)}>
                 <DeleteProjectConfirmation project={project} setShowModal={setShowModal}/>

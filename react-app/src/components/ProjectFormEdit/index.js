@@ -83,7 +83,7 @@ const ProjectFormEdit = ({setShowModal}) => {
                 placeholder='Price'
                 required
                 onChange= {(e) => setGoalAmount(e.target.value)}/>
-                <button className="editProjectBtn" type='submit'>Submit</button>
+                <button className="editProjectModalBtn" type='submit'>Submit Project</button>
             </form>
         </div>
     )

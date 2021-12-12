@@ -52,7 +52,7 @@ const RewardEditForm = ({project_id, reward_id, setShowModal}) => {
                 placeholder='Price'
                 required
                 onChange= {(e) => setPrice(e.target.value)}/>
-                <button type='submit' className="editRewardFormBtn">Submit</button>
+                <button type='submit' className="editRewardModalBtn">Submit Reward</button>
             </form>
         </div>
     )
