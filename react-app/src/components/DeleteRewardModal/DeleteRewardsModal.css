@@ -1,0 +1,21 @@
+.confirm{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4rem;
+}
+
+.delete-rew{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 13rem;
+    background-color:#6D9789;
+    box-shadow: none;
+    border: none;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+
+}
