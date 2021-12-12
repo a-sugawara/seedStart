@@ -12,7 +12,7 @@ function PostRewardModal({project_id}){
     return (
         <div className="createRewardBtnContainer">
         <>
-            <button onClick={() => setShowModal(true)} className="createRewardBtn">Create Reward</button>
+            <div onClick={() => setShowModal(true)} className="createRewardsBtn">Create Reward</div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <RewardForm project_id={project_id} setShowModal={setShowModal}/>

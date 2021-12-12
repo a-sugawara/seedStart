@@ -99,6 +99,7 @@
     margin-bottom: .25rem;
     height: 100%;
     overflow-x: none;
+    font-size: 100%;
 }
 
 .reward-info{
@@ -118,7 +119,7 @@
     height: 100%;
 }
 
-.editRewardBtn, .createRewardBtn{
+.editRewardBtn, .createRewardsBtn{
     background-color: #BCC3C6;
     border: none;
     outline: none;
@@ -131,9 +132,9 @@
     background-color: rgb(167, 174, 177);
 }
 
-.createRewardBtnContainer {
+/* .createRewardBtnContainer {
     overflow-y: hidden;
-}
+} */
 
 .amount-contributed{
     color: #000000;
@@ -234,6 +235,12 @@
         border-radius:5px;
         overflow: hidden;
         height: 100%;
+    }
+    .reward-description{
+        margin-bottom: .25rem;
+        min-height: 100%;
+
+        font-size: 70%;
     }
 
 }
