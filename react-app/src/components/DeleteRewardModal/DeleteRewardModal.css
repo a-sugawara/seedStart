@@ -8,6 +8,9 @@
     border: none;
     border-radius: 2px;
 }
+.deleteRewardFormBtn:hover {
+    background-color: rgb(167, 174, 177);
+}
 .deleteRewardModal {
     padding: 15px 30px;
     border-radius: 4px;

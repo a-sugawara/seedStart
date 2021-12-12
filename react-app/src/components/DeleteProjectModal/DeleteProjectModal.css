@@ -26,3 +26,6 @@
     border: none;
     border-radius: 2px;
 }
+.deleteProjectFormBtn:hover {
+    background-color: rgb(167, 174, 177);
+}

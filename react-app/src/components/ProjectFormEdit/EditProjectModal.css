@@ -34,3 +34,6 @@
     border: none;
     border-radius: 2px;
 }
+.editProjectFormBtn:hover {
+    background-color: rgb(167, 174, 177);
+}
