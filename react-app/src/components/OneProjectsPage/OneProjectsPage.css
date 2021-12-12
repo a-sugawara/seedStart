@@ -1,4 +1,5 @@
 .singleProject-wrapper{
+    margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     width:100%;
@@ -8,7 +9,7 @@
 
 .singleProject-title{
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
     display:flex;
     width: 100%;
     justify-content: center;
@@ -30,16 +31,19 @@
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius:5px;
-    overflow: hidden;
 }
 
 .singleProject-description{
     max-width: 30%;
     font-size: 20px;
 }
+.singleProject-description-header{
+    font-size: 30px;
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+}
 
 .rewardCard:hover{
-    /* box-shadow: 0 .1rem 5px #efe8cf6e; */
     transform: translateY(-2px) ;
     cursor: pointer;
 }
@@ -49,8 +53,8 @@
     height: .65rem;
     background-color: #BCC3C6;
     margin-top: 1rem;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    /* border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px; */
 }
 
 .progress-status{
@@ -62,7 +66,8 @@
 .singleProject-card-img{
     width: 450px;
     height: 350px;
-    /* aspect-ratio: 16/9; */
+    aspect-ratio: 16/9;
+    border-radius: 5px;
 }
 
 .rewardsContainer{
@@ -70,7 +75,7 @@
     flex-direction: column;
     align-items: center;
     max-height: 35rem;
-    overflow: hidden;
+    overflow-y: auto;
     background-color: #37393a;
     gap: 1.5rem;
     width: 100%;
@@ -79,6 +84,9 @@
 }
 
 .reward-title{
+    display: flex;
+    flex-direction: column;
+    min-height: 1.7rem;
     font-size: 1.5rem;
     font-weight: 500;
     text-align: center;
@@ -94,6 +102,8 @@
 }
 
 .reward-info{
+    display: flex;
+    flex-direction: column;
     max-width: 80%;
 
 }
@@ -108,17 +118,19 @@
     height: 100%;
 }
 
-.editRewardBtn, .deleteRewardBtn, .createRewardBtn{
-    background-color: #dfe1e2;
+.editRewardBtn, .createRewardBtn{
+    background-color: #BCC3C6;
     border: none;
     outline: none;
-    padding: 8px;
-    border-radius: 4px;
+    border-radius: 3px;
+    padding: 0.25rem 0.75rem;
+
 }
 
-.createRewardBtn{
-    height: 30px;
+.editRewardBtn:hover {
+    background-color: rgb(167, 174, 177);
 }
+
 .createRewardBtnContainer {
     overflow-y: hidden;
 }
@@ -176,14 +188,26 @@
         border-right: 1px solid rgba(0, 0, 0, 0.246);
         height: 60%;
         display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
         margin-right: .6rem;
         padding-right: .6rem;
+        font-size: 100%;
     }
 
     .reward-price{
         margin-right: 1rem;
+        margin-left: 1rem;
         width: 10rem;
+    }
+
+    .backing-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
     }
 
     .amount-contributed{
@@ -195,7 +219,21 @@
         display: flex;
         flex-direction: row;
         justify-content:center;
+        align-items: center;
         gap: 1rem;
+        margin-top: 1rem;
+    }
+    .reward-buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        height: 50px;
+        border-radius:5px;
+        overflow: hidden;
+        height: 100%;
     }
 
 }

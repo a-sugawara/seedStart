@@ -1,15 +1,9 @@
-.editRewardFormBtn {
-    margin-top: 10px;
-    border-radius: 50px;
-    padding: .5rem 1rem;
+.editRewardModalBtn {
+    background-color: #6D9688;
     border: none;
-    outline: none;
-    background-color: #6D9789;
-    color: white;
-    width: 80%;
-    overflow-y: hidden;
+    border-radius: 2px;
 }
-.editRewardFormBtn:hover {
+.editRewardModalBtn:hover {
     background-color: #5b7e73;
     cursor: pointer;
 }

@@ -1,0 +1,28 @@
+.deleteRewardModalBtn {
+    background-color: #6D9688;
+    border: none;
+    border-radius: 2px;
+}
+.deleteRewardFormBtn {
+    background-color: #BCC3C6;
+    border: none;
+    border-radius: 2px;
+    padding: 0.25rem 0.75rem;
+}
+.deleteRewardFormBtn:hover {
+    background-color: rgb(167, 174, 177);
+}
+.deleteRewardModal {
+    padding: 15px 30px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+}
+.deleteRewardModalBtn:hover {
+    background-color: #5b7e73;
+    cursor: pointer;
+}

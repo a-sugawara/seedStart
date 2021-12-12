@@ -1,49 +1,35 @@
-.form {
+.deleteProjectFormModal {
+    background-color: #6D9688;
+    border: none;
+    border-radius: 2px;
+}
+.deleteModal {
     padding: 15px 30px;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    gap: 1rem;
-}
-.form-container {
-    display: flex;
-    height: 75%;
-    width: 100%;
     background-color: white;
-}
-
-.project-title-input, .project-description-input, .project-price-input {
-    margin: 0;
     width: 100%;
 }
-.input-field{
-    width: 100%;
-}
-.category-dropdown-menu {
-    width: 103%;
-
-}
-
-.editProjectModalBtn {
+.deleteModalBtn {
     background-color: #6D9688;
     border: none;
     border-radius: 2px;
-    overflow-y: hidden;
+    padding: 0.25rem 0.75rem;
 }
-.editProjectModalBtn:hover {
+.deleteModalBtn:hover {
     background-color: #5b7e73;
     cursor: pointer;
 }
-.editProjectFormBtn {
+.deleteProjectFormBtn {
     background-color: #BCC3C6;
     border: none;
     border-radius: 2px;
     padding: 0.25rem 0.75rem;
     font-size: 1rem;
 }
-.editProjectFormBtn:hover {
+.deleteProjectFormBtn:hover {
     background-color: rgb(167, 174, 177);
 }

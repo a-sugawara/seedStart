@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { allProjects, removeProject } from '../../store/project'
-import './DeleteConfirmation.css'
+
+import './DeleteProjectModal.css'
+
 
 const DeleteProjectConfirmation = () => {
     const history = useHistory()
@@ -18,9 +20,10 @@ const DeleteProjectConfirmation = () => {
     }
 
     return (
-        <div className="delete-confirm">
-            <p className="confirm">Are you sure you want to delete this project?</p>
-            <button type="submit" onClick={handleDelete} className="delete-rew">Delete</button>
+
+        <div className="deleteModal">
+            <p>Are you sure you want to delete this project?</p>
+            <button type="submit" onClick={handleDelete} className="deleteModalBtn">Delete</button>
         </div>
     )
 }

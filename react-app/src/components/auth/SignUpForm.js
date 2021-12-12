@@ -46,7 +46,7 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className="login-container">
+    <div className="signup-container">
       <div className="sidebar"></div>
       <form onSubmit={onSignUp} className="login-modal">
         <div className="errors">

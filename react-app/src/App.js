@@ -87,6 +87,13 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
+        <Route>
+        <center>
+            <h1 id="h1404">404:</h1>
+            <p>Page Not Found</p>
+            <img alt="test" style={{filter: "grayscale(100%)", border: "10px solid transparent"}} height="450" width="650" src="https://ca-times.brightspotcdn.com/dims4/default/ef6e205/2147483647/strip/true/crop/2048x1367+0+0/resize/1486x992!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc1%2Fbe%2F09f63c9e5ce1f5af817eee063724%2Fla-na-portland-water-scare-water-bottles-sold-001"></img>
+        </center>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

@@ -5,7 +5,6 @@
 *{
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
 }
 a{
     color: #000000
@@ -80,8 +79,9 @@ a{
     background-color:#fff;
     height:100%;
     width:10%;
-    font-size: 1.25em;
+    font-size: 1.2vw;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 .search-btn:hover{
  color:#6D9688;
@@ -91,6 +91,7 @@ a{
 .errors{
     color: rgb(202, 0, 0);
     font-weight: 500;
+    font-size: 0.75rem;
 }
 .project-wrapper{
     display: flex;
