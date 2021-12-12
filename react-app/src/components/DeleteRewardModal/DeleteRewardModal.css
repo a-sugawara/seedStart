@@ -7,6 +7,7 @@
     background-color: #BCC3C6;
     border: none;
     border-radius: 2px;
+    padding: 0.25rem 0.75rem;
 }
 .deleteRewardFormBtn:hover {
     background-color: rgb(167, 174, 177);

@@ -10,7 +10,7 @@ function DeleteProjectModal({project}) {
   return (
     <div>
     <>
-        <button onClick={() => setShowModal(true)} className="deleteProjectFormBtn">Delete Project</button>
+        <div onClick={() => setShowModal(true)} className="deleteProjectFormBtn">Delete Project</div>
         {showModal && (
             <Modal onClose={() => setShowModal(false)}>
                 <DeleteProjectConfirmation project={project} setShowModal={setShowModal}/>

@@ -16,6 +16,7 @@
     background-color: #6D9688;
     border: none;
     border-radius: 2px;
+    padding: 0.25rem 0.75rem;
 }
 .deleteModalBtn:hover {
     background-color: #5b7e73;
@@ -25,6 +26,8 @@
     background-color: #BCC3C6;
     border: none;
     border-radius: 2px;
+    padding: 0.25rem 0.75rem;
+    font-size: 1rem;
 }
 .deleteProjectFormBtn:hover {
     background-color: rgb(167, 174, 177);
