@@ -10,7 +10,7 @@ function DeleteRewardModal({project_id, reward_id}) {
   return (
     <div>
     <>
-        <button onClick={() => setShowModal(true)} className="deleteRewardFormBtn">Delete</button>
+        <div onClick={() => setShowModal(true)} className="deleteRewardFormBtn" >Delete</div>
         {showModal && (
             <Modal onClose={() => setShowModal(false)}>
                 <DeleteRewardConfirmation project_id={project_id}  reward_id={reward_id} setShowModal={setShowModal}/>

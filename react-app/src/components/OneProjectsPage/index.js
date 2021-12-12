@@ -56,7 +56,7 @@ export default function OneProjectPage(){
     }
 
     let rewards = project?.rewards?.sort((a,b) => a[2]-b[2]).map((reward) => {
-        let test
+        let test=null
         for(let i = 0; i < project?.backing.length; i++) {
             if(project.backing[i][1] === user_id) {
                 if(project.backing[i][0] >= reward[2]){
@@ -81,8 +81,10 @@ export default function OneProjectPage(){
                 </div>
             </div>
             <div className="reward-buttons">
-                {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
-                {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
+                <div>hi</div>
+                <div>bye</div>
+                {/* {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
+                {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null} */}
             </div>
             {test}
         </div>
