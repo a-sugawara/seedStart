@@ -1,0 +1,22 @@
+.editRewardFormBtn {
+    margin-top: 10px;
+    border-radius: 50px;
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    background-color: #6D9789;
+    color: white;
+    width: 80%;
+    overflow-y: hidden;
+}
+.editRewardFormBtn:hover {
+    background-color: #5b7e73;
+    cursor: pointer;
+}
+.editRewardBtn {
+
+}
+.reward-title-input, .reward-description-input, .reward-price-input {
+    margin: 10px;
+    width: 80%;
+}

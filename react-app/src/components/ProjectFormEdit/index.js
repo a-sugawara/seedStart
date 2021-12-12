@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { editProject } from '../../store/project'
 import {oneProject} from  '../../store/project'
+import './EditProjectModal.css'
 
 const ProjectFormEdit = ({setShowModal}) => {
     const [title, setTitle] = useState('');
@@ -48,6 +49,7 @@ const ProjectFormEdit = ({setShowModal}) => {
 
     return (
         <div className='form-container'>
+            <div className="sidebar2"></div>
             <div className="errors">
                 {errors.map((error, ind) => (
                 <div key={ind}>{error.split(':')[1]}</div>
@@ -66,22 +68,22 @@ const ProjectFormEdit = ({setShowModal}) => {
                 onChange= {(e) => setDescription(e.target.value)}/>
                 <select className='category-dropdown-menu'
                 onChange={(e) => setCategoryId(e.target.value)}>
-                    <option value={1}>{categories[0]}</option>
-                    <option value={2}>{categories[1]}</option>
-                    <option value={3}>{categories[2]}</option>
-                    <option value={4}>{categories[3]}</option>
-                    <option value={5}>{categories[4]}</option>
-                    <option value={6}>{categories[5]}</option>
-                    <option value={7}>{categories[6]}</option>
-                    <option value={8}>{categories[7]}</option>
-                    <option value={9}>{categories[8]}</option>
+                    <option className="value" value={1}>{categories[0]}</option>
+                    <option className="value" value={2}>{categories[1]}</option>
+                    <option className="value" value={3}>{categories[2]}</option>
+                    <option className="value" value={4}>{categories[3]}</option>
+                    <option className="value" value={5}>{categories[4]}</option>
+                    <option className="value" value={6}>{categories[5]}</option>
+                    <option className="value" value={7}>{categories[6]}</option>
+                    <option className="value" value={8}>{categories[7]}</option>
+                    <option className="value" value={9}>{categories[8]}</option>
                 </select>
                 <input
                 className='project-price-input'
                 placeholder='Price'
                 required
                 onChange= {(e) => setGoalAmount(e.target.value)}/>
-                <button type='submit'>Submit</button>
+                <button className="editProjectBtn" type='submit'>Submit</button>
             </form>
         </div>
     )
