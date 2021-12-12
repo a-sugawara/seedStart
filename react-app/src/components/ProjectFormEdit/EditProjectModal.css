@@ -6,19 +6,26 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    gap: 1rem;
 }
 .form-container {
     display: flex;
     height: 100%;
     width: 100%;
 }
+
 .project-title-input, .project-description-input, .project-price-input {
-    margin: 10px;
-    width: 80%;
+    margin: 0;
+    width: 100%;
+}
+.input-field{
+    width: 100%;
 }
 .category-dropdown-menu {
-    width: 82.3%;
+    width: 103%;
+
 }
+
 .editProjectModalBtn {
     background-color: #6D9688;
     border: none;
