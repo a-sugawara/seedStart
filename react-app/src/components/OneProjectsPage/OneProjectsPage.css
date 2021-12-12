@@ -90,6 +90,7 @@
 .reward-description{
     margin-bottom: .25rem;
     height: 100%;
+    overflow-x: none;
 }
 
 .reward-info{
@@ -108,9 +109,11 @@
 }
 
 .editRewardBtn, .deleteRewardBtn, .createRewardBtn{
-    background-color: #BCC3C6;
+    background-color: #dfe1e2;
     border: none;
     outline: none;
+    padding: 8px;
+    border-radius: 4px;
 }
 
 .createRewardBtn{

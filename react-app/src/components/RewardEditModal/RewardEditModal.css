@@ -13,9 +13,7 @@
     background-color: #5b7e73;
     cursor: pointer;
 }
-.editRewardBtn {
 
-}
 .reward-title-input, .reward-description-input, .reward-price-input {
     margin: 10px;
     width: 80%;
