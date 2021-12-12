@@ -18,24 +18,24 @@ const ProjectFormEdit = ({setShowModal}) => {
 
     const validator = () => {
         let error = []
-        if (+goal_amount < 1) {
-            error.push('. : Goal - Please enter a whole number greater than 0')
+        if (+goal_amount < 50) {
+            error.push('. : Goal - must be at least $50')
         }
         else if (!Boolean(+goal_amount)) {
             error.push('. : Goal - Please enter a number')
         }
         else if (+goal_amount % 1 !== 0) {
             error.push('. : Goal - Please enter a whole number')
-        } 
+        }
 
         if(title.length > 80) {
             error.push('. : Title - Please enter a title shorter than 80 characters')
-        } 
+        }
 
         if(description.length > 500) {
             error.push('. : Descriptions cannot exceed 500 characters')
-        } else if(description.length < 5) {
-            error.push('. : Descriptions need to be at least 5 characters')
+        } else if(description.length < 20) {
+            error.push('. : Descriptions need to be at least 20 characters')
         }
         return error;
     }
