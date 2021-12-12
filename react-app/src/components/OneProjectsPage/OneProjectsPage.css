@@ -30,7 +30,6 @@
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius:5px;
-    overflow: hidden;
 }
 
 .singleProject-description{
@@ -39,7 +38,6 @@
 }
 
 .rewardCard:hover{
-    /* box-shadow: 0 .1rem 5px #efe8cf6e; */
     transform: translateY(-2px) ;
     cursor: pointer;
 }
@@ -70,7 +68,7 @@
     flex-direction: column;
     align-items: center;
     max-height: 35rem;
-    overflow: hidden;
+    overflow-y: auto;
     background-color: #37393a;
     gap: 1.5rem;
     width: 100%;
@@ -107,19 +105,20 @@
     height: 100%;
 }
 
-.editRewardBtn, .createRewardBtn{
+/* .editRewardBtn, .createRewardBtn{
     background-color: #BCC3C6;
     border: none;
     outline: none;
     border-radius: 3px;
-}
-.editRewardBtn:hover {
+} */
+
+/* .editRewardBtn:hover {
     background-color: rgb(167, 174, 177);
 }
 
 .createRewardBtnContainer {
     overflow-y: hidden;
-}
+} */
 
 .amount-contributed{
     color: #000000;
