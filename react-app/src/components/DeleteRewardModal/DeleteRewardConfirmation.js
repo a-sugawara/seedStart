@@ -6,7 +6,7 @@ import { allProjects, removeReward } from '../../store/project'
 import './DeleteRewardModal.css'
 
 
-const DeleteRewardConfirmation = ({reward_id}) => {
+const DeleteRewardConfirmation = ({reward_id, setShowModal}) => {
     // const history = useHistory()
     // const {projectId} = useParams()
     const dispatch = useDispatch()
@@ -15,6 +15,7 @@ const DeleteRewardConfirmation = ({reward_id}) => {
         e.preventDefault()
 
         dispatch(removeReward(reward_id))
+        setShowModal(false)
         // history.push('/')
     }
 
