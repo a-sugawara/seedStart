@@ -8,7 +8,7 @@ import "./Splash.css"
 
 export default function Splash({projectsArr}) {
     const [idx, setIdx] = useState(0)
-    const [classs, setClasss]=useState("small")
+    const [classs, setClasss]=useState("tiny")
     let {projects: splashProjects} = useSelector(state => state?.project)
     const singleProject = (
         splashProjects[idx]
@@ -62,8 +62,10 @@ export default function Splash({projectsArr}) {
           <div className="splash-top">
               <div className="left splashbox">
                   <div className="left-text">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-            quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat
+
+                <p>At <span>Seed Starter</span> our mission is to help give a platform to help sprout the seeds of those in need. Much of the world is far too concerned about profits and bottom lines.
+                We believe it is our duty to help those who help the world. Our projects vary from Eco-tech to community based projects. <span>Press the circles to see more projects!</span>
+            </p>
                   </div>
               </div>
               <div className="mid splashbox">
@@ -90,15 +92,15 @@ export default function Splash({projectsArr}) {
                   {/* <div>
                       Click me for random projects!
                   </div> */}
-                      <div onClick={() => small() } className="circle one">
+                      <div onClick={() => small() } className={`circle one one${classs}` }>
                       </div>
-                      <div onClick={() => med()} className="circle two">
+                      <div onClick={() => med()} className={`circle two two${classs}` }>
                       </div>
-                      <div onClick={() => xmed()} className="circle three">
+                      <div onClick={() => xmed()} className={`circle three three${classs}` }>
                       </div>
-                      <div onClick={() => large()} className="circle four">
+                      <div onClick={() => large()} className={`circle four four${classs}` }>
                       </div>
-                      <div onClick={() => xlarge()} className="circle five">
+                      <div onClick={() => xlarge()} className={`circle five five${classs}` }>
                       </div>
                   </div>
                   <NavLink to='/projects'className="bottom">

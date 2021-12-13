@@ -21,9 +21,13 @@ const DeleteRewardConfirmation = ({reward_id}) => {
     return (
 
         <div className="deleteRewardModal">
-            <p>Are you sure you want to delete this reward?</p>
-            <button type="submit" onClick={handleDelete} className="deleteRewardModalBtn">Delete Reward</button>
+                <div className="sidebar2"></div>
+            <div className="form">
+                <p>Are you sure you want to delete this reward?</p>
+                <button type="submit" onClick={handleDelete} className="deleteRewardModalBtn">Delete Reward</button>
+            </div>
         </div>
+
     )
 }
 

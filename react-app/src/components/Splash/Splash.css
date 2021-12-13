@@ -26,9 +26,15 @@
     flex-direction: column;
 }
 .left-text{
-    margin: 4rem;
+    margin: 0 4rem;
     font-size: calc((1.75vh + 0.25vw));
     color: #7e8385;
+}
+.left-text > p> span{
+
+    font-size: calc((1.75vh + 0.25vw));
+    color: #7e8385;
+    font-weight: 700;
 }
 .right-text{
     margin: 3rem;
@@ -95,6 +101,35 @@
 .five{
     background-color:#fff;
     margin-right: 5rem;
+}
+.onesmall{
+    background-color:#EFE8CF;
+    margin-left: 5rem;
+    height: calc(4vh);
+    width: calc(4vh);
+}
+.twomed{
+    background-color:#A39E8D;
+    height: calc(4vh);
+    width: calc(4vh);
+}
+.threexmed{
+    background-color:#6D9789;
+    height: calc(4vh);
+    width: calc(4vh);
+
+}
+.fourlarge{
+    background-color:#BBD8C3;
+    height: calc(4vh);
+    width: calc(4vh);
+
+}
+.fivexlarge{
+    background-color:#fff;
+    margin-right: 5rem;
+    height: calc(4vh);
+    width: calc(4vh);
 }
 .top{
     height: 50%;
@@ -247,6 +282,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.tiny{
+    height:2rem;
 }
 .small{
     height:3rem;

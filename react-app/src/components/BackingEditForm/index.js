@@ -23,7 +23,7 @@ const BackingEditForm = ({user_id, project_id, backing_id, amount_backed}) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const errorsArr = validator();
-        
+
         if(errorsArr.length) {
             setErrors(errorsArr)
             return;
@@ -46,12 +46,12 @@ const BackingEditForm = ({user_id, project_id, backing_id, amount_backed}) => {
 
     return (
         <div className='backing-form-container'>
+            <form className='backing-form' onSubmit={handleSubmit}>
             <div className="errors">
             {errors.length ?  errors.map((error, ind) => (
                 <div key={ind}>{error.split(':')[1]}</div>
             )):null}
         </div>
-            <form className='backing-form' onSubmit={handleSubmit}>
                 <input
                 className='backed-input'
                 placeholder='Amount'
