@@ -30,6 +30,7 @@
     border-radius: 2px;
     padding: 0.25rem 0.75rem;
     font-size: 1rem;
+    cursor: pointer;
 }
 .deleteProjectFormBtn:hover {
     background-color: rgb(167, 174, 177);

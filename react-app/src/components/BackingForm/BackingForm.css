@@ -22,6 +22,7 @@
     margin-left: .7rem;
     color: #37393a;
     /* margin-right: 0; */
+    cursor: pointer;
 }
 
 .backBtn:hover, .backMoreBtn:hover {
