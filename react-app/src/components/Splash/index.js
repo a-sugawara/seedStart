@@ -63,8 +63,9 @@ export default function Splash({projectsArr}) {
               <div className="left splashbox">
                   <div className="left-text">
 
-                <p>At <span>Seed Starter</span> our mission is to help give a platform to help sprout the seeds of those in need. Much of the world is far too concerned about profits and bottom lines.
-                We believe it is our duty to help those who help the world. Our projects vary from Eco-tech to community based projects. <span>Press the circles to see more projects!</span>
+                <p><span>Seed Starter</span> started with an idea: aim to be a platform that provides seed funding to community-driven projects.
+                From our community to yours, we believe those closest to the problem know how to solve it best. <span>Press a circle to see featured projects.</span>
+                <p>For communities, by communities. <br/>Get your start here.</p>
             </p>
                   </div>
               </div>
