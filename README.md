@@ -63,6 +63,10 @@ You can view our API routes [here](https://github.com/ad-sw/SeedStarter/wiki/Bac
 
 Our frontend routes can be viewed [here](https://github.com/ad-sw/SeedStarter/wiki/Backend-Routes)
 
+## Challenges We Faced
+
+- One problem we faced was that the random number generator that we used on the splash page would generate a random array for every click. In order to solve that, we prop threaded the random number array into the splash component to avoid re-rendering the array.
+
 
 ## How To Run Locally
 1. Clone this repository (only this branch)
@@ -196,5 +200,7 @@ of your Heroku app in the url and tag name:
 
 ## Future Features
 
-- Add likes to projects
-- User profiles with full CRUD
+- Add likes and comments to projects.
+- User profiles with full CRUD, that also shows projects they've supported and created.
+- -adviser matchmaking with projects to industry experts or ppl with a history of successful project implementation, to help with any risks a project may have during implemenetation
+-potential coaching offered to well-funded projects with successful campaigns & community traction (comments & likes).
