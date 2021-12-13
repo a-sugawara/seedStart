@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Modal } from '../context/Modal';
 import RewardForm from './RewardForm';
-// import createReward from '../../store/project'
 import '../OneProjectsPage/OneProjectsPage.css'
-
+import './RewardFormModal.css';
 
 function PostRewardModal({project_id}){
     const [showModal, setShowModal] = useState(false)
