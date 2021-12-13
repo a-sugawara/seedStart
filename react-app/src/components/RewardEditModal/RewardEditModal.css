@@ -4,6 +4,7 @@
     border-radius: 5px;
     padding: .5rem 2rem;
     font-size: 1rem;
+    cursor: pointer;
 }
 .editRewardModalBtn:hover {
     background-color: #5b7e73;

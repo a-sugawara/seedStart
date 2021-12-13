@@ -45,7 +45,6 @@
 
 .rewardCard:hover{
     transform: translateY(-2px) ;
-    cursor: pointer;
 }
 
 .progress-bar{
@@ -81,7 +80,39 @@
     width: 100%;
     padding: 1rem 0;
     border-radius: 10px;
+    overflow-x: hidden;
 }
+/* width */
+.rewardsContainer::-webkit-scrollbar {
+    width: 12px;
+}
+
+  /* Track */
+.rewardsContainer::-webkit-scrollbar-track {
+    background: #f3f3f3;
+}
+
+  /* Handle */
+.rewardsContainer::-webkit-scrollbar-thumb {
+    background: #3a3c3d;
+    border: #484b4c solid 1.85px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-clip: padding-box;
+}
+
+  /* Handle on hover */
+.rewardsContainer::-webkit-scrollbar-thumb:hover {
+    background: #343536;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-clip: padding-box;
+}
+/*
+.rewardsContainer::-webkit-scrollbar-track-piece {
+    margin-bottom: 1px;
+} */
 
 .reward-title{
     display: flex;
@@ -126,7 +157,7 @@
     border-radius: 3px;
     padding: 0.25rem 0.75rem;
     font-size: 1rem;
-
+    cursor: pointer;
 }
 
 .editRewardBtn:hover {

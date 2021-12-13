@@ -61,7 +61,7 @@ const RewardForm = ({project_id, setShowModal,atitle,adescription, aprice}) => {
 
     return (
         <div className='form-container'>
-            
+
             <div className="sidebar"></div>
             <form className='form' onSubmit={handleSubmit}>
             <div className="errors">
@@ -84,7 +84,7 @@ const RewardForm = ({project_id, setShowModal,atitle,adescription, aprice}) => {
                 placeholder='Price'
                 required
                 onChange= {(e) => setPrice(e.target.value)}/>
-                <button type='submit' className="createRewardsBtn">Submit</button>
+                <button type='submit' className="createRewardsBtn">Create Reward</button>
             </form>
         </div>
     )
