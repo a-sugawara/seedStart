@@ -4,10 +4,11 @@ import { Redirect } from "react-router-dom";
 import { createReward } from '../../store/project';
 import './RewardFormModal.css';
 
-const RewardForm = ({project_id, setShowModal}) => {
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [price, setPrice] = useState(0);
+const RewardForm = ({project_id, setShowModal,atitle,adescription, aprice}) => {
+
+    const [title, setTitle] = useState(atitle);
+    const [description, setDescription] = useState(adescription);
+    const [price, setPrice] = useState(aprice);
     const [errors, setErrors] = useState([]);
 
     const dispatch = useDispatch();
@@ -60,12 +61,14 @@ const RewardForm = ({project_id, setShowModal}) => {
 
     return (
         <div className='form-container'>
+            
+            <div className="sidebar"></div>
+            <form className='form' onSubmit={handleSubmit}>
             <div className="errors">
                 {errors.map((error, ind) => (
                 <div key={ind}>{error.split(':')[1]}</div>
             ))}
             </div>
-            <form className='form' onSubmit={handleSubmit}>
                 <input
                 className='reward-title-input'
                 placeholder='Title'

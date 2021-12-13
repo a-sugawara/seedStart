@@ -2,11 +2,18 @@
     background-color: #6D9688;
     border: none;
     border-radius: 2px;
+    padding: 0.5rem 1rem;
 }
-.createRewardsBtn:hover {
+.createRewardsBtn-plus {
+    background-color: #6D9688;
+    border: none;
+    border-radius: 8px;
+    font-size: 4rem;
+    font-weight: 500;
+    color:white;
+    padding: 1rem 2rem;
+}
+.createRewardsBtn-plus:hover {
     background-color: #5b7e73;
     cursor: pointer;
-}
-.createRewardsBtn:hover {
-    background-color: rgb(167, 174, 177);
 }

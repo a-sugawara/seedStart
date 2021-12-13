@@ -2,6 +2,7 @@
     background-color: #6D9688;
     border: none;
     border-radius: 2px;
+
 }
 .deleteModal {
     padding: 15px 30px;
@@ -14,13 +15,13 @@
     width: 100%;
 }
 .deleteModalBtn {
-    background-color: #6D9688;
+    background-color: #fd3c2e8c;
     border: none;
     border-radius: 2px;
-    padding: 0.25rem 0.75rem;
+    padding: 0.5rem 1.5rem;
 }
 .deleteModalBtn:hover {
-    background-color: #5b7e73;
+    background-color: #fd3c2ec4;
     cursor: pointer;
 }
 .deleteProjectFormBtn {

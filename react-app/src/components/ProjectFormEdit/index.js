@@ -5,11 +5,19 @@ import { editProject } from '../../store/project'
 import {oneProject} from  '../../store/project'
 import './EditProjectModal.css'
 
-const ProjectFormEdit = ({setShowModal}) => {
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [category_id, setCategoryId] = useState(1);
-    const [goal_amount, setGoalAmount] = useState('');
+const ProjectFormEdit = ({
+    setShowModal,
+    aproject_id,
+    atitle,
+    aimage_url,
+    agoal_amount,
+    acategory_id,
+    adescription,
+}) => {
+    const [title, setTitle] = useState(atitle);
+    const [description, setDescription] = useState(adescription);
+    const [category_id, setCategoryId] = useState(acategory_id);
+    const [goal_amount, setGoalAmount] = useState(agoal_amount);
     const [errors, setErrors] = useState([])
     const {projectId} = useParams()
 
@@ -32,11 +40,15 @@ const ProjectFormEdit = ({setShowModal}) => {
             error.push('. : Title - Please enter a title shorter than 80 characters')
         }
 
-        if(description.length > 500) {
+        if(description.length > 2000) {
             error.push('. : Descriptions cannot exceed 500 characters')
         } else if(description.length < 20) {
             error.push('. : Descriptions need to be at least 20 characters')
         }
+
+        // if(category_id === "null"){
+        //     error.push('. : Please select a category')
+        // }
         return error;
     }
 
@@ -54,7 +66,7 @@ const ProjectFormEdit = ({setShowModal}) => {
                 user_id,
                 title,
                 description,
-                category_id,
+                category_id:+category_id,
                 goal_amount,
             }
             const data = await dispatch(editProject(projectId, projectInfo));
@@ -79,7 +91,7 @@ const ProjectFormEdit = ({setShowModal}) => {
 
     return (
         <div className='form-container'>
-            <div className="sidebar2"></div>
+            <div className="sidebar"></div>
             <form className='form' onSubmit={handleSubmit}>
                 <div className="errors">
                     {errors.map((error, ind) => (
@@ -87,18 +99,19 @@ const ProjectFormEdit = ({setShowModal}) => {
                 ))}
                 </div>
                 <input
-                className='project-title-input input-field'
+                className='reward-title-input'
                 placeholder='Title'
                 required
                 value={title}
                 onChange= {(e) => setTitle(e.target.value)}/>
                 <input
-                className='project-description-input input-field'
+                className='reward-description-input'
                 placeholder='Description'
                 required
                 value={description}
                 onChange= {(e) => setDescription(e.target.value)}/>
-                <select className='category-dropdown-menu input-field'
+                <select className='reward-price-input'
+                required
                 onChange={(e) => setCategoryId(e.target.value)}>
                     <option className="value" value={1}>{categories[0]}</option>
                     <option className="value" value={2}>{categories[1]}</option>
@@ -111,7 +124,7 @@ const ProjectFormEdit = ({setShowModal}) => {
                     <option className="value" value={9}>{categories[8]}</option>
                 </select>
                 <input
-                className='project-price-input input-field'
+                className='reward-price-input'
                 placeholder='Price'
                 required
                 value={goal_amount}

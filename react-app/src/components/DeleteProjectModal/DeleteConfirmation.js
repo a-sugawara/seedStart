@@ -21,9 +21,12 @@ const DeleteProjectConfirmation = () => {
 
     return (
 
-        <div className="deleteModal">
+        <div className="deleteRewardModal">
+            <div className="sidebar2"></div>
+        <div className="form">
             <p>Are you sure you want to delete this project?</p>
             <button type="submit" onClick={handleDelete} className="deleteModalBtn">Delete</button>
+        </div>
         </div>
     )
 }

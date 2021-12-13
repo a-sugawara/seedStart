@@ -15,6 +15,14 @@
     border-bottom-left-radius: 4px;
     background-color: #6D9789;
 }
+.sidebar2{
+    display: flex;
+    height: 100%;
+    width: 3rem;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: #fd3c2ea9;
+}
 
 /* this is on the Login.css page */
 /* .login-modal{

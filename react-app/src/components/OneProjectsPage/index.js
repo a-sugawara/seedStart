@@ -42,7 +42,15 @@ export default function OneProjectPage(){
             projectButtons =
                 <div className="navbtn-holder">
                     <div>
-                        <EditProjectModal project_id={projectId} />
+                        <EditProjectModal
+                            project_id={projectId}
+                            image_url={project?.images[0]}
+                            goal_amount={project?.goal_amount}
+                            category_id={project?.category_id}
+                            description={project?.description}
+                            title={project?.title}
+
+                        />
                     </div>
                     <div>
                         <DeleteProjectModal project_id={projectId}/>
@@ -82,7 +90,13 @@ export default function OneProjectPage(){
             </div>
             <div className="reward-buttons">
 
-                {(user_id === project.user_id) ? <EditRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
+                {(user_id === project.user_id) ? <EditRewardModal
+                    project_id={projectId}
+                    reward_id={reward[3]}
+                    title={reward[0]}
+                    description={reward[1]}
+                    price={reward[2]}
+                    /> : null}
                 {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
             </div>
             {test}

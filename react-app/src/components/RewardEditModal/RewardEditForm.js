@@ -4,10 +4,10 @@ import { Redirect } from "react-router-dom";
 import { putReward} from '../../store/project'
 import './RewardEditModal.css'
 
-const RewardEditForm = ({project_id, reward_id, setShowModal}) => {
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [price, setPrice] = useState(0);
+const RewardEditForm = ({project_id, reward_id,atitle,adescription, aprice, setShowModal}) => {
+    const [title, setTitle] = useState(atitle);
+    const [description, setDescription] = useState(adescription);
+    const [price, setPrice] = useState(aprice);
     const [errors, setErrors] = useState([]);
 
     const dispatch = useDispatch();
@@ -61,26 +61,31 @@ const RewardEditForm = ({project_id, reward_id, setShowModal}) => {
 
     return (
         <div className='form-container'>
-            <div className="errors">
-                {errors.map((error, ind) => (
-                <div key={ind}>{error.split(':')[1]}</div>
-            ))}
-            </div>
+            {console.log(atitle, adescription,aprice)}
+            <div className="sidebar"></div>
             <form className='form' onSubmit={handleSubmit}>
+                <div className="errors">
+                    {errors.map((error, ind) => (
+                    <div key={ind}>{error.split(':')[1]}</div>
+                ))}
+                </div>
                 <input
                 className='reward-title-input'
                 placeholder='Title'
                 required
+                value={title}
                 onChange= {(e) => setTitle(e.target.value)}/>
                 <input
                 className='reward-description-input'
                 placeholder='Description'
                 required
+                value={description}
                 onChange= {(e) => setDescription(e.target.value)}/>
                 <input
                 className='reward-price-input'
                 placeholder='Price'
                 required
+                value={price}
                 onChange= {(e) => setPrice(e.target.value)}/>
                 <button type='submit' className="editRewardModalBtn">Submit Reward</button>
             </form>
