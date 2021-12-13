@@ -45,3 +45,8 @@
     width: 80%;
     overflow-y: hidden;
 }
+
+.project-submit-button:hover {
+    background-color: #5b7e73;
+    cursor: pointer;
+}

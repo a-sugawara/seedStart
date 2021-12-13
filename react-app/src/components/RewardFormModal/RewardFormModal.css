@@ -4,6 +4,10 @@
     border-radius: 2px;
     padding: 0.5rem 1rem;
 }
+.createRewardsBtn:hover {
+    background-color: #5b7e73;
+    cursor: pointer;
+}
 .createRewardsBtn-plus {
     background-color: #6D9688;
     border: none;
