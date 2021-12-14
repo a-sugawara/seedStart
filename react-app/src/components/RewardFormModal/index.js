@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { Modal } from '../context/Modal';
 import RewardForm from './RewardForm';
 import '../OneProjectsPage/OneProjectsPage.css'

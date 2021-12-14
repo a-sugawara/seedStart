@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import{NavLink } from 'react-router-dom'
-import {allProjects} from  '../../store/project'
-import Footer from "../Footer/Footer";
+// import {allProjects} from  '../../store/project'
+// import Footer from "../Footer/Footer";
 import "./Splash.css"
 
 
@@ -17,7 +17,7 @@ export default function Splash({projectsArr}) {
     const singleProjectCard = <NavLink to={`/projects/${singleProject?.id}`}>
         <div className="sproject-card">
             <div className="simage-bar">
-                <img className="sproject-card-img" src={singleProject?.images[0]}/>
+                <img className="sproject-card-img" alt="sproject-card-img" src={singleProject?.images[0]}/>
                 <div className="sprogress-bar-all">
                     <div className="sprogress-status-all"
                     style={{width:`${(singleProject?.backing?.reduce((acc, a)=>acc+a,0)) / (singleProject?.goal_amount) * 100}%`}}></div>
@@ -76,8 +76,8 @@ export default function Splash({projectsArr}) {
               </div>
               <div className="right splashbox">
                 <div className="plant">
-                    <img className={`splash-logo-img-top ${classs} `} src={"https://cdn.discordapp.com/attachments/898413474080772116/919162139489476658/justLeaves.png"}/>
-                    <img className="splash-logo-img-bottom" src={"https://cdn.discordapp.com/attachments/898413474080772116/919162139715985469/justPot.png"}/>
+                    <img className={`splash-logo-img-top ${classs} `} alt="plant leaves" src={"https://cdn.discordapp.com/attachments/898413474080772116/919162139489476658/justLeaves.png"}/>
+                    <img className="splash-logo-img-bottom" alt="plant pot" src={"https://cdn.discordapp.com/attachments/898413474080772116/919162139715985469/justPot.png"}/>
                 </div>
                 <div className="right-text">
                     Seed Starter
