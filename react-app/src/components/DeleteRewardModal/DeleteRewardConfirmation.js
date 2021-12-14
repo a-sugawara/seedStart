@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+// import { useHistory, useParams } from "react-router-dom";
 import { allProjects, removeReward } from '../../store/project'
 
 import './DeleteRewardModal.css'

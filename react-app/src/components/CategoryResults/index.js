@@ -15,7 +15,7 @@ export default function CategoryResults(){
         <NavLink key={idx} to={`/projects/${project.id}`}>
         <div className="project-card">
             <div className="image-bar">
-                <img className="project-card-img" src={project.images[0]}/>
+                <img className="project-card-img" alt="project-card-img" src={project.images[0]}/>
                 <div className="progress-bar-all">
                     <div className="progress-status-all"
                     style={{width:`${(project?.backing?.reduce((acc, a)=>acc+a,0)) / (project?.goal_amount) * 100}%`}}></div>

@@ -5,7 +5,7 @@ import {searchProjects} from "../../store/project"
 
 const SearchForm = () => {
     const [term, setTerm] = useState('');
-    const [errors, setErrors] = useState([]);
+    // const [errors, setErrors] = useState([]);
 
     const dispatch = useDispatch();
     const history = useHistory();
