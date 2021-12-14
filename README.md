@@ -2,11 +2,11 @@
 
 >**SeedStarter** started with an idea: aim to be a platform that provides seed funding to community-driven and environmental-focused projects. From our community to yours, we believe that those closest to the problem know how to solve it best.<br>
 For communities, by communities.<br>
-Get your start here.
-
+Get your start here.<p><br>
+(a Kickstarter clone)
 ## Live Site
 
-Give it a try [here](https://seed-starter.herokuapp.com/)
+You can try this by clicking [here](https://seed-starter.herokuapp.com/)
 
 ## Technologies Used
 
