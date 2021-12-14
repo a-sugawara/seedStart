@@ -64,8 +64,9 @@ export default function Splash({projectsArr}) {
                   <div className="left-text">
 
                 <p><span>Seed Starter</span> started with an idea: aim to be a platform that provides seed funding to community-driven projects.
-                From our community to yours, we believe those closest to the problem know how to solve it best. <span>Press a circle to see featured projects.</span>
-                <p>For communities, by communities. <br/>Get your start here.</p>
+                From our community to yours, we believe that those closest to the problem know how to solve it best. <span>Press a circle to see featured projects.</span>
+                <p>For communities, by communities.
+                <br/>Get your start here.</p>
             </p>
                   </div>
               </div>
