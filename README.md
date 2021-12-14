@@ -1,10 +1,12 @@
-# About SeedStarter
+# SeedStarter
 
-**SeedStarter** is a Kickstarter clone, with a focus on more local, community-driven projects. Support local businesses, entrepreneurs, and your environment!
+>**SeedStarter** started with an idea: aim to be a platform that provides seed funding to community-driven and environmental-focused projects. From our community to yours, we believe that those closest to the problem know how to solve it best.<br>
+For communities, by communities.<br>
+Get your start here.
 
 ## Live Site
 
-Check out our app on [Heroku](https://seed-starter.herokuapp.com/)
+Give it a try [here](https://seed-starter.herokuapp.com/)
 
 ## Technologies Used
 
