@@ -19,23 +19,30 @@ const ProjectForm = () => {
     const validator = () => {
         let error = []
         if (+goal_amount < 50) {
-            error.push('. : Please enter a whole number greater than 50')
+            error.push('. : Please enter a whole number greater than 50 for your goal.')
         }
         else if (!Boolean(+goal_amount)) {
-            error.push('. : Please enter a number')
+            error.push('. : Please enter a number for your goal.')
         }
         else if (+goal_amount % 1 !== 0) {
-            error.push('. : Please enter a whole number')
+            error.push('. : Please enter a whole number for your goal.')
         }
 
+        if(title.length < 5) {
+            error.push('. : Please enter a title of at least 5.')
+        }
         if(title.length > 80) {
             error.push('. : Please enter a title shorter than 80 characters.')
         }
 
         if(description.length > 2000) {
-            error.push('. : Descriptions cannot exceed 2000 characters')
+            error.push('. : Descriptions cannot exceed 2000 characters.')
         } else if(description.length < 20) {
-            error.push('. : Descriptions need to be at least 20 characters')
+            error.push('. : Descriptions need to be at least 20 characters.')
+        }
+
+        if(!image_url){
+            error.push('. : Must Upload an image.')
         }
 
         return error;
@@ -90,13 +97,13 @@ const ProjectForm = () => {
                     <input
                     className='project-title-input'
                     placeholder='Title'
-                    required
+
                     value = {title}
                     onChange= {(e) => setTitle(e.target.value)}/>
                     <input
                     className='project-description-input'
                     placeholder='Description'
-                    required
+
                     onChange= {(e) => setDescription(e.target.value)}/>
                     <select className='category-dropdown-menu'
                     onChange={(e) => setCategoryId(e.target.value)}>
@@ -113,17 +120,23 @@ const ProjectForm = () => {
                     <input
                     className='project-price-input'
                     placeholder='Price'
-                    required
+
                     value = {goal_amount}
                     onChange= {(e) => setGoalAmount(e.target.value)}/>
+                    <label htmlFor='aws' className='awsholder'>
+                        <img src="https://cdn.discordapp.com/attachments/915741036024827916/927861102568697906/leavesCam.png"
+                        className='project-img-upload'/>
+                    </label>
                     <input
+                    id="aws"
                     type="file"
                     accept=".jpeg, .jpg, .png, .gif"
                     className='project-image_url-input'
                     placeholder='Image URL'
-                    required
+
                     // value = {image_url}
                     onChange= {(e) => setImageUrl(e.target.files[0])}/>
+                    <div>{image_url.name?`Uploading ${image_url.name}`:null }</div>
                     <button className="project-submit-button">Submit</button>
                 </form>
             </div>
