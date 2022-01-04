@@ -26,11 +26,11 @@ const ProjectForm = () => {
         }
         else if (+goal_amount % 1 !== 0) {
             error.push('. : Please enter a whole number')
-        } 
+        }
 
         if(title.length > 80) {
             error.push('. : Please enter a title shorter than 80 characters.')
-        } 
+        }
 
         if(description.length > 2000) {
             error.push('. : Descriptions cannot exceed 2000 characters')
@@ -40,22 +40,23 @@ const ProjectForm = () => {
 
         return error;
     }
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const errorsArr = validator() 
+        const errorsArr = validator()
         if(errorsArr.length) {
             setErrors(errorsArr)
         } else{
-            const projectInfo = {
-                user_id,
-                title,
-                description,
-                category_id,
-                goal_amount,
-                image_url
-            } 
-            const data = await dispatch(createProject(projectInfo))
+            const formData = new FormData()
+
+                formData.append("user_id",user_id)
+                formData.append("title",title)
+                formData.append("description",description)
+                formData.append("category_id",category_id)
+                formData.append("goal_amount",goal_amount)
+                formData.append("image_url", image_url)
+
+            const data = await dispatch(createProject(formData))
             if(data) {
                 setErrors(data)
             } else {
@@ -116,11 +117,13 @@ const ProjectForm = () => {
                     value = {goal_amount}
                     onChange= {(e) => setGoalAmount(e.target.value)}/>
                     <input
+                    type="file"
+                    accept=".jpeg, .jpg, .png, .gif"
                     className='project-image_url-input'
                     placeholder='Image URL'
                     required
-                    value = {image_url}
-                    onChange= {(e) => setImageUrl(e.target.value)}/>
+                    // value = {image_url}
+                    onChange= {(e) => setImageUrl(e.target.files[0])}/>
                     <button className="project-submit-button">Submit</button>
                 </form>
             </div>

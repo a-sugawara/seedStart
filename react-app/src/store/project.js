@@ -125,12 +125,7 @@ export const oneProject = (id) => async(dispatch) => {
 export const createProject = (projectInfo) => async(dispatch) => {
   const response = await fetch(`/api/projects/`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(
-      projectInfo
-    )
+    body:projectInfo
   })
   if (response.ok) {
     const data = await response.json()
