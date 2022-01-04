@@ -6,23 +6,29 @@ Get your start here.<p><br>
 (a Kickstarter clone)
 ## Live Site
 
-You can try this by clicking [here](https://seed-starter.herokuapp.com/)
+ [Seed Starter](https://seed-starter.herokuapp.com/)
 
-## Technologies Used
+##  Frontend Technologies Used
+<img src="https://cdn.discordapp.com/attachments/920285009099751524/925631805267271690/frontend-tech.png" width="300"/>
+   
+##  Backend Technologies Used
+<img src="https://cdn.discordapp.com/attachments/920285009099751524/925631805057548308/backend-tech.png" width="300"/>
+   
+# Application Architecture
+<img src="https://cdn.discordapp.com/attachments/920285009099751524/925650376110256208/techArchnoback.png" width="900"/>
 
-- Python
-- Flask
-- SQLAlchemy
-- Flask-SQLAlchemy
-- Alembic
-- Javascript
-- React
-- HTML/CSS
-- Flask-login
-- Flask-WTF
-- WTForms
-- Werkzeug
-
+### 1. User hit button/submits form (controlled component)/loads a page(useEffect) and hits a thunk.
+### 2. The thunk sends a fetch request to the api server.
+### 3. The server then sends a request to the database.
+### 4. The database then returns data to the server.
+### 5. The server then serves the data back to the thunk.
+### 6. The thunk dispatches the action creator.
+### 7. The action creator sends the action object to the reducer.
+### 8. The reducer takes the action object and updates the state.
+### 9. The state/store is then updated.
+### 10. useSelector is then used to listen to the state a pull out a “Slice of State”.
+### 11. The frontend is then updated using the information from the backend and renders the page using the frontend technology stack.
+   
 ## Features
 
 
@@ -51,7 +57,7 @@ Users can use the search bar to look for more specific projects based on what th
 
 ## User Stories
 
-Browse our [User Stories](https://github.com/ad-sw/SeedStarter/wiki/User-Stories)
+Browse our [User Stories](https://github.com/a-sugawara/seedStart/wiki/User-Stories)
 
 ## Database Schema
 
@@ -69,7 +75,13 @@ Our frontend routes can be viewed [here](https://github.com/ad-sw/SeedStarter/wi
 
 - One problem we faced was that the random number generator that we used on the splash page would generate a random array for every click. In order to solve that, we prop threaded the random number array into the splash component to avoid re-rendering the array.
 
+## Future Features
 
+- Add likes and comments to projects.
+- User profiles with full CRUD, that also shows projects they've supported and created.
+- Implement Web Sockets for live updates on project statuses(backings, likes, ratings).
+- Smoother CSS animations/formating.
+   
 ## How To Run Locally
 1. Clone this repository (only this branch)
 
@@ -199,10 +211,3 @@ of your Heroku app in the url and tag name:
    ```bash=3
    docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
    ```
-
-## Future Features
-
-- Add likes and comments to projects.
-- User profiles with full CRUD, that also shows projects they've supported and created.
-- -adviser matchmaking with projects to industry experts or ppl with a history of successful project implementation, to help with any risks a project may have during implemenetation
--potential coaching offered to well-funded projects with successful campaigns & community traction (comments & likes).
