@@ -50,3 +50,20 @@
     background-color: #5b7e73;
     cursor: pointer;
 }
+.project-image_url-input{
+    display:none;
+}
+.project-img-upload{
+
+    height:5rem;
+    width: auto;
+    transition: all 0.25s ease-in-out;
+}
+.project-img-upload:hover{
+    height:6rem;
+    width: auto;
+    cursor: pointer;
+}
+.awsholder{
+    height: 6rem;
+}
