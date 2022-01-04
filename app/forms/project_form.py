@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, TextAreaField
+from wtforms import StringField, IntegerField, TextAreaField, FileField
 from wtforms.validators import DataRequired, Email, ValidationError
 from app.models import Project
 
@@ -33,8 +33,7 @@ class ProjectForm(FlaskForm):
     description = StringField('description', validators=[DataRequired(), description_validator])
     goal_amount = IntegerField('goal_amount', validators=[DataRequired()])
     title = StringField('title', validators=[DataRequired(), title_validator])
-
-    image_url = StringField('image_url', validators=[DataRequired()])
+    image_url = FileField('image_url', validators=[DataRequired()])
 
 class ProjectFormEdit(FlaskForm):
     user_id = IntegerField('user_id', validators=[DataRequired()])
