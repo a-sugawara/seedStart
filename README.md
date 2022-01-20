@@ -6,7 +6,7 @@ Get your start here.<p><br>
 (a Kickstarter clone)
 ## Live Site
 
- [Seed Starter](https://seed-starter.herokuapp.com/)
+ [Seed Starter](https://seedstart.herokuapp.com)
 
 ##  Frontend Technologies Used
 <img src="https://cdn.discordapp.com/attachments/920285009099751524/925631805267271690/frontend-tech.png" width="300"/>
