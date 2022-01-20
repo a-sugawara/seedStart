@@ -5,3 +5,4 @@ from .backing import Backing
 from .image import Image
 from .project import Project
 from .reward import Reward
+from .likes import Like

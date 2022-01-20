@@ -11,8 +11,9 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
-    backings = db.relationship('Backing', back_populates='user')
+    backing = db.relationship('Backing', back_populates='user')
     project = db.relationship('Project', back_populates='user')
+    like = db.relationship('Like', back_populates='user')
 
     @property
     def password(self):

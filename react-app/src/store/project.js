@@ -12,6 +12,9 @@ const POST_REWARD = 'rewards/POST_REWARD'
 const UPDATE_REWARD = 'rewards/UPDATE_REWARD'
 const DELETE_REWARD = 'rewards/DELETE_REWARD'
 
+const POST_LIKE = 'likes/POST_LIKE'
+const DELETE_LIKE = 'likes/DELETE_LIKE'
+
 const setAllProjects = (allProjects) => {
     return {
         type: GET_ALL_PROJECTS,
@@ -87,6 +90,21 @@ const deleteReward = (id) => {
     payload: id
   }
 }
+
+const postLikeAC = (information) => {
+  return {
+    type: POST_LIKE,
+    payload: information
+  }
+}
+
+const deleteLikeAC = (information) => {
+  return {
+    type: DELETE_LIKE,
+    payload: information
+  }
+}
+
 
 export const allProjects = () => async (dispatch) => {
     const response = await fetch('/api/projects/')
@@ -290,6 +308,43 @@ export const removeReward = (rewardId) => async(dispatch) => {
   }
 }
 
+export const postLike = (information) => async(dispatch) => {
+  const response = await fetch(`/api/likes/`, {
+    method: "POST",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(information)
+  })
+  if (response.ok) {
+    const data = await response.json()
+    dispatch(postLikeAC(data))
+    return null;
+  } else if (response.status < 500){
+    const data = await response.json()
+    if (data.errors) {
+      return data.errors
+    }
+  } else {
+    return ['An error occurred. Please try again.']
+  }
+}
+
+export const deleteLike = (project_id, user_id) => async(dispatch) => {
+  const response = await fetch(`/api/likes/${project_id}/${user_id}`, {
+    method: "DELETE"})
+  if (response.ok) {
+    const data = await response.json()
+    dispatch(deleteLikeAC(data))
+    return null;
+  } else if (response.status < 500){
+    const data = await response.json()
+    if (data.errors) {
+      return data.errors
+    }
+  } else {
+    return ['An error occurred. Please try again.']
+  }
+}
+
 let initialState = {projects:[], currentProject:null, searchedProjects:null}
 
 const reducer = (state = initialState, action) => {
@@ -347,6 +402,20 @@ const reducer = (state = initialState, action) => {
           const rewardRIdx = newState.currentProject.rewards.findIndex(reward => reward[3] === action.payload)
           newState.currentProject.rewards.splice(rewardRIdx, 1)
           return newState
+        case POST_LIKE:
+          newState = {...state}
+          const projIdx = newState.projects.findIndex(proj => proj.id === action.payload.project_id)
+          newState.projects[projIdx].like.push([action.payload.user_id, action.payload.id])
+          if(newState.currentProject) {
+            newState.currentProject.like.push([action.payload.user_id, action.payload.id])
+          }
+          return newState;
+        case DELETE_LIKE:
+          newState = {...state}
+          const projectDelIdx = newState.projects.findIndex(proj => proj.id === action.payload.project_id)
+          const likeIdIdx = newState.projects[projectDelIdx].like.findIndex(lik => lik[1] === action.payload.id)
+          newState.projects[projectDelIdx].like.splice(likeIdIdx, 1)
+          return newState;
         default:
             return state;
     }

@@ -11,8 +11,11 @@ const SearchForm = () => {
     const history = useHistory();
 
     useEffect(() => {
-        dispatch(searchProjects(term))
-        if(term.length > 0)history.push(`/discover/${term}`)
+        if(term.length > 0){
+            dispatch(searchProjects(term))
+            history.push(`/discover/${term}`)
+        }
+            
     },[term])
 
     const handleSubmit = (e) => {
