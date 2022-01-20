@@ -29,8 +29,8 @@ class Project(db.Model):
             'user': self.user.username,
             'backing': [obj.backed for obj in self.backing],
             'images' : [obj.image_url for obj in self.image],
-            'description' : self.description
-
+            'description' : self.description,
+            "like": [obj.user_id for obj in self.like]
         }
 
     def to_dictionary(self):
@@ -45,6 +45,6 @@ class Project(db.Model):
             'category': self.category.category,
             'user': self.user.username,
             'backing': [list((obj.backed, obj.user_id, obj.id)) for obj in self.backing],
-            'images' : [obj.image_url for obj in self.image]
-
+            'images' : [obj.image_url for obj in self.image],
+            "like": [obj.user_id for obj in self.like]
         }

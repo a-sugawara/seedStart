@@ -309,14 +309,14 @@ export const removeReward = (rewardId) => async(dispatch) => {
 }
 
 export const postLike = (information) => async(dispatch) => {
-  const response = await fetch(`/api/likes`, {
+  const response = await fetch(`/api/likes/`, {
     method: "POST",
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(information)
   })
   if (response.ok) {
     const data = await response.json()
-    dispatch(postLike(data))
+    dispatch(postLikeAC(data))
     return null;
   } else if (response.status < 500){
     const data = await response.json()
@@ -328,12 +328,12 @@ export const postLike = (information) => async(dispatch) => {
   }
 }
 
-export const deleteLike = (information, project_id) => async(dispatch) => {
-  const response = await fetch(`/api/likes/${project_id}`, {
+export const deleteLike = (like_id) => async(dispatch) => {
+  const response = await fetch(`/api/likes/${like_id}`, {
     method: "DELETE"})
   if (response.ok) {
     const data = await response.json()
-    dispatch(deleteLike(data))
+    dispatch(deleteLikeAC(data))
     return null;
   } else if (response.status < 500){
     const data = await response.json()
@@ -402,6 +402,14 @@ const reducer = (state = initialState, action) => {
           const rewardRIdx = newState.currentProject.rewards.findIndex(reward => reward[3] === action.payload)
           newState.currentProject.rewards.splice(rewardRIdx, 1)
           return newState
+        case POST_LIKE:
+          newState = {...state}
+          const projIdx = newState.projects.findIndex(proj => proj.id === action.payload.project_id)
+          newState.projects[projIdx].like.push(action.payload.user_id)
+          if(newState.currentProject) {
+            newState.currentProject.like.push(action.payload.user_id)
+          }
+          return newState;
         default:
             return state;
     }
