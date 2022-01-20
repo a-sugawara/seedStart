@@ -12,6 +12,7 @@ from .api.project_routes import project_routes
 from .api.rewards_routes import reward_routes
 from .api.backing_routes import backing_routes
 from .api.image_routes import image_routes
+from .api.like_routes import likes_routes
 
 
 from .seeds import seed_commands
@@ -40,6 +41,7 @@ app.register_blueprint(project_routes, url_prefix='/api/projects')
 app.register_blueprint(reward_routes, url_prefix='/api/rewards')
 app.register_blueprint(backing_routes, url_prefix='/api/backings')
 app.register_blueprint(image_routes, url_prefix='/api/images')
+app.register_blueprint(likes_routes, url_prefix='/api/likes')
 
 db.init_app(app)
 Migrate(app, db)
