@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import{NavLink } from 'react-router-dom'
-import {allProjects, postLike} from  '../../store/project'
+import {allProjects, postLike, deleteLike} from  '../../store/project'
 import Footer from "../Footer/Footer";
 import "./AllProjectsPage.css"
 
@@ -20,6 +20,11 @@ export default function AllProjectsPage(){
         dispatch(postLike(information))
     }
 
+    const handleDeleteLike = (e, project_id, user_id) => {
+        e.preventDefault();
+        dispatch(deleteLike(project_id, user_id))
+    }
+
     const details = projects?.map((project, idx) =>
     <NavLink key={idx} to={`/projects/${project.id}`}>
         <div className="project-card">
@@ -34,7 +39,9 @@ export default function AllProjectsPage(){
                 <div className="title">{project.title}</div>
                 <div>Goal: ${project.goal_amount}</div>
                 <div>By {project.user}</div>
-                {sessionUser ? <button onClick={(e) => handleLike(e, project.id)}>Like</button> : null }
+                {sessionUser ? [projects[idx]?.like.find(lik => lik[0] === sessionUser.id) ? 
+                <button onClick={(e) => handleDeleteLike(e, project.id, sessionUser.id)}>Unlike</button>: 
+                <button onClick={(e) => handleLike(e, project.id)}>Like</button>] : null}
             </div>
             <div>
             </div>

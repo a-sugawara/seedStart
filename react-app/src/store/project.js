@@ -328,8 +328,8 @@ export const postLike = (information) => async(dispatch) => {
   }
 }
 
-export const deleteLike = (like_id) => async(dispatch) => {
-  const response = await fetch(`/api/likes/${like_id}`, {
+export const deleteLike = (project_id, user_id) => async(dispatch) => {
+  const response = await fetch(`/api/likes/${project_id}/${user_id}`, {
     method: "DELETE"})
   if (response.ok) {
     const data = await response.json()
@@ -405,10 +405,14 @@ const reducer = (state = initialState, action) => {
         case POST_LIKE:
           newState = {...state}
           const projIdx = newState.projects.findIndex(proj => proj.id === action.payload.project_id)
-          newState.projects[projIdx].like.push(action.payload.user_id)
+          newState.projects[projIdx].like.push([action.payload.user_id, action.payload.id])
           if(newState.currentProject) {
-            newState.currentProject.like.push(action.payload.user_id)
+            newState.currentProject.like.push([action.payload.user_id, action.payload.id])
           }
+          return newState;
+        case DELETE_LIKE:
+          newState = {...state}
+          
           return newState;
         default:
             return state;

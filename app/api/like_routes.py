@@ -28,9 +28,9 @@ def post_like():
         return new_like.to_dict();
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
-@likes_routes.route('/<int:id>', methods=['DELETE'])
-def delete_like(id):
-    specific_like = Like.query.get(id)
+@likes_routes.route('/<int:project_id>/<int:user_id>', methods=['DELETE'])
+def delete_like(project_id, user_id):
+    specific_like = Like.query.filter(Like.project_id == project_id, Like.user_id == user_id).first()
     db.session.delete(specific_like)
     db.session.commit()
-    return {"message": "Successful deletion"}
+    return specific_like.to_dict()
