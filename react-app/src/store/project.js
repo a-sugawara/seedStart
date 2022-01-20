@@ -12,6 +12,9 @@ const POST_REWARD = 'rewards/POST_REWARD'
 const UPDATE_REWARD = 'rewards/UPDATE_REWARD'
 const DELETE_REWARD = 'rewards/DELETE_REWARD'
 
+const POST_LIKE = 'likes/POST_LIKE'
+const DELETE_LIKE = 'likes/DELETE_LIKE'
+
 const setAllProjects = (allProjects) => {
     return {
         type: GET_ALL_PROJECTS,

@@ -23,6 +23,7 @@ export default function AllProjectsPage(){
                 <div className="title">{project.title}</div>
                 <div>Goal: ${project.goal_amount}</div>
                 <div>By {project.user}</div>
+                <button>Like</button>
             </div>
             <div>
             </div>

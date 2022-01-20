@@ -15,6 +15,7 @@ class Project(db.Model):
     backing = db.relationship('Backing', back_populates='project', cascade="all, delete")
     reward = db.relationship('Reward', back_populates='project', cascade="all, delete")
     image = db.relationship('Image', back_populates='project', cascade="all, delete")
+    like = db.relationship('Like', back_populates='project', cascade="all, delete")
 
 
 

@@ -1,14 +1,14 @@
 from .db import db
 
-class Likes(db.Model):
+class Like(db.Model):
     __tablename__ = 'likes'
 
     id = db.Column(db.Integer, primary_key=True)
     project_id = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
-    user = db.relationship('User', back_populates='backings')
-    project = db.relationship('Project', back_populates='backing')
+    user = db.relationship('User', back_populates='likes')
+    project = db.relationship('Project', back_populates='likes')
 
     def to_dict(self):
         return {
