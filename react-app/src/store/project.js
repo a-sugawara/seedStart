@@ -412,7 +412,9 @@ const reducer = (state = initialState, action) => {
           return newState;
         case DELETE_LIKE:
           newState = {...state}
-          
+          const projectDelIdx = newState.projects.findIndex(proj => proj.id === action.payload.project_id)
+          const likeIdIdx = newState.projects[projectDelIdx].like.findIndex(lik => lik[1] === action.payload.id)
+          newState.projects[projectDelIdx].like.splice(likeIdIdx, 1)
           return newState;
         default:
             return state;

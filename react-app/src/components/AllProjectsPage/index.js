@@ -39,6 +39,7 @@ export default function AllProjectsPage(){
                 <div className="title">{project.title}</div>
                 <div>Goal: ${project.goal_amount}</div>
                 <div>By {project.user}</div>
+                <div>{project.like.length}</div>
                 {sessionUser ? [projects[idx]?.like.find(lik => lik[0] === sessionUser.id) ? 
                 <button onClick={(e) => handleDeleteLike(e, project.id, sessionUser.id)}>Unlike</button>: 
                 <button onClick={(e) => handleLike(e, project.id)}>Like</button>] : null}
