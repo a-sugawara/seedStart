@@ -7,8 +7,8 @@ class Like(db.Model):
     project_id = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
-    user = db.relationship('User', back_populates='likes')
-    project = db.relationship('Project', back_populates='likes')
+    user = db.relationship('User', back_populates='like')
+    project = db.relationship('Project', back_populates='like')
 
     def to_dict(self):
         return {

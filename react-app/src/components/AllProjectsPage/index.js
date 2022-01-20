@@ -9,6 +9,12 @@ import "./AllProjectsPage.css"
 export default function AllProjectsPage(){
     let dispatch = useDispatch()
     let projects = useSelector(state => state.project.projects)
+
+    const handleLike = (e) => {
+        e.preventDefault()
+        console.log('liked');
+    }
+
     const details = projects?.map((project, idx) =>
     <NavLink key={idx} to={`/projects/${project.id}`}>
         <div className="project-card">
@@ -23,7 +29,7 @@ export default function AllProjectsPage(){
                 <div className="title">{project.title}</div>
                 <div>Goal: ${project.goal_amount}</div>
                 <div>By {project.user}</div>
-                <button>Like</button>
+                <button onClick={handleLike}>Like</button>
             </div>
             <div>
             </div>

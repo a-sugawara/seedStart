@@ -91,6 +91,21 @@ const deleteReward = (id) => {
   }
 }
 
+const postLikeAC = (information) => {
+  return {
+    type: POST_LIKE,
+    payload: information
+  }
+}
+
+const deleteLikeAC = (information) => {
+  return {
+    type: DELETE_LIKE,
+    payload: information
+  }
+}
+
+
 export const allProjects = () => async (dispatch) => {
     const response = await fetch('/api/projects/')
     if (response.ok) {
@@ -283,6 +298,43 @@ export const removeReward = (rewardId) => async(dispatch) => {
   })
   if(response.ok) {
     dispatch(deleteReward(rewardId))
+  } else if (response.status < 500){
+    const data = await response.json()
+    if (data.errors) {
+      return data.errors
+    }
+  } else {
+    return ['An error occurred. Please try again.']
+  }
+}
+
+export const postLike = (information) => async(dispatch) => {
+  const response = await fetch(`/api/likes`, {
+    method: "POST",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(information)
+  })
+  if (response.ok) {
+    const data = await response.json()
+    dispatch(postLike(data))
+    return null;
+  } else if (response.status < 500){
+    const data = await response.json()
+    if (data.errors) {
+      return data.errors
+    }
+  } else {
+    return ['An error occurred. Please try again.']
+  }
+}
+
+export const deleteLike = (information, project_id) => async(dispatch) => {
+  const response = await fetch(`/api/likes/${project_id}`, {
+    method: "DELETE"})
+  if (response.ok) {
+    const data = await response.json()
+    dispatch(deleteLike(data))
+    return null;
   } else if (response.status < 500){
     const data = await response.json()
     if (data.errors) {
