@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request, session
-from app.models import Likes, db
+from app.models import Like, db
 from app.forms import LikeForm
 
 likes_routes = Blueprint('likes', __name__)
@@ -19,7 +19,7 @@ def post_like():
     form = LikeForm();
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-        new_like = Likes(
+        new_like = Like(
             project_id = form.data['project_id'],
             user_id = form.data['user_id']
         )
@@ -30,7 +30,7 @@ def post_like():
 
 @likes_routes.route('/<int:id>', methods=['DELETE'])
 def delete_like(id):
-    specific_like = Likes.query.get(id)
+    specific_like = Like.query.get(id)
     db.session.delete(specific_like)
     db.session.commit()
     return {"message": "Successful deletion"}
