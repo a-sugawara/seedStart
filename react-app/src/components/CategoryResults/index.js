@@ -45,7 +45,7 @@ export default function CategoryResults(){
                 <div className="like-holder"><div className="likeNum">{project.like.length}</div>
                     {sessionUser ? [projects[idx]?.like.find(lik => lik[0] === sessionUser.id) ?
                     <div onClick={(e) => handleDeleteLike(e, project.id, sessionUser.id)}><img className="unlike-heart"src="https://cdn.discordapp.com/attachments/915741036024827916/933638180572389376/SEEDHEART.png"/></div>:
-                    <div onClick={(e) => handleLike(e, project.id)}><img className="like-heart"src="https://cdn.discordapp.com/attachments/915741036024827916/933638180786303036/SEEDHEARTHOLLOW.png"/></div>] : null}
+                    <div onClick={(e) => handleLike(e, project.id)}><img className="like-heart"src="https://cdn.discordapp.com/attachments/915741036024827916/933638180786303036/SEEDHEARTHOLLOW.png"/></div>] : <img className="like-heart"src="https://cdn.discordapp.com/attachments/915741036024827916/933638180786303036/SEEDHEARTHOLLOW.png"/>}
                 </div>
             </div>
             <div>
