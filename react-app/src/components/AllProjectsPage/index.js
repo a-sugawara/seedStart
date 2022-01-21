@@ -36,7 +36,7 @@ export default function AllProjectsPage(){
                 </div>
             </div>
             <div className="project-card-info" >
-                <div className="title">{project.title.slice(0,35)}</div>
+                <div className="title">{project.title.slice(0,30)}</div>
                 <div>Goal: ${project.goal_amount}</div>
                 <div>By {project.user}</div>
                 <div className="like-holder"><div className="likeNum">{project.like.length}</div>
