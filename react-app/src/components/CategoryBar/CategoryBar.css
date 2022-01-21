@@ -3,7 +3,7 @@
     gap: 1rem;
     align-items:center;
     justify-content:center;
-
+    height: 2rem;
     box-sizing: border-box;
 }
 .category-name:hover{
