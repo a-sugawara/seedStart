@@ -1,8 +1,25 @@
 import React from 'react'
+import {useDispatch } from 'react-redux';
 import{ NavLink } from 'react-router-dom'
+import {postLike, deleteLike} from  '../../store/project'
+import "./AllProjectsPage.css"
 
-export default function SingleProject({projects, project, idx, handleDeleteLike, handleLike, sessionUser}) {
+export default function SingleProject({projects, project, idx, sessionUser}) {
+    let dispatch = useDispatch()
 
+    const handleLike = (e, project_id) => {
+        e.preventDefault()
+        const information = {
+            project_id,
+            user_id: sessionUser.id
+        }
+        dispatch(postLike(information))
+    }
+
+    const handleDeleteLike = (e, project_id, user_id) => {
+        e.preventDefault();
+        dispatch(deleteLike(project_id, user_id))
+    }
   return (
     <NavLink key={idx} to={`/projects/${project.id}`}>
         <div className="project-card">

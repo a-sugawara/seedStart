@@ -11,22 +11,10 @@ export default function AllProjectsPage(){
     let projects = useSelector(state => state.project.projects)
     let sessionUser = useSelector(state => state.session.user)
 
-    const handleLike = (e, project_id) => {
-        e.preventDefault()
-        const information = {
-            project_id,
-            user_id: sessionUser.id
-        }
-        dispatch(postLike(information))
-    }
 
-    const handleDeleteLike = (e, project_id, user_id) => {
-        e.preventDefault();
-        dispatch(deleteLike(project_id, user_id))
-    }
 
     const details = projects?.map((project, idx) =>
-    <SingleProject  projects={projects} project={project} idx={idx} sessionUser={sessionUser} handleDeleteLike={handleDeleteLike} handleLike={handleLike}/>
+    <SingleProject  projects={projects} project={project} idx={idx} sessionUser={sessionUser} />
     ).reverse()
 
     useEffect(()=>{
