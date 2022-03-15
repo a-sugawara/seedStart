@@ -7,9 +7,8 @@ import BackingEditForm from "../BackingEditForm";
 import EditProjectModal from '../ProjectFormEdit/EditProjectModal'
 import DeleteProjectModal from "../DeleteProjectModal/DeleteProjectModal";
 import PostRewardModal from "../RewardFormModal/index";
-import EditRewardModal from "../RewardEditModal";
-import DeleteRewardModal from "../DeleteRewardModal";
 import Footer from "../Footer/Footer";
+import Reward from "./reward";
 import './OneProjectsPage.css'
 
 export default function OneProjectPage(){
@@ -63,45 +62,7 @@ export default function OneProjectPage(){
         backingForm =null
     }
 
-    let rewards = project?.rewards?.sort((a,b) => a[2]-b[2]).map((reward) => {
-        let test=null
-        for(let i = 0; i < project?.backing.length; i++) {
-            if(project.backing[i][1] === user_id) {
-                if(project.backing[i][0] >= reward[2]){
-                    test="Owned"
-                }
-            }
-
-        }
-        return <div className="rewardCard">
-            <div className="reward-title">
-                {/* this is the reward title */}
-                {reward[0]}
-            </div>
-            <div className="reward-info">
-                <div className="reward-description">
-                    {/* this is the reward description */}
-                    {reward[1]}
-                </div>
-                <div className="reward-price">
-                    {/* this is the reward price */}
-                {` Cost: $${reward[2]}`}
-                </div>
-            </div>
-            <div className="reward-buttons">
-
-                {(user_id === project.user_id) ? <EditRewardModal
-                    project_id={projectId}
-                    reward_id={reward[3]}
-                    title={reward[0]}
-                    description={reward[1]}
-                    price={reward[2]}
-                    /> : null}
-                {(user_id === project.user_id) ? <DeleteRewardModal project_id={projectId} reward_id={reward[3]}/> : null}
-            </div>
-            {test}
-        </div>
-    })
+    let rewards = project?.rewards?.sort((a,b) => a[2]-b[2]).map((reward) => <Reward reward={reward}/>)
     let rewardsbox
     if(rewards?.length){
         rewardsbox = <div className="rewardsContainer">
@@ -122,7 +83,6 @@ export default function OneProjectPage(){
                     <div>Goal: {"$"}{project?.goal_amount}</div>
                     <div>Raised: {"$"}{project?.backing?.reduce((acc, a)=>acc+a[0],0)}</div>
                     <div>User: {project?.user}</div>
-                {/* {project?.goal_amount} */}
                 {projectButtons}
                 <div className="progress-bar">
                     <div className="progress-status"
