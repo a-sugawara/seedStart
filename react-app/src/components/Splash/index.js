@@ -14,7 +14,7 @@ export default function Splash({projectsArr}) {
         splashProjects[idx]
         )
 
-    const singleProjectCard = <NavLink to={`/projects/${singleProject?.id}`}>
+    const singleProjectCard = <NavLink to={`/projects/${singleProject?.id}`} className="proj-holder">
         <div className="sproject-card">
             <div className="simage-bar">
                 <img className="sproject-card-img" alt="sproject-card-img" src={singleProject?.images[0]}/>

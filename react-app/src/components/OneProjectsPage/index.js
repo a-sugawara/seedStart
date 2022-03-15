@@ -7,8 +7,6 @@ import BackingEditForm from "../BackingEditForm";
 import EditProjectModal from '../ProjectFormEdit/EditProjectModal'
 import DeleteProjectModal from "../DeleteProjectModal/DeleteProjectModal";
 import PostRewardModal from "../RewardFormModal/index";
-import EditRewardModal from "../RewardEditModal";
-import DeleteRewardModal from "../DeleteRewardModal";
 import Footer from "../Footer/Footer";
 import Reward from "./reward";
 import './OneProjectsPage.css'
@@ -85,7 +83,6 @@ export default function OneProjectPage(){
                     <div>Goal: {"$"}{project?.goal_amount}</div>
                     <div>Raised: {"$"}{project?.backing?.reduce((acc, a)=>acc+a[0],0)}</div>
                     <div>User: {project?.user}</div>
-                {/* {project?.goal_amount} */}
                 {projectButtons}
                 <div className="progress-bar">
                     <div className="progress-status"

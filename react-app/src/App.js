@@ -52,7 +52,6 @@ function App() {
       <Switch>
         <Route path='/' exact={true}>
           <Splash projectsArr={projectsArr}/>
-          <Footer/>
         </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
