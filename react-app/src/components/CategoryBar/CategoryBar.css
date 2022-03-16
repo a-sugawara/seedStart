@@ -21,7 +21,15 @@
 }
 @media only screen and (max-width: 800px) {
     .category-bar{
-        display:none;
+        display:flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items:center;
+        justify-content:center;
+        height: 2rem;
+        box-sizing: border-box;
+        margin-bottom:5rem;
     }
+
 
 }

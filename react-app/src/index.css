@@ -107,3 +107,25 @@ a{
     font-size:3rem;
     margin-top:2.5rem;
 }
+@media only screen and (max-width: 800px) {
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.109);
+        margin-bottom: 1rem;
+        gap:1.5rem;
+    }
+    .searchbar-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        border: 1px solid #0000002d;
+        border-radius: 5px;
+        width: 90%;
+
+    }
+}

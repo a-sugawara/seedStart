@@ -315,6 +315,7 @@
     .left{
         flex-direction: column;
         width:100%;
+        padding: 2rem 0;
     }
     .right{
         display:none;
