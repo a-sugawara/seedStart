@@ -315,6 +315,7 @@
     .left{
         flex-direction: column;
         width:100%;
+        padding: 2rem 0;
     }
     .right{
         display:none;
@@ -364,10 +365,18 @@
         height:fit-content
     }
     .login{
-        margin:0
+        margin:0;
+        padding:1rem;
     }
     .sign-up{
-        margin:0
+        margin:0;
+        padding:1rem;
+    }
+    .login:hover{
+        cursor: pointer;
+    }
+    .sign-up:hover{
+        cursor: pointer;
     }
     .proj-holder{
         display: flex;
